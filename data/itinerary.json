@@ -748,16 +748,16 @@
       "flights": {
         "inbound": {
           "from": "Ibiza (IBZ)",
-          "airline": "Vueling",
+          "airline": "Vueling (melhor opção)",
           "duration": "3h50",
           "price": "R$1.968/pessoa",
           "status": "looking",
-          "notes": "1 stop BCN (1h25 layover). 13:35→17:25. Total 3 pessoas: ~R$5.904."
+          "notes": "Preço por pessoa (3 adultos). Sem bagagem de mão inclusa na tarifa mais barata. Total 3 pessoas: ~R$5.904."
         },
         "options": [
           {
             "airline": "Vueling",
-            "route": "IBZ → NCE",
+            "route": "IBZ → BCN → NCE",
             "duration": "3h50",
             "stops": "1 (BCN, 1h25)",
             "times": "13:35 → 17:25",
@@ -765,7 +765,15 @@
           },
           {
             "airline": "Vueling",
-            "route": "IBZ → NCE",
+            "route": "IBZ → BCN → NCE",
+            "duration": "3h55",
+            "stops": "1 (BCN, 1h25)",
+            "times": "17:50 → 21:45",
+            "price": "R$2.344/pp"
+          },
+          {
+            "airline": "Vueling",
+            "route": "IBZ → BCN → NCE",
             "duration": "5h30",
             "stops": "1 (BCN, 3h)",
             "times": "16:15 → 21:45",
@@ -773,19 +781,43 @@
           },
           {
             "airline": "KLM",
-            "route": "IBZ → NCE",
+            "route": "IBZ → AMS → NCE",
             "duration": "5h30",
-            "stops": "1 (AMS)",
+            "stops": "1 (AMS, 55min)",
             "times": "16:55 → 22:25",
             "price": "R$2.534/pp"
           },
           {
             "airline": "Vueling",
-            "route": "IBZ → NCE",
+            "route": "IBZ → BCN → NCE",
+            "duration": "7h20",
+            "stops": "1 (BCN, 4h55)",
+            "times": "14:25 → 21:45",
+            "price": "R$1.988/pp"
+          },
+          {
+            "airline": "Vueling (mais barato)",
+            "route": "IBZ → BCN → NCE",
             "duration": "8h05",
             "stops": "1 (BCN, 5h40)",
             "times": "09:20 → 17:25",
             "price": "R$1.765/pp"
+          },
+          {
+            "airline": "Iberia",
+            "route": "IBZ → MAD → NCE",
+            "duration": "4h45",
+            "stops": "1 (MAD, 1h30)",
+            "times": "19:20 → 00:05+1",
+            "price": "R$3.045/pp"
+          },
+          {
+            "airline": "Air France (HOP!)",
+            "route": "IBZ → CDG → NCE",
+            "duration": "5h10",
+            "stops": "1 (CDG, 1h30)",
+            "times": "17:30 → 22:40",
+            "price": "R$4.199/pp"
           }
         ],
         "return": {
