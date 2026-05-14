@@ -54,7 +54,7 @@
     padding: 60px 40px 40px;
     text-align: center;
     overflow: hidden;
-    background: linear-gradient(135deg, #0a0a1a 0%, #12102a 50%, #0a0a1a 100%);
+    background: linear-gradient(135deg, rgba(10,10,26,0.7) 0%, rgba(18,16,42,0.6) 50%, rgba(10,10,26,0.7) 100%), url('assets/hero/hero.jpg') center/cover no-repeat;
   }
 
   .hero::before {
@@ -280,6 +280,20 @@
     justify-content: center;
     font-size: 2.5rem;
     flex-shrink: 0;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .leg-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .leg-image img[src=""], .leg-image img:not([src]) {
+    display: none;
   }
 
   .leg-info { flex: 1; min-width: 0; }
@@ -460,6 +474,20 @@
     align-items: center;
     justify-content: center;
     font-size: 3rem;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+  }
+
+  .event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .event-image img[src=""], .event-image img:not([src]) {
+    display: none;
   }
 
   .event-body { padding: 20px; }
@@ -991,7 +1019,7 @@ function renderTimeline() {
       <div class="leg-card" data-leg="${leg.id}" onclick="toggleLeg(this)">
         <div class="leg-dot" style="background:${color}"></div>
         <div class="leg-header">
-          <div class="leg-image">${emoji}</div>
+          <div class="leg-image">${leg.image ? `<img src="${leg.image}" alt="${leg.city}" onerror="this.style.display='none';this.parentElement.textContent='${emoji}'">` : emoji}</div>
           <div class="leg-info">
             <div class="leg-city"><span class="flag">${leg.flag}</span> ${leg.city}</div>
             <div class="leg-dates">${formatDate(leg.dates.start)} → ${formatDate(leg.dates.end)}</div>
@@ -1092,7 +1120,7 @@ function renderEvents() {
 
     return `
       <div class="event-card">
-        <div class="event-image">${venueEmoji}</div>
+        <div class="event-image">${ev.venueImage ? `<img src="${ev.venueImage}" alt="${ev.venue}" onerror="this.style.display='none';this.parentElement.textContent='${venueEmoji}'">` : venueEmoji}</div>
         <div class="event-body">
           <div class="event-date">${formatDate(ev.date)}</div>
           <div class="event-name">${ev.name}</div>
