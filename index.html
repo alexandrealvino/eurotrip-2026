@@ -873,10 +873,17 @@ function renderAll() {
   lucide.createIcons();
 }
 
+// Active travelers filter
+let activeTravelers = new Set();
+
 function renderTravelers() {
   const bar = document.getElementById('travelers-bar');
+  // Initialize all active
+  if (activeTravelers.size === 0) {
+    DATA.travelers.forEach(t => activeTravelers.add(t.id));
+  }
   bar.innerHTML = DATA.travelers.map(t => `
-    <div class="traveler-badge active" data-traveler="${t.id}" onclick="toggleTraveler('${t.id}', this)">
+    <div class="traveler-badge ${activeTravelers.has(t.id) ? 'active' : ''}" data-traveler="${t.id}" onclick="toggleTraveler('${t.id}', this)">
       <div class="dot" style="background:${t.color}"></div>
       <span>${t.name}</span>
     </div>
@@ -884,8 +891,78 @@ function renderTravelers() {
 }
 
 function toggleTraveler(id, el) {
-  el.classList.toggle('active');
-  // Future: filter timeline/map by selected travelers
+  if (activeTravelers.has(id)) {
+    // Don't allow deselecting all
+    if (activeTravelers.size <= 1) return;
+    activeTravelers.delete(id);
+    el.classList.remove('active');
+  } else {
+    activeTravelers.add(id);
+    el.classList.add('active');
+  }
+  applyTravelerFilter();
+}
+
+function applyTravelerFilter() {
+  // Filter timeline cards
+  document.querySelectorAll('.leg-card').forEach(card => {
+    const legId = card.dataset.leg;
+    const leg = DATA.legs.find(l => l.id === legId);
+    if (!leg) return;
+    const visible = leg.who.some(w => activeTravelers.has(w));
+    card.style.display = visible ? '' : 'none';
+  });
+
+  // Filter map markers
+  if (window._mapMarkers) {
+    window._mapMarkers.forEach(({marker, label, leg}) => {
+      const visible = leg.who.some(w => activeTravelers.has(w));
+      if (visible) {
+        marker.setStyle({opacity: 0.9, fillOpacity: 0.8});
+        if (label._icon) label._icon.style.opacity = '1';
+      } else {
+        marker.setStyle({opacity: 0.15, fillOpacity: 0.1});
+        if (label._icon) label._icon.style.opacity = '0.15';
+      }
+    });
+  }
+
+  // Filter overlap rows
+  document.querySelectorAll('.overlap-name')?.forEach(nameCell => {
+    const name = nameCell.textContent.trim();
+    const traveler = DATA.travelers.find(t => t.name === name);
+    if (!traveler) return;
+    const row = nameCell.parentElement;
+    // Get all cells in this row (overlap grid is flat, need to find by index)
+    // Simpler: toggle via CSS class on the name cell
+    const visible = activeTravelers.has(traveler.id);
+    // Walk sibling cells (overlap grid uses CSS grid, cells are flat siblings)
+    let el = nameCell;
+    const totalDays = 25;
+    for (let i = 0; i <= totalDays; i++) {
+      if (el) {
+        el.style.opacity = visible ? '1' : '0.15';
+        el = el.nextElementSibling;
+      }
+    }
+  });
+
+  // Filter event cards
+  document.querySelectorAll('.event-card').forEach((card, i) => {
+    const allEvents = [];
+    DATA.legs.forEach(leg => leg.events.forEach(ev => allEvents.push(ev)));
+    const ev = allEvents[i];
+    if (!ev) return;
+    const visible = (ev.who || []).some(w => activeTravelers.has(w));
+    card.style.display = visible ? '' : 'none';
+  });
+
+  // Filter todo items
+  document.querySelectorAll('.todo-item').forEach((item, i) => {
+    const todo = DATA.todos[i];
+    if (!todo || !todo.who) { item.style.display = ''; return; }
+    item.style.display = activeTravelers.has(todo.who) ? '' : 'none';
+  });
 }
 
 // ─── MAP ───
@@ -902,6 +979,7 @@ function renderMap() {
   }).addTo(map);
 
   window._map = map;
+  window._mapMarkers = [];
 
   const routeCoords = [];
   const mainLegs = DATA.legs.filter(l => !l.parallelWith);
@@ -939,7 +1017,7 @@ function renderMap() {
     `);
 
     // City label with step number
-    L.marker([leg.lat, leg.lng], {
+    const label = L.marker([leg.lat, leg.lng], {
       icon: L.divIcon({
         className: '',
         html: `<div style="color:#fff;font-size:11px;font-weight:700;text-shadow:0 1px 4px #000,0 0 8px #000;white-space:nowrap;transform:translate(-50%,8px)">${i+1}. ${leg.city}</div>`,
@@ -947,6 +1025,8 @@ function renderMap() {
         iconAnchor: [0, -12]
       })
     }).addTo(map);
+
+    window._mapMarkers.push({marker, label, leg});
   });
 
   // Animated route line
@@ -962,7 +1042,7 @@ function renderMap() {
   const parallelLegs = DATA.legs.filter(l => l.parallelWith);
   parallelLegs.forEach(leg => {
     const color = countryColors[leg.country] || '#fff';
-    L.circleMarker([leg.lat, leg.lng], {
+    const pMarker = L.circleMarker([leg.lat, leg.lng], {
       radius: 6,
       fillColor: color,
       color: '#fff',
@@ -976,6 +1056,10 @@ function renderMap() {
         <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">${leg.notes || ''}</div>
       </div>
     `);
+    const pLabel = L.marker([leg.lat, leg.lng], {
+      icon: L.divIcon({ className: '', html: `<div style="color:#fff;font-size:10px;font-weight:600;text-shadow:0 1px 4px #000;white-space:nowrap;transform:translate(-50%,6px);opacity:0.7">${leg.city}</div>`, iconSize: [0,0], iconAnchor: [0,-10] })
+    }).addTo(map);
+    window._mapMarkers.push({marker: pMarker, label: pLabel, leg});
   });
 
   map.fitBounds(routeCoords, { padding: [40, 40] });
