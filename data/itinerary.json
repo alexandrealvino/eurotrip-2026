@@ -50,10 +50,10 @@
         "name": null,
         "pricePerNight": 550,
         "currency": "BRL",
-        "notes": "Top picks: II Guelfo Bianco (9.3, R$1.095/noite), Ruby Bea (9.1, R$908/noite), Hotel Angelica (9.0, R$952/noite)",
+        "notes": "Booking: II Guelfo Bianco (9.3, San Lorenzo) R$1.095/noite, Ruby Bea (9.1) R$908/noite, Hotel Angelica (9.0) R$952/noite. Airbnb: Mattonaia apt (4.95) $358 total/2n, Quarto Amarelo MusArt (4.94) $339 total/2n, Neri-A (4.87 Guest Fav) $414 total/2n",
         "links": {
-          "airbnb": "https://www.airbnb.com.br/s/Floren%C3%A7a--Toscana--It%C3%A1lia/homes?checkin=2026-06-17&checkout=2026-06-19&adults=2",
-          "booking": "https://www.booking.com/searchresults.html?ss=Florence%2C+Tuscany%2C+Italy&checkin=2026-06-17&checkout=2026-06-19&group_adults=2"
+          "airbnb": "https://www.airbnb.com.br/s/Florence--Italy/homes?checkin=2026-06-17&checkout=2026-06-19&adults=2&price_max=180&currency=USD",
+          "booking": "https://www.booking.com/searchresults.html?ss=Florence&checkin=2026-06-17&checkout=2026-06-19&group_adults=2&no_rooms=1"
         }
       },
       "flights": {
@@ -129,8 +129,11 @@
         "name": null,
         "pricePerNight": 850,
         "currency": "BRL",
-        "notes": "Costa Amalfitana é cara (Romano alertou). Hotel Casa Albertina R$1.713/noite (mais barato de Positano). Considerar Amalfi/Sorrento como base.",
-        "links": {}
+        "notes": "⚠️ Positano é cara (Romano alertou). Booking: Casa Albertina $311/noite (mais barato). Airbnb: Pepella B&B Piano di Sorrento (4.97) $386/3n, BB Villa La Quercia (4.63) $516/3n, Apt romântico (4.87) $523/3n. Opção: Amalfi centro (4.85 Guest Fav) $516/3n. Considerar Sorrento como base mais barata.",
+        "links": {
+          "airbnb": "https://www.airbnb.com.br/s/Positano--Italy/homes?checkin=2026-06-23&checkout=2026-06-26&adults=2&price_max=250&currency=USD",
+          "booking": "https://www.booking.com/searchresults.html?ss=Positano&checkin=2026-06-23&checkout=2026-06-26&group_adults=2&no_rooms=1"
+        }
       },
       "flights": {
         "inbound": null
