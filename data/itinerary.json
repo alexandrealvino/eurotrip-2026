@@ -230,7 +230,8 @@
       "nights": 4,
       "who": [
         "ale",
-        "lucas"
+        "lucas",
+        "david"
       ],
       "accommodation": {
         "status": "booked",
@@ -251,7 +252,7 @@
         "Trastevere",
         "Pantheon"
       ],
-      "notes": "",
+      "notes": " David chega em Roma dia 24/Jun (vindo de Paris dia 23).",
       "image": "assets/cities/rome.jpg"
     },
     {
@@ -579,10 +580,10 @@
       "lat": 38.9067,
       "lng": 1.4206,
       "dates": {
-        "start": "2026-07-03",
+        "start": "2026-07-01",
         "end": "2026-07-08"
       },
-      "nights": 5,
+      "nights": 7,
       "who": [
         "ale",
         "lucas",
@@ -714,7 +715,7 @@
         "Cala Comte",
         "Dalt Vila"
       ],
-      "notes": "David junta ao grupo em Ibiza. Ale chega Jul 3, Lucas Jul 5.",
+      "notes": "David junta ao grupo dia 1/Jul (confirmado). Todos juntos até dia 8. Ale chega Jul 3 (originalmente), David e Lucas podem chegar antes.",
       "image": "assets/cities/ibiza.jpg"
     },
     {
@@ -864,8 +865,57 @@
           "destination": "St Tropez"
         }
       ],
-      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez",
+      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre volta dia 11/Jul (TAP NCE→LIS→GIG). David continua na Riviera e volta dia 14/Jul via Londres (escala 1 dia, volta dia 15).",
       "image": "assets/cities/nice.jpg"
+    },
+    {
+      "id": "david-return",
+      "city": "Londres (escala)",
+      "country": "England",
+      "flag": "🇬🇧",
+      "lat": 51.5074,
+      "lng": -0.1278,
+      "dates": {
+        "start": "2026-07-14",
+        "end": "2026-07-15"
+      },
+      "nights": 1,
+      "who": [
+        "david"
+      ],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "BRL",
+        "notes": "Escala de 1 dia em Londres antes de voltar",
+        "links": {}
+      },
+      "flights": {
+        "inbound": {
+          "from": "Nice (NCE)",
+          "airline": "A confirmar",
+          "duration": "A confirmar",
+          "price": "A confirmar",
+          "status": "looking",
+          "notes": "David continua na Riviera após Jul 11 (Ale volta). Sai de Nice ~Jul 14 pra Londres."
+        },
+        "return": {
+          "from": "Londres",
+          "to": "Rio de Janeiro",
+          "date": "2026-07-15",
+          "status": "looking",
+          "notes": "David volta de Londres dia 15/Jul",
+          "options": []
+        }
+      },
+      "events": [],
+      "highlights": [
+        "Layover de 1 dia"
+      ],
+      "notes": "David chega em Paris dia 23/Jun, Roma dia 24/Jun. Volta dia 14/Jul via Londres, chega RJ dia 15/Jul.",
+      "image": null
     }
   ],
   "budget": {
