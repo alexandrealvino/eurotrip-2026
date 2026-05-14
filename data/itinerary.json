@@ -529,9 +529,9 @@
       "lng": 4.1107,
       "dates": {
         "start": "2026-07-01",
-        "end": "2026-07-05"
+        "end": "2026-07-04"
       },
-      "nights": 4,
+      "nights": 3,
       "who": [
         "lucas"
       ],
@@ -578,7 +578,7 @@
         "Ciutadella",
         "Beaches"
       ],
-      "notes": "Lucas: 4 noites confirmado",
+      "notes": "Lucas: 3 noites. Vai pra Ibiza dia 4.",
       "image": "assets/cities/menorca.jpg",
       "parallelWith": "baleares"
     },
@@ -728,7 +728,7 @@
         "Cala Comte",
         "Dalt Vila"
       ],
-      "notes": "David junta ao grupo dia 1/Jul (confirmado). Todos juntos até dia 8. Ale chega Jul 3 (originalmente), David e Lucas podem chegar antes.",
+      "notes": "David chega dia 1/Jul (confirmado). Alexandre chega Jul 1-3 (TBD). Lucas chega dia 4/Jul (de Menorca). Todos juntos até dia 8.",
       "image": "assets/cities/ibiza.jpg",
       "dayTrips": [
         {
@@ -954,7 +954,7 @@
       "who": "ale"
     },
     {
-      "task": "Definir destino Ale Jul 1-3 (Formentera / Menorca / Maiorca / direto Ibiza?)",
+      "task": "Definir voo/ferry Menorca→Ibiza (04/Jul) — Lucas",
       "priority": "high",
       "who": "ale"
     },
@@ -1044,7 +1044,7 @@
       "who": "lucas"
     },
     {
-      "task": "Definir voo Menorca→Ibiza (Jul 5) — Lucas",
+      "task": "Definir voo/ferry Menorca→Ibiza (04/Jul) — Lucas",
       "priority": "medium",
       "who": "lucas"
     },
