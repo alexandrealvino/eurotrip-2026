@@ -5,7 +5,12 @@
     "startDate": "2026-06-17",
     "endDate": "2026-07-11",
     "totalDays": 25,
-    "currency": "BRL"
+    "currency": "BRL",
+    "davidDates": {
+      "start": "2026-06-23",
+      "end": "2026-07-15",
+      "days": 22
+    }
   },
   "travelers": [
     {
@@ -875,7 +880,7 @@
       "highlights": [
         "Layover de 1 dia"
       ],
-      "notes": "David chega em Paris dia 23/Jun, Roma dia 24/Jun. Volta dia 14/Jul via Londres, chega RJ dia 15/Jul.",
+      "notes": "David chega na Europa dia 23/Jun (Paris). Volta dia 15/Jul via Londres.",
       "image": null
     }
   ],
@@ -1043,7 +1048,7 @@
       "who": "lucas"
     },
     {
-      "task": "Definir voo de ida do David (→ Paris Jun 23 ou Roma Jun 24)",
+      "task": "Definir voo de ida do David (→ Paris, chegada 23/Jun)",
       "priority": "medium",
       "who": "david"
     },
@@ -1063,7 +1068,7 @@
       "who": "david"
     },
     {
-      "task": "Definir voo David Londres→Rio (Jul 15)",
+      "task": "Definir voo David Londres→Rio (15/Jul)",
       "priority": "medium",
       "who": "david"
     },
