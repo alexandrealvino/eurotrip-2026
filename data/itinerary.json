@@ -753,12 +753,13 @@
           "venue": "Ushuaïa",
           "type": "show",
           "status": "tbd",
-          "link": null,
+          "link": "https://www.clubtickets.com/clubbing/ushuaia-ibiza/calvin-harris?aff=CT006",
           "who": [
             "ale",
             "david"
           ],
-          "venueImage": "assets/events/ushuaia.jpg"
+          "venueImage": "assets/events/ushuaia.jpg",
+          "notes": "Comprar em clubtickets.com"
         },
         {
           "date": "2026-07-03",
@@ -766,12 +767,13 @@
           "venue": "UNVRS",
           "type": "show",
           "status": "tbd",
-          "link": null,
+          "link": "https://www.unvrs.com/events-calendar",
           "who": [
             "ale",
             "david"
           ],
-          "venueImage": "assets/events/unvrs.jpg"
+          "venueImage": "assets/events/unvrs.jpg",
+          "notes": "Comprar em unvrs.com/events-calendar"
         },
         {
           "date": "2026-07-04",
