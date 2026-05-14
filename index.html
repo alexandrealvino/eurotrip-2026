@@ -495,6 +495,18 @@
 
   .event-body { padding: 20px; }
 
+  .accomm-options { display: flex; flex-direction: column; gap: 10px; margin-top: 12px; }
+  .accomm-option { display: flex; gap: 12px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 10px; transition: border-color 0.2s; }
+  .accomm-option:hover { border-color: var(--border-hover); }
+  .accomm-option-img { width: 90px; height: 70px; border-radius: 6px; object-fit: cover; flex-shrink: 0; background: var(--bg-card); }
+  .accomm-option-info { flex: 1; min-width: 0; }
+  .accomm-option-name { font-weight: 600; font-size: 0.85rem; color: var(--text); }
+  .accomm-option-name a { color: var(--text); text-decoration: none; }
+  .accomm-option-name a:hover { color: var(--accent); }
+  .accomm-option-details { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
+  .accomm-option-price { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.8rem; color: var(--accent); margin-top: 4px; }
+  .accomm-option-source { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+
   .event-date {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.75rem;
@@ -703,15 +715,15 @@
     <div class="hero-stats">
       <div class="stat">
         <div class="stat-value">25</div>
-        <div class="stat-label">Days</div>
+        <div class="stat-label">Dias</div>
       </div>
       <div class="stat">
         <div class="stat-value">10</div>
-        <div class="stat-label">Cities</div>
+        <div class="stat-label">Cidades</div>
       </div>
       <div class="stat">
         <div class="stat-value">3</div>
-        <div class="stat-label">Countries</div>
+        <div class="stat-label">Países</div>
       </div>
       <div class="stat">
         <div class="stat-value">5</div>
@@ -724,12 +736,12 @@
 
 <!-- TABS -->
 <div class="tabs">
-  <div class="tab active" data-tab="map" onclick="switchTab('map')"><i data-lucide="map"></i> Map</div>
-  <div class="tab" data-tab="timeline" onclick="switchTab('timeline')"><i data-lucide="calendar"></i> Timeline</div>
-  <div class="tab" data-tab="overlap" onclick="switchTab('overlap')"><i data-lucide="users"></i> Who's Where</div>
-  <div class="tab" data-tab="events" onclick="switchTab('events')"><i data-lucide="music"></i> Events</div>
-  <div class="tab" data-tab="todos" onclick="switchTab('todos')"><i data-lucide="check-square"></i> To-Do</div>
-  <div class="tab" data-tab="budget" onclick="switchTab('budget')"><i data-lucide="wallet"></i> Budget</div>
+  <div class="tab active" data-tab="map" onclick="switchTab('map')"><i data-lucide="map"></i> Mapa</div>
+  <div class="tab" data-tab="timeline" onclick="switchTab('timeline')"><i data-lucide="calendar"></i> Roteiro</div>
+  <div class="tab" data-tab="overlap" onclick="switchTab('overlap')"><i data-lucide="users"></i> Quem Está Onde</div>
+  <div class="tab" data-tab="events" onclick="switchTab('events')"><i data-lucide="music"></i> Eventos</div>
+  <div class="tab" data-tab="todos" onclick="switchTab('todos')"><i data-lucide="check-square"></i> Pendências</div>
+  <div class="tab" data-tab="budget" onclick="switchTab('budget')"><i data-lucide="wallet"></i> Orçamento</div>
 </div>
 
 <div class="content">
@@ -737,8 +749,8 @@
   <!-- MAP -->
   <div class="section active" id="section-map">
     <div class="section-header">
-      <h2>Route Map</h2>
-      <p>Click on markers for details. Line follows the route chronologically.</p>
+      <h2>Mapa da Rota</h2>
+      <p>Clique nos marcadores para detalhes. A linha segue o roteiro cronologicamente.</p>
     </div>
     <div id="map"></div>
   </div>
@@ -746,8 +758,8 @@
   <!-- TIMELINE -->
   <div class="section" id="section-timeline">
     <div class="section-header">
-      <h2>Timeline</h2>
-      <p>Click any leg to expand details, accommodation links and highlights.</p>
+      <h2>Roteiro</h2>
+      <p>Clique em qualquer etapa para ver detalhes, opções de hospedagem e destaques.</p>
     </div>
     <div class="timeline" id="timeline"></div>
   </div>
@@ -755,8 +767,8 @@
   <!-- OVERLAP -->
   <div class="section" id="section-overlap">
     <div class="section-header">
-      <h2>Who's Where</h2>
-      <p>Day-by-day overlap view. Colors = destination country.</p>
+      <h2>Quem Está Onde</h2>
+      <p>Visão dia-a-dia. Cores = país de destino.</p>
     </div>
     <div class="overlap-grid" id="overlap-grid"></div>
   </div>
@@ -764,8 +776,8 @@
   <!-- EVENTS -->
   <div class="section" id="section-events">
     <div class="section-header">
-      <h2>Events & Shows</h2>
-      <p>Ibiza season. The real reason for the trip.</p>
+      <h2>Eventos & Shows</h2>
+      <p>Temporada de Ibiza. O verdadeiro motivo da viagem.</p>
     </div>
     <div class="events-grid" id="events-grid"></div>
   </div>
@@ -773,8 +785,8 @@
   <!-- TODOS -->
   <div class="section" id="section-todos">
     <div class="section-header">
-      <h2>To-Do List</h2>
-      <p>What still needs to happen before June 17.</p>
+      <h2>Pendências</h2>
+      <p>O que ainda precisa rolar antes de 17 de junho.</p>
     </div>
     <div class="todos-list" id="todos-list"></div>
   </div>
@@ -782,8 +794,8 @@
   <!-- BUDGET -->
   <div class="section" id="section-budget">
     <div class="section-header">
-      <h2>Budget Tracker</h2>
-      <p>Estimated costs per person. Updates as we book.</p>
+      <h2>Orçamento</h2>
+      <p>Custos estimados por pessoa. Atualiza conforme reservamos.</p>
     </div>
     <div class="budget-section" id="budget-section"></div>
   </div>
@@ -810,8 +822,8 @@ const countryColors = { 'Italy': 'var(--italy)', 'Spain': 'var(--spain)', 'Franc
 
 function formatDate(dateStr) {
   const d = new Date(dateStr + 'T12:00:00');
-  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  const months = ['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov','Dez'];
+  const days = ['Dom','Seg','Ter','Qua','Qui','Sex','Sáb'];
   return `${days[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}`;
 }
 
@@ -822,9 +834,9 @@ function formatDateShort(dateStr) {
 
 function statusBadge(status) {
   const map = {
-    'booked': '<span class="badge badge-booked"><i data-lucide="check-circle" style="width:14px;height:14px;color:#22C55E"></i> Booked</span>',
-    'looking': '<span class="badge badge-looking"><i data-lucide="search" style="width:14px;height:14px"></i> Looking</span>',
-    'tbd': '<span class="badge badge-tbd"><i data-lucide="help-circle" style="width:14px;height:14px"></i> TBD</span>'
+    'booked': '<span class="badge badge-booked"><i data-lucide="check-circle" style="width:14px;height:14px;color:#22C55E"></i> Reservado</span>',
+    'looking': '<span class="badge badge-looking"><i data-lucide="search" style="width:14px;height:14px"></i> Pesquisando</span>',
+    'tbd': '<span class="badge badge-tbd"><i data-lucide="help-circle" style="width:14px;height:14px"></i> A definir</span>'
   };
   return map[status] || map['tbd'];
 }
@@ -957,6 +969,22 @@ function renderMap() {
   map.fitBounds(routeCoords, { padding: [40, 40] });
 }
 
+// ─── ACCOMMODATION OPTIONS ───
+function renderAccommOptions(options) {
+  if (!options || !options.length) return '';
+  return `<div class="accomm-options">${options.map(opt => `
+    <div class="accomm-option">
+      <img class="accomm-option-img" src="${opt.image || ''}" alt="${opt.name}" onerror="this.style.display='none'">
+      <div class="accomm-option-info">
+        <div class="accomm-option-name">${opt.url ? `<a href="${opt.url}" target="_blank">${opt.name} ↗</a>` : opt.name}</div>
+        <div class="accomm-option-details">${opt.rating ? '★ ' + opt.rating : ''} ${opt.location ? '· ' + opt.location : ''} ${opt.details || ''}</div>
+        <div class="accomm-option-price">${opt.price || ''}</div>
+        <div class="accomm-option-source">${opt.source || ''}</div>
+      </div>
+    </div>
+  `).join('')}</div>`;
+}
+
 // ─── TIMELINE ───
 function renderTimeline() {
   const container = document.getElementById('timeline');
@@ -975,8 +1003,8 @@ function renderTimeline() {
 
     const flightInfo = leg.flights?.inbound ? `
       <div class="detail-block">
-        <h4><i data-lucide="plane" style="width:14px;height:14px"></i> Flight</h4>
-        <p>From ${leg.flights.inbound.from}<br>
+        <h4><i data-lucide="plane" style="width:14px;height:14px"></i> Voo</h4>
+        <p>De ${leg.flights.inbound.from}<br>
         ${leg.flights.inbound.duration || ''} ${leg.flights.inbound.price ? '· ' + leg.flights.inbound.price : ''}<br>
         ${statusBadge(leg.flights.inbound.status || 'tbd')}</p>
       </div>
@@ -984,7 +1012,7 @@ function renderTimeline() {
 
     const eventsList = leg.events.length ? `
       <div class="detail-block" style="grid-column: 1 / -1">
-        <h4><i data-lucide="music" style="width:14px;height:14px"></i> Events</h4>
+        <h4><i data-lucide="music" style="width:14px;height:14px"></i> Eventos</h4>
         ${leg.events.map(ev => `
           <p style="margin-bottom:6px">
             <strong>${ev.date.split('-').reverse().join('/')}</strong> — ${ev.name} @ ${ev.venue}
@@ -996,7 +1024,7 @@ function renderTimeline() {
 
     const highlights = leg.highlights?.length ? `
       <div class="detail-block" style="grid-column: 1 / -1">
-        <h4><i data-lucide="sparkles" style="width:14px;height:14px"></i> Highlights</h4>
+        <h4><i data-lucide="sparkles" style="width:14px;height:14px"></i> Destaques</h4>
         <ul class="highlights-list">
           ${leg.highlights.map(h => `<li>${h}</li>`).join('')}
         </ul>
@@ -1005,7 +1033,7 @@ function renderTimeline() {
 
     const dayTrips = leg.dayTrips?.length ? `
       <div class="detail-block">
-        <h4><i data-lucide="car" style="width:14px;height:14px"></i> Day Trips</h4>
+        <h4><i data-lucide="car" style="width:14px;height:14px"></i> Passeios</h4>
         ${leg.dayTrips.map(dt => `<p>${formatDateShort(dt.date)} — ${dt.destination}</p>`).join('')}
       </div>
     ` : '';
@@ -1030,16 +1058,17 @@ function renderTimeline() {
           <div class="leg-details-inner">
             <div class="details-grid">
               <div class="detail-block">
-                <h4><i data-lucide="bed-double" style="width:14px;height:14px"></i> Accommodation</h4>
-                <p>${leg.accommodation.notes || 'No details yet'}</p>
-                ${leg.accommodation.pricePerNight ? `<p style="margin-top:4px;font-family:'JetBrains Mono',monospace;font-weight:600">~R$${leg.accommodation.pricePerNight}/night/person</p>` : ''}
+                <h4><i data-lucide="bed-double" style="width:14px;height:14px"></i> Hospedagem</h4>
+                <p>${leg.accommodation.notes || 'Sem detalhes ainda'}</p>
+                ${leg.accommodation.pricePerNight ? `<p style="margin-top:4px;font-family:'JetBrains Mono',monospace;font-weight:600">~R$${leg.accommodation.pricePerNight}/noite/pessoa</p>` : ''}
+                ${leg.accommodation.options ? renderAccommOptions(leg.accommodation.options) : ''}
                 <div style="margin-top:8px">${accommLinks}</div>
               </div>
               ${flightInfo}
               ${dayTrips}
               ${highlights}
               ${eventsList}
-              ${leg.notes ? `<div class="detail-block" style="grid-column:1/-1"><h4><i data-lucide="file-text" style="width:14px;height:14px"></i> Notes</h4><p>${leg.notes}</p></div>` : ''}
+              ${leg.notes ? `<div class="detail-block" style="grid-column:1/-1"><h4><i data-lucide="file-text" style="width:14px;height:14px"></i> Notas</h4><p>${leg.notes}</p></div>` : ''}
             </div>
           </div>
         </div>
@@ -1123,7 +1152,7 @@ function renderEvents() {
           <div class="event-venue"><i data-lucide="map-pin" style="width:14px;height:14px"></i> ${ev.venue} · ${ev.city}</div>
           <div class="event-footer">
             <div class="leg-travelers" style="margin:0">${travelerDots}</div>
-            ${ev.link ? `<a href="${ev.link}" target="_blank" class="event-link">Tickets →</a>` : `<span class="badge badge-tbd">TBD</span>`}
+            ${ev.link ? `<a href="${ev.link}" target="_blank" class="event-link">Ingressos →</a>` : `<span class="badge badge-tbd">A definir</span>`}
           </div>
         </div>
       </div>
@@ -1170,7 +1199,7 @@ function renderBudget() {
 
   container.innerHTML = `
     <div class="budget-card">
-      <h3><i data-lucide="bed-double" style="width:18px;height:18px"></i> Accommodation (per person)</h3>
+      <h3><i data-lucide="bed-double" style="width:18px;height:18px"></i> Hospedagem (por pessoa)</h3>
       ${legRows.map(r => `
         <div class="budget-row">
           <span class="label">${r.city} (${r.nights}n)</span>
@@ -1178,13 +1207,13 @@ function renderBudget() {
         </div>
       `).join('')}
       <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
-        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Accommodation</span>
+        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Hospedagem</span>
         <span class="value" style="color:var(--accent)">~R$${totalAccomm}+</span>
       </div>
     </div>
 
     <div class="budget-card">
-      <h3><i data-lucide="plane" style="width:18px;height:18px"></i> Flights (per person)</h3>
+      <h3><i data-lucide="plane" style="width:18px;height:18px"></i> Voos (por pessoa)</h3>
       ${DATA.legs.filter(l => l.flights?.inbound).map(l => `
         <div class="budget-row">
           <span class="label">${l.flights.inbound.from} → ${l.city}</span>
@@ -1192,31 +1221,31 @@ function renderBudget() {
         </div>
       `).join('')}
       <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
-        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Flights</span>
+        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Voos</span>
         <span class="value" style="color:var(--accent)">~R$${totalFlights}+</span>
       </div>
     </div>
 
     <div class="budget-card">
-      <h3><i data-lucide="music" style="width:18px;height:18px"></i> Events (per person)</h3>
+      <h3><i data-lucide="music" style="width:18px;height:18px"></i> Eventos (por pessoa)</h3>
       <div class="budget-row">
-        <span class="label">Ibiza shows (5 events)</span>
+        <span class="label">Shows Ibiza (5 eventos)</span>
         <span class="value">TBD</span>
       </div>
       <div class="budget-row">
-        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Prices update as we buy tickets</span>
+        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Preços atualizam conforme compramos ingressos</span>
         <span class="value">—</span>
       </div>
     </div>
 
     <div class="budget-card budget-total">
-      <h3><i data-lucide="wallet" style="width:18px;height:18px"></i> Estimated Total (per person)</h3>
+      <h3><i data-lucide="wallet" style="width:18px;height:18px"></i> Total Estimado (por pessoa)</h3>
       <div class="budget-row">
-        <span class="label">Accommodation + Flights + Events</span>
-        <span class="value">~R$${totalAccomm + totalFlights}+ (partial)</span>
+        <span class="label">Hospedagem + Voos + Eventos</span>
+        <span class="value">~R$${totalAccomm + totalFlights}+ (parcial)</span>
       </div>
       <div class="budget-row">
-        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Excludes: food, transport, shopping, activities</span>
+        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Não inclui: alimentação, transporte, compras, atividades</span>
         <span class="value">—</span>
       </div>
     </div>

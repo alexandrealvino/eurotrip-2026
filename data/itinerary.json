@@ -50,11 +50,73 @@
         "name": null,
         "pricePerNight": 550,
         "currency": "BRL",
-        "notes": "Booking: II Guelfo Bianco (9.3, San Lorenzo) R$1.095/noite, Ruby Bea (9.1) R$908/noite, Hotel Angelica (9.0) R$952/noite. Airbnb: Mattonaia apt (4.95) $358 total/2n, Quarto Amarelo MusArt (4.94) $339 total/2n, Neri-A (4.87 Guest Fav) $414 total/2n",
+        "notes": "Budget: ~R$550/noite total. Airbnb tem boas opções no centro. Booking tem hotéis com nota alta.",
         "links": {
           "airbnb": "https://www.airbnb.com.br/s/Florence--Italy/homes?checkin=2026-06-17&checkout=2026-06-19&adults=2&price_max=180&currency=USD",
           "booking": "https://www.booking.com/searchresults.html?ss=Florence&checkin=2026-06-17&checkout=2026-06-19&group_adults=2&no_rooms=1"
-        }
+        },
+        "options": [
+          {
+            "name": "Alojamento de Simo",
+            "source": "Airbnb",
+            "url": "https://www.airbnb.com.br/rooms/1400162667312917326?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/hosting/Hosting-U3RheVN1cHBseUxpc3Rpbmc6MTQwMDE2MjY2NzMxMjkxNzMyNg==/original/80351928-651b-447b-b010-b0e9d3a37d30.jpeg?im_w=720",
+            "rating": "4.75 (64)",
+            "location": "Centro histórico",
+            "details": "Condomínio · 1 quarto · 1 cama de casal",
+            "price": "$349 total (2n) · ~R$960"
+          },
+          {
+            "name": "Mattonaia s.Ambrogio",
+            "source": "Airbnb · Guest Favorite",
+            "url": "https://www.airbnb.com.br/rooms/860222614035703423?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-GuestFavorite/original/4d090f93-f9a5-4f06-95e4-ca737c0d0ab5.png?im_w=720",
+            "rating": "4.95 (83)",
+            "location": "San Marco",
+            "details": "Apartamento · 1 quarto · 1 cama de casal",
+            "price": "$358 total (2n) · ~R$985"
+          },
+          {
+            "name": "Quarto Amarelo MusArt",
+            "source": "Airbnb · Superhost",
+            "url": "https://www.airbnb.com.br/rooms/851434810897704278?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/miso/Hosting-786329706711283927/original/b3ce27dc-5281-443f-944b-b110d286428a.jpeg?im_w=720",
+            "rating": "4.94 (195)",
+            "location": "Centro",
+            "details": "Quarto · banheiro privativo",
+            "price": "$339 total (2n) · ~R$933"
+          },
+          {
+            "name": "Neri-A",
+            "source": "Airbnb · Guest Favorite",
+            "url": "https://www.airbnb.com.br/rooms/786329706711283927?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/hosting/Hosting-1278140820394617065/original/7e2c1b5a-b2cf-4690-b74a-03d7343314ac.jpeg?im_w=720",
+            "rating": "4.87 (312)",
+            "location": "Centro",
+            "details": "Condomínio · 1 quarto",
+            "price": "$414 total (2n) · ~R$1.139"
+          },
+          {
+            "name": "II Guelfo Bianco",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/searchresults.html?ss=II+Guelfo+Bianco+Florence&checkin=2026-06-17&checkout=2026-06-19&group_adults=2",
+            "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/523855916.jpg?k=e8b1d03f10c8c1e15a1d27ff9c2d77ade2a66a0f77c9a5ac0dfcd6c5aca8fa00",
+            "rating": "9.3 (1.944)",
+            "location": "San Lorenzo",
+            "details": "Hotel 3★ · Café da manhã incluído · WiFi",
+            "price": "$199/noite · ~R$1.095/noite"
+          },
+          {
+            "name": "Ruby Bea Hotel Florence",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/searchresults.html?ss=Ruby+Bea+Hotel+Florence&checkin=2026-06-17&checkout=2026-06-19&group_adults=2",
+            "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/594815261.jpg?k=fa73e1e4f95f1dc3c5c8c8f4a4ae7f74fc0f2b71aadf5e8c7a2b2e0b8b5c5d5a",
+            "rating": "9.1 (1.297)",
+            "location": "Campo Di Marte",
+            "details": "Hotel · Design moderno",
+            "price": "$165/noite · ~R$908/noite"
+          }
+        ]
       },
       "flights": {
         "inbound": null
@@ -129,11 +191,73 @@
         "name": null,
         "pricePerNight": 850,
         "currency": "BRL",
-        "notes": "⚠️ Positano é cara (Romano alertou). Booking: Casa Albertina $311/noite (mais barato). Airbnb: Pepella B&B Piano di Sorrento (4.97) $386/3n, BB Villa La Quercia (4.63) $516/3n, Apt romântico (4.87) $523/3n. Opção: Amalfi centro (4.85 Guest Fav) $516/3n. Considerar Sorrento como base mais barata.",
+        "notes": "⚠️ Positano é cara (Romano alertou). Pepella em Piano di Sorrento é o melhor custo-benefício. Considerar Amalfi como alternativa.",
         "links": {
           "airbnb": "https://www.airbnb.com.br/s/Positano--Italy/homes?checkin=2026-06-23&checkout=2026-06-26&adults=2&price_max=250&currency=USD",
           "booking": "https://www.booking.com/searchresults.html?ss=Positano&checkin=2026-06-23&checkout=2026-06-26&group_adults=2&no_rooms=1"
-        }
+        },
+        "options": [
+          {
+            "name": "Pepella B&B",
+            "source": "Airbnb · Guest Favorite",
+            "url": "https://www.airbnb.com.br/rooms/1361388762113928904?check_in=2026-06-23&check_out=2026-06-26&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/BnbProperty/BnbProperty-1480074023078814718/original/afe748ac-ee77-45e3-8cc7-bce6d71283bb.jpeg?im_w=720",
+            "rating": "4.97 (34)",
+            "location": "Piano di Sorrento",
+            "details": "Pousada · 1 quarto · 1 cama",
+            "price": "$386 total (3n) · ~R$1.062 · MELHOR PREÇO"
+          },
+          {
+            "name": "Apartamento Amalfi Centro",
+            "source": "Airbnb · Guest Favorite",
+            "url": "https://www.airbnb.com.br/rooms/31512964?check_in=2026-06-23&check_out=2026-06-26&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/hosting/Hosting-31512964/original/4e4d0045-c975-46f0-9eb1-f07398eee0fd.jpeg?im_w=720",
+            "rating": "4.85 (272)",
+            "location": "Amalfi centro",
+            "details": "Casa de veraneio · 1 quarto · 2 camas",
+            "price": "$516 total (3n) · ~R$1.419"
+          },
+          {
+            "name": "BB Villa La Quercia (vista mar)",
+            "source": "Airbnb",
+            "url": "https://www.airbnb.com.br/rooms/678834?check_in=2026-06-23&check_out=2026-06-26&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/30ce4b27-5631-4fa3-a5dd-8951dd5a3360.jpg?im_w=720",
+            "rating": "4.63 (293)",
+            "location": "Positano",
+            "details": "Quarto · terraço com vista mar",
+            "price": "$516 total (3n) · ~R$1.419"
+          },
+          {
+            "name": "Apartamento Romântico",
+            "source": "Airbnb",
+            "url": "https://www.airbnb.com.br/rooms/504232?check_in=2026-06-23&check_out=2026-06-26&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/89672920/3deaa3c7_original.jpg?im_w=720",
+            "rating": "4.87 (417)",
+            "location": "Positano",
+            "details": "Vila · 1 quarto · 1 cama de casal",
+            "price": "$523 total (3n) · ~R$1.438"
+          },
+          {
+            "name": "Hotel Casa Albertina",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/searchresults.html?ss=Hotel+Casa+Albertina+Positano&checkin=2026-06-23&checkout=2026-06-26&group_adults=2",
+            "image": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/24127155.jpg?k=a4c4e2e1a0e0b0c0d0f0a0b0c0d0e0f0a0b0c0d0e0f0",
+            "rating": "8.4",
+            "location": "Positano centro",
+            "details": "Hotel · Vista mar · Centro histórico",
+            "price": "$311/noite · ~R$1.711/noite"
+          },
+          {
+            "name": "Costa Amalfitana: Bougainvillea",
+            "source": "Airbnb · Guest Favorite",
+            "url": "https://www.airbnb.com.br/rooms/1042812463664914437?check_in=2026-06-23&check_out=2026-06-26&adults=2",
+            "image": "https://a0.muscache.com/im/pictures/airbnb-platform-assets/AirbnbPlatformAssets-GuestFavorite/original/4d090f93-f9a5-4f06-95e4-ca737c0d0ab5.png?im_w=720",
+            "rating": "Novo",
+            "location": "Costa Amalfitana",
+            "details": "Casa Romântica · 1 quarto",
+            "price": "~$550 total (3n) · ~R$1.513"
+          }
+        ]
       },
       "flights": {
         "inbound": null
