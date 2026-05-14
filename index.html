@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -1346,25 +1348,52 @@ function renderEvents() {
 }
 
 // ─── TODOS ───
-// Load saved todo states from localStorage
+// ─── FIREBASE CONFIG ───
+const firebaseConfig = {
+  apiKey: "AIzaSyDPLACEHOLDER",
+  authDomain: "eurotrip-2026.firebaseapp.com",
+  databaseURL: "https://eurotrip-2026-default-rtdb.firebaseio.com",
+  projectId: "eurotrip-2026"
+};
+
+let fbDb = null;
+let fbTodoRef = null;
+let todoStates = {};
+
+try {
+  if (firebaseConfig.databaseURL && !firebaseConfig.databaseURL.includes('PLACEHOLDER')) {
+    firebase.initializeApp(firebaseConfig);
+    fbDb = firebase.database();
+    fbTodoRef = fbDb.ref('todoStates');
+    // Real-time listener
+    fbTodoRef.on('value', (snap) => {
+      todoStates = snap.val() || {};
+      if (DATA) { renderTodos(); setTimeout(() => lucide.createIcons(), 50); }
+    });
+  }
+} catch(e) { console.warn('Firebase not available, using localStorage fallback', e); }
+
 function getTodoStates() {
+  if (fbDb) return todoStates;
   try { return JSON.parse(localStorage.getItem('eurotrip-todo-states') || '{}'); } catch(e) { return {}; }
 }
-function saveTodoStates(states) {
-  localStorage.setItem('eurotrip-todo-states', JSON.stringify(states));
+function saveTodoState(idx, done) {
+  todoStates[idx] = done;
+  if (fbTodoRef) {
+    fbTodoRef.child(String(idx)).set(done);
+  } else {
+    localStorage.setItem('eurotrip-todo-states', JSON.stringify(todoStates));
+  }
 }
 function isTodoDone(idx) {
   const states = getTodoStates();
-  const todo = DATA.todos[idx];
   if (states[idx] !== undefined) return states[idx];
-  return todo.priority === 'done';
+  return DATA.todos[idx]?.priority === 'done';
 }
 function toggleTodo(idx) {
-  const states = getTodoStates();
-  states[idx] = !isTodoDone(idx);
-  saveTodoStates(states);
-  renderTodos();
-  setTimeout(() => lucide.createIcons(), 50);
+  const newState = !isTodoDone(idx);
+  saveTodoState(idx, newState);
+  if (!fbDb) { renderTodos(); setTimeout(() => lucide.createIcons(), 50); }
 }
 
 function renderTodos() {
