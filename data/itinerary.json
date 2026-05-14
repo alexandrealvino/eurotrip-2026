@@ -729,7 +729,18 @@
         "Dalt Vila"
       ],
       "notes": "David junta ao grupo dia 1/Jul (confirmado). Todos juntos até dia 8. Ale chega Jul 3 (originalmente), David e Lucas podem chegar antes.",
-      "image": "assets/cities/ibiza.jpg"
+      "image": "assets/cities/ibiza.jpg",
+      "dayTrips": [
+        {
+          "date": "2026-07-06",
+          "destination": "Formentera (day trip de barco/ferry)",
+          "who": [
+            "ale",
+            "lucas",
+            "david"
+          ]
+        }
+      ]
     },
     {
       "id": "nice",
