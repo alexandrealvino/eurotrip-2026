@@ -552,6 +552,11 @@
   /* ───── TODOS ───── */
   .todos-list { max-width: 700px; }
 
+  .todo-city-group { margin-bottom: 20px; }
+  .todo-city-header { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; margin-bottom: 6px; border-bottom: 1px solid var(--border); }
+  .todo-city-name { font-weight: 700; font-size: 0.95rem; color: var(--text); }
+  .todo-city-count { font-size: 0.75rem; }
+
   .todo-item {
     display: flex;
     align-items: center;
@@ -965,10 +970,16 @@ function applyTravelerFilter() {
   });
 
   // Filter todo items
-  document.querySelectorAll('.todo-item').forEach((item, i) => {
-    const todo = DATA.todos[i];
+  document.querySelectorAll('.todo-item').forEach((item) => {
+    const idx = parseInt(item.dataset.todoIdx);
+    const todo = DATA.todos[idx];
     if (!todo || !todo.who) { item.style.display = ''; return; }
     item.style.display = activeTravelers.has(todo.who) ? '' : 'none';
+  });
+  // Hide empty city groups
+  document.querySelectorAll('.todo-city-group').forEach(group => {
+    const visibleItems = group.querySelectorAll('.todo-item:not([style*="display: none"])');
+    group.style.display = visibleItems.length > 0 ? '' : 'none';
   });
 }
 
@@ -1293,14 +1304,46 @@ function renderEvents() {
 // ─── TODOS ───
 function renderTodos() {
   const container = document.getElementById('todos-list');
-  container.innerHTML = DATA.todos.map(todo => {
-    const isDone = todo.priority === 'done';
-    const traveler = DATA.travelers.find(t => t.id === todo.who);
+
+  // Group by city in route order
+  const routeOrder = [
+    '🇮🇹 Milão', '🇮🇹 Florença', '🇮🇹 Roma', '🇮🇹 Positano / Amalfi', '🇮🇹 Sorrento',
+    '🇮🇹 Capri', '🇮🇹 Nápoles / Pompeii', '🇪🇸 Baleares (TBD)', '🇪🇸 Menorca',
+    '🇫🇷 Paris (David)', '🇪🇸 Ibiza', '🇫🇷 Nice / Côte d\'Azur',
+    '🇬🇧 Londres (David)', '📋 Geral'
+  ];
+  const groups = {};
+  DATA.todos.forEach((todo, i) => {
+    const city = todo.city || '📋 Geral';
+    if (!groups[city]) groups[city] = [];
+    groups[city].push({...todo, _idx: i});
+  });
+
+  const orderedCities = routeOrder.filter(c => groups[c]);
+  // Add any cities not in routeOrder
+  Object.keys(groups).forEach(c => { if (!orderedCities.includes(c)) orderedCities.push(c); });
+
+  container.innerHTML = orderedCities.map(city => {
+    const todos = groups[city];
+    const pendingCount = todos.filter(t => t.priority !== 'done').length;
+    const doneCount = todos.filter(t => t.priority === 'done').length;
     return `
-      <div class="todo-item ${isDone ? 'done' : ''}">
-        <div class="todo-priority ${todo.priority}"></div>
-        <div class="todo-text">${todo.task}</div>
-        ${traveler ? `<span class="todo-who" style="background:${traveler.color}22;color:${traveler.color};border:1px solid ${traveler.color}44">${traveler.name}</span>` : ''}
+      <div class="todo-city-group">
+        <div class="todo-city-header">
+          <span class="todo-city-name">${city}</span>
+          <span class="todo-city-count">${doneCount ? '<span style="color:var(--booked)">' + doneCount + ' ✓</span>' : ''}${pendingCount ? (doneCount ? ' · ' : '') + '<span style="color:var(--text-muted)">' + pendingCount + ' pendente' + (pendingCount > 1 ? 's' : '') + '</span>' : ''}</span>
+        </div>
+        ${todos.map(todo => {
+          const isDone = todo.priority === 'done';
+          const traveler = DATA.travelers.find(t => t.id === todo.who);
+          return `
+            <div class="todo-item ${isDone ? 'done' : ''}" data-todo-idx="${todo._idx}">
+              <div class="todo-priority ${todo.priority}"></div>
+              <div class="todo-text">${todo.task}</div>
+              ${traveler ? `<span class="todo-who" style="background:${traveler.color}22;color:${traveler.color};border:1px solid ${traveler.color}44">${traveler.name}</span>` : ''}
+            </div>
+          `;
+        }).join('')}
       </div>
     `;
   }).join('');
