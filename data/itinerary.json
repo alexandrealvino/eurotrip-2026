@@ -240,8 +240,7 @@
       "nights": 4,
       "who": [
         "ale",
-        "lucas",
-        "david"
+        "lucas"
       ],
       "accommodation": {
         "status": "booked",
@@ -262,7 +261,7 @@
         "Trastevere",
         "Pantheon"
       ],
-      "notes": " David chega em Roma dia 24/Jun (vindo de Paris dia 23).",
+      "notes": "",
       "image": "assets/cities/rome.jpg"
     },
     {
@@ -843,7 +842,7 @@
           "destination": "St Tropez"
         }
       ],
-      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre volta dia 11/Jul (TAP NCE→LIS→GIG). David continua na Riviera e volta dia 14/Jul via Londres (escala 1 dia, volta dia 15). Volta do Lucas ainda por definir.",
+      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre e Lucas voltam dia 11/Jul. David continua até dia 14/Jul, depois vai pra Londres.",
       "image": "assets/cities/nice.jpg"
     },
     {
@@ -892,7 +891,7 @@
       "highlights": [
         "Layover de 1 dia"
       ],
-      "notes": "David chega na Europa dia 23/Jun (Paris). Volta dia 15/Jul via Londres.",
+      "notes": "David chega na Europa dia 23/Jun (Paris), Roma dia 24/Jun. Fica até Jul 14 em Nice, escala em Londres, volta Rio dia 15/Jul.",
       "image": null
     }
   ],
@@ -1060,12 +1059,12 @@
       "who": "david"
     },
     {
-      "task": "Definir transporte David Paris→Roma (Jun 23-24)",
+      "task": "Definir transporte David Paris→Roma (23-24/Jun)",
       "priority": "medium",
       "who": "david"
     },
     {
-      "task": "Definir voo/transporte David Roma→Ibiza (Jun 30 ou Jul 1)",
+      "task": "Definir voo/transporte David Roma→Ibiza (~30/Jun ou 01/Jul)",
       "priority": "medium",
       "who": "david"
     },
