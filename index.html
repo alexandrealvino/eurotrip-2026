@@ -848,6 +848,12 @@ function statusBadge(status) {
   return map[status] || map['tbd'];
 }
 
+const cityAbbrevs = {
+  'milan': 'MIL', 'florence': 'FLR', 'rome': 'ROM', 'positano': 'POS', 'sorrento': 'SOR',
+  'capri': 'CAP', 'pompeii': 'NAP', 'baleares': 'BAL', 'menorca-lucas': 'MEN',
+  'ibiza': 'IBZ', 'nice': 'NCE', 'david-return': 'LDN'
+};
+
 const cityEmojis = {
   'florence': '<i data-lucide="landmark"></i>', 'rome': '<i data-lucide="landmark"></i>', 'positano': '<i data-lucide="umbrella"></i>', 'sorrento': '<i data-lucide="citrus"></i>',
   'capri': '<i data-lucide="sailboat"></i>', 'pompeii': '<i data-lucide="mountain"></i>', 'baleares': '<i data-lucide="palmtree"></i>', 'menorca-lucas': '<i data-lucide="palmtree"></i>',
@@ -1236,9 +1242,9 @@ function renderOverlap() {
 
       if (leg) {
         const color = countryColors[leg.country] || '#444';
-        const icon = cityEmojis[leg.id] || '<i data-lucide="map-pin"></i>';
-        html += `<div class="overlap-cell overlap-active" style="background:${color}22;border:1px solid ${color}44" title="${traveler.name} in ${leg.city}">
-          <span style="font-size:0.7rem">${icon}</span>
+        const abbrev = cityAbbrevs[leg.id] || leg.city.substring(0,3).toUpperCase();
+        html += `<div class="overlap-cell overlap-active" style="background:${color}22;border:1px solid ${color}44" title="${traveler.name} em ${leg.city}">
+          <span style="font-size:0.6rem;font-weight:700;letter-spacing:0.5px;color:${color}">${abbrev}</span>
         </div>`;
       } else {
         html += `<div class="overlap-cell" style="background:var(--bg-card);border:1px solid var(--border);opacity:0.3">—</div>`;

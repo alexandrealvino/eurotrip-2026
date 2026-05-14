@@ -650,7 +650,16 @@
             "times": "10:05 → 14:35",
             "price": "R$694"
           }
-        ]
+        ],
+        "david_inbound": {
+          "from": "Naples (NAP)",
+          "airline": "easyJet",
+          "flight": "EJU4287",
+          "duration": "2h05",
+          "price": "Comprado",
+          "status": "booked",
+          "notes": "✅ COMPRADO — David. NAP 07:00 → IBZ 09:05. Ref: KCMW6DD."
+        }
       },
       "events": [
         {
@@ -728,7 +737,7 @@
         "Cala Comte",
         "Dalt Vila"
       ],
-      "notes": "David chega dia 1/Jul (confirmado). Alexandre chega Jul 1-3 (TBD). Lucas chega dia 4/Jul (de Menorca, voo comprado R$1.200). Todos juntos até dia 8.",
+      "notes": "David chega dia 1/Jul de Nápoles (easyJet, comprado). Alexandre chega Jul 1-3 (TBD). Lucas chega dia 4/Jul de Menorca (comprado). Todos juntos até dia 8.",
       "image": "assets/cities/ibiza.jpg",
       "dayTrips": [
         {
@@ -1064,8 +1073,8 @@
       "who": "david"
     },
     {
-      "task": "Definir voo/transporte David Roma→Ibiza (~30/Jun ou 01/Jul)",
-      "priority": "medium",
+      "task": "✅ Voo David NAP→IBZ comprado (easyJet EJU4287, 01/Jul 07:00→09:05)",
+      "priority": "done",
       "who": "david"
     },
     {
