@@ -5,7 +5,7 @@
     "startDate": "2026-06-17",
     "endDate": "2026-07-11",
     "totalDays": 25,
-    "currency": "USD"
+    "currency": "BRL"
   },
   "travelers": [
     {
@@ -48,9 +48,9 @@
         "status": "looking",
         "type": null,
         "name": null,
-        "pricePerNight": 100,
-        "currency": "USD",
-        "notes": "~100 USD/person/night",
+        "pricePerNight": 550,
+        "currency": "BRL",
+        "notes": "Top picks: II Guelfo Bianco (9.3, R$1.095/noite), Ruby Bea (9.1, R$908/noite), Hotel Angelica (9.0, R$952/noite)",
         "links": {
           "airbnb": "https://www.airbnb.com.br/s/Floren%C3%A7a--Toscana--It%C3%A1lia/homes?checkin=2026-06-17&checkout=2026-06-19&adults=2",
           "booking": "https://www.booking.com/searchresults.html?ss=Florence%2C+Tuscany%2C+Italy&checkin=2026-06-17&checkout=2026-06-19&group_adults=2"
@@ -86,12 +86,12 @@
         "lucas"
       ],
       "accommodation": {
-        "status": "tbd",
-        "type": null,
-        "name": null,
-        "pricePerNight": null,
-        "currency": "USD",
-        "notes": "",
+        "status": "booked",
+        "type": "family",
+        "name": "Casa da mãe do Lucas",
+        "pricePerNight": 0,
+        "currency": "BRL",
+        "notes": "Ficando na casa da mãe do Lucas em Roma",
         "links": {}
       },
       "flights": {
@@ -127,9 +127,9 @@
         "status": "looking",
         "type": null,
         "name": null,
-        "pricePerNight": null,
-        "currency": "USD",
-        "notes": "Costa Amalfitana é cara (Romano alertou)",
+        "pricePerNight": 850,
+        "currency": "BRL",
+        "notes": "Costa Amalfitana é cara (Romano alertou). Hotel Casa Albertina R$1.713/noite (mais barato de Positano). Considerar Amalfi/Sorrento como base.",
         "links": {}
       },
       "flights": {
@@ -165,7 +165,7 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "",
         "links": {}
       },
@@ -202,7 +202,7 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "Capri Town ou Anacapri",
         "links": {}
       },
@@ -240,7 +240,7 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "",
         "links": {}
       },
@@ -280,7 +280,7 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "Ale: destino indefinido. Lucas: Menorca confirmado.",
         "links": {}
       },
@@ -288,7 +288,7 @@
         "inbound": {
           "from": "Naples",
           "duration": "~2h",
-          "price": "80-100 USD",
+          "price": "R$440-550",
           "status": "looking"
         }
       },
@@ -317,16 +317,18 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "",
         "links": {}
       },
       "flights": {
         "inbound": {
-          "from": "Naples",
-          "duration": "~2h",
-          "price": "80-100 USD",
-          "status": "looking"
+          "from": "Naples (NAP)",
+          "airline": "Ryanair (Malta Air)",
+          "duration": "1h45",
+          "price": "R$141",
+          "status": "looking",
+          "notes": "Voo direto 11:15→13:00. Absurdamente barato."
         }
       },
       "events": [],
@@ -361,12 +363,19 @@
         "type": null,
         "name": null,
         "pricePerNight": null,
-        "currency": "USD",
+        "currency": "BRL",
         "notes": "",
         "links": {}
       },
       "flights": {
-        "inbound": null
+        "inbound": {
+          "from": "Naples (NAP)",
+          "airline": "easyJet",
+          "duration": "2h05",
+          "price": "R$392",
+          "status": "looking",
+          "notes": "Voo direto 07:00→09:05. Tem 3 opções diretas easyJet."
+        }
       },
       "events": [
         {
@@ -465,8 +474,8 @@
         "status": "looking",
         "type": null,
         "name": null,
-        "pricePerNight": null,
-        "currency": "USD",
+        "pricePerNight": 550,
+        "currency": "BRL",
         "notes": "",
         "links": {
           "skyscanner": "https://www.skyscanner.com.br/transporte/passagens-aereas/ibz/nce/260708/"
@@ -474,11 +483,12 @@
       },
       "flights": {
         "inbound": {
-          "from": "Ibiza",
-          "duration": "~4h",
-          "price": "~100 USD",
-          "time": "13:35",
-          "status": "looking"
+          "from": "Ibiza (IBZ)",
+          "airline": "Vueling",
+          "duration": "3h50",
+          "price": "R$1.968/pessoa",
+          "status": "looking",
+          "notes": "1 stop BCN (1h25 layover). 13:35→17:25. Total 3 pessoas: ~R$5.904"
         }
       },
       "events": [],
@@ -505,19 +515,19 @@
   ],
   "budget": {
     "flights": {
-      "estimated": 280,
-      "currency": "USD",
-      "notes": "Naples→Baleares (~90) + Ibiza→Nice (~100) + outros transfers"
+      "estimated": 1540,
+      "currency": "BRL",
+      "notes": "Naples→Baleares (~R$495) + Ibiza→Nice (~R$550) + outros transfers"
     },
     "accommodation": {
-      "estimatedPerNight": 100,
-      "currency": "USD",
+      "estimatedPerNight": 550,
+      "currency": "BRL",
       "notes": "Média estimada, varia muito por destino"
     }
   },
   "todos": [
     {
-      "task": "Fechar passagem de volta do Alexandre",
+      "task": "Comprar passagem de volta: Nice→GRU Jul 11. BA/LATAM R$6.693 (15h10, 1 stop LHR) ou TAP+LATAM R$5.960 (18h15, 2 stops)",
       "priority": "high",
       "who": "ale"
     },

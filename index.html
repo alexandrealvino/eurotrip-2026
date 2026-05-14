@@ -6,6 +6,7 @@
 <title>Eurotrip 2026 — Ale • Lucas • David</title>
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -49,29 +50,31 @@
   }
 
   /* ───── HERO ───── */
+  [data-lucide] {
+    width: 18px;
+    height: 18px;
+    stroke-width: 1.5;
+    vertical-align: middle;
+    display: inline-block;
+  }
+
   .hero {
     position: relative;
     padding: 60px 40px 40px;
     text-align: center;
     overflow: hidden;
-    background: linear-gradient(135deg, rgba(10,10,26,0.7) 0%, rgba(18,16,42,0.6) 50%, rgba(10,10,26,0.7) 100%), url('assets/hero/hero.jpg') center/cover no-repeat;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.65) 0%, rgba(0,0,0,0.75) 50%, rgba(0,0,0,0.9) 100%), url('assets/hero/hero.jpg') center/cover no-repeat;
   }
 
   .hero::before {
     content: '';
     position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(ellipse at 30% 50%, var(--accent-glow) 0%, transparent 50%),
-                radial-gradient(ellipse at 70% 50%, #ec489922 0%, transparent 50%);
-    animation: heroGlow 8s ease-in-out infinite alternate;
-  }
-
-  @keyframes heroGlow {
-    0% { transform: translate(0, 0) scale(1); }
-    100% { transform: translate(20px, -10px) scale(1.05); }
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    z-index: 0;
   }
 
   .hero-content { position: relative; z-index: 1; }
@@ -80,17 +83,17 @@
     font-size: 3.5rem;
     font-weight: 900;
     letter-spacing: -2px;
-    background: linear-gradient(135deg, #fff 0%, #c4b5fd 50%, #ec4899 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    color: #ffffff;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8), 0 0 40px rgba(0,0,0,0.5);
     margin-bottom: 8px;
   }
 
   .hero-sub {
     font-size: 1.15rem;
-    color: var(--text-muted);
+    color: #e0e0ee;
     font-weight: 400;
     margin-bottom: 24px;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.7);
   }
 
   .hero-stats {
@@ -721,12 +724,12 @@
 
 <!-- TABS -->
 <div class="tabs">
-  <div class="tab active" data-tab="map" onclick="switchTab('map')">🗺️ Map</div>
-  <div class="tab" data-tab="timeline" onclick="switchTab('timeline')">📅 Timeline</div>
-  <div class="tab" data-tab="overlap" onclick="switchTab('overlap')">👥 Who's Where</div>
-  <div class="tab" data-tab="events" onclick="switchTab('events')">🎵 Events</div>
-  <div class="tab" data-tab="todos" onclick="switchTab('todos')">✅ To-Do</div>
-  <div class="tab" data-tab="budget" onclick="switchTab('budget')">💰 Budget</div>
+  <div class="tab active" data-tab="map" onclick="switchTab('map')"><i data-lucide="map"></i> Map</div>
+  <div class="tab" data-tab="timeline" onclick="switchTab('timeline')"><i data-lucide="calendar"></i> Timeline</div>
+  <div class="tab" data-tab="overlap" onclick="switchTab('overlap')"><i data-lucide="users"></i> Who's Where</div>
+  <div class="tab" data-tab="events" onclick="switchTab('events')"><i data-lucide="music"></i> Events</div>
+  <div class="tab" data-tab="todos" onclick="switchTab('todos')"><i data-lucide="check-square"></i> To-Do</div>
+  <div class="tab" data-tab="budget" onclick="switchTab('budget')"><i data-lucide="wallet"></i> Budget</div>
 </div>
 
 <div class="content">
@@ -819,34 +822,25 @@ function formatDateShort(dateStr) {
 
 function statusBadge(status) {
   const map = {
-    'booked': '<span class="badge badge-booked">✅ Booked</span>',
-    'looking': '<span class="badge badge-looking">🔍 Looking</span>',
-    'tbd': '<span class="badge badge-tbd">❓ TBD</span>'
+    'booked': '<span class="badge badge-booked"><i data-lucide="check-circle" style="width:14px;height:14px;color:#22C55E"></i> Booked</span>',
+    'looking': '<span class="badge badge-looking"><i data-lucide="search" style="width:14px;height:14px"></i> Looking</span>',
+    'tbd': '<span class="badge badge-tbd"><i data-lucide="help-circle" style="width:14px;height:14px"></i> TBD</span>'
   };
   return map[status] || map['tbd'];
 }
 
 const cityEmojis = {
-  'florence': '🏛️', 'rome': '🏟️', 'positano': '🏖️', 'sorrento': '🍋',
-  'capri': '⛵', 'pompeii': '🌋', 'baleares': '🏝️', 'menorca-lucas': '🏝️',
-  'ibiza': '🎧', 'nice': '🌊'
+  'florence': '<i data-lucide="landmark"></i>', 'rome': '<i data-lucide="landmark"></i>', 'positano': '<i data-lucide="umbrella"></i>', 'sorrento': '<i data-lucide="citrus"></i>',
+  'capri': '<i data-lucide="sailboat"></i>', 'pompeii': '<i data-lucide="mountain"></i>', 'baleares': '<i data-lucide="palmtree"></i>', 'menorca-lucas': '<i data-lucide="palmtree"></i>',
+  'ibiza': '<i data-lucide="headphones"></i>', 'nice': '<i data-lucide="waves"></i>'
 };
 
 const venueEmojis = {
-  'Ushuaïa': '☀️', 'Pacha': '🍒', 'Hï Ibiza': '✨', 'UNVRS': '🌌'
+  'Ushuaïa': '<i data-lucide="sun"></i>', 'Pacha': '<i data-lucide="cherry"></i>', 'Hï Ibiza': '<i data-lucide="sparkles"></i>', 'UNVRS': '<i data-lucide="globe"></i>'
 };
 
 // ─── TABS ───
-function switchTab(tab) {
-  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-  document.querySelector(`.tab[data-tab="${tab}"]`).classList.add('active');
-  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
-  document.getElementById(`section-${tab}`).classList.add('active');
-
-  if (tab === 'map' && window._map) {
-    setTimeout(() => window._map.invalidateSize(), 100);
-  }
-}
+// switchTab defined after loadData init below
 
 // ─── RENDER ───
 function renderAll() {
@@ -857,6 +851,7 @@ function renderAll() {
   renderEvents();
   renderTodos();
   renderBudget();
+  lucide.createIcons();
 }
 
 function renderTravelers() {
@@ -915,7 +910,7 @@ function renderMap() {
         <h3>${leg.flag} ${leg.city}</h3>
         <div class="dates">${formatDate(leg.dates.start)} — ${formatDate(leg.dates.end)} (${leg.nights}n)</div>
         <div class="travelers-mini">${travelerDots}</div>
-        ${leg.events.length ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--show)">🎵 ${leg.events.length} event${leg.events.length > 1 ? 's' : ''}</div>` : ''}
+        ${leg.events.length ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--show)"><i data-lucide="music" style="width:14px;height:14px"></i> ${leg.events.length} event${leg.events.length > 1 ? 's' : ''}</div>` : ''}
       </div>
     `);
 
@@ -980,7 +975,7 @@ function renderTimeline() {
 
     const flightInfo = leg.flights?.inbound ? `
       <div class="detail-block">
-        <h4>✈️ Flight</h4>
+        <h4><i data-lucide="plane" style="width:14px;height:14px"></i> Flight</h4>
         <p>From ${leg.flights.inbound.from}<br>
         ${leg.flights.inbound.duration || ''} ${leg.flights.inbound.price ? '· ' + leg.flights.inbound.price : ''}<br>
         ${statusBadge(leg.flights.inbound.status || 'tbd')}</p>
@@ -989,7 +984,7 @@ function renderTimeline() {
 
     const eventsList = leg.events.length ? `
       <div class="detail-block" style="grid-column: 1 / -1">
-        <h4>🎵 Events</h4>
+        <h4><i data-lucide="music" style="width:14px;height:14px"></i> Events</h4>
         ${leg.events.map(ev => `
           <p style="margin-bottom:6px">
             <strong>${ev.date.split('-').reverse().join('/')}</strong> — ${ev.name} @ ${ev.venue}
@@ -1001,7 +996,7 @@ function renderTimeline() {
 
     const highlights = leg.highlights?.length ? `
       <div class="detail-block" style="grid-column: 1 / -1">
-        <h4>✨ Highlights</h4>
+        <h4><i data-lucide="sparkles" style="width:14px;height:14px"></i> Highlights</h4>
         <ul class="highlights-list">
           ${leg.highlights.map(h => `<li>${h}</li>`).join('')}
         </ul>
@@ -1010,7 +1005,7 @@ function renderTimeline() {
 
     const dayTrips = leg.dayTrips?.length ? `
       <div class="detail-block">
-        <h4>🚗 Day Trips</h4>
+        <h4><i data-lucide="car" style="width:14px;height:14px"></i> Day Trips</h4>
         ${leg.dayTrips.map(dt => `<p>${formatDateShort(dt.date)} — ${dt.destination}</p>`).join('')}
       </div>
     ` : '';
@@ -1035,16 +1030,16 @@ function renderTimeline() {
           <div class="leg-details-inner">
             <div class="details-grid">
               <div class="detail-block">
-                <h4>🏨 Accommodation</h4>
+                <h4><i data-lucide="bed-double" style="width:14px;height:14px"></i> Accommodation</h4>
                 <p>${leg.accommodation.notes || 'No details yet'}</p>
-                ${leg.accommodation.pricePerNight ? `<p style="margin-top:4px;font-family:'JetBrains Mono',monospace;font-weight:600">~$${leg.accommodation.pricePerNight}/night/person</p>` : ''}
+                ${leg.accommodation.pricePerNight ? `<p style="margin-top:4px;font-family:'JetBrains Mono',monospace;font-weight:600">~R$${leg.accommodation.pricePerNight}/night/person</p>` : ''}
                 <div style="margin-top:8px">${accommLinks}</div>
               </div>
               ${flightInfo}
               ${dayTrips}
               ${highlights}
               ${eventsList}
-              ${leg.notes ? `<div class="detail-block" style="grid-column:1/-1"><h4>📝 Notes</h4><p>${leg.notes}</p></div>` : ''}
+              ${leg.notes ? `<div class="detail-block" style="grid-column:1/-1"><h4><i data-lucide="file-text" style="width:14px;height:14px"></i> Notes</h4><p>${leg.notes}</p></div>` : ''}
             </div>
           </div>
         </div>
@@ -1055,6 +1050,7 @@ function renderTimeline() {
 
 function toggleLeg(el) {
   el.classList.toggle('expanded');
+  setTimeout(() => lucide.createIcons(), 50);
 }
 
 // ─── OVERLAP CALENDAR ───
@@ -1088,9 +1084,9 @@ function renderOverlap() {
 
       if (leg) {
         const color = countryColors[leg.country] || '#444';
-        const emoji = cityEmojis[leg.id] || '📍';
+        const icon = cityEmojis[leg.id] || '<i data-lucide="map-pin"></i>';
         html += `<div class="overlap-cell overlap-active" style="background:${color}22;border:1px solid ${color}44" title="${traveler.name} in ${leg.city}">
-          <span style="font-size:0.7rem">${emoji}</span>
+          <span style="font-size:0.7rem">${icon}</span>
         </div>`;
       } else {
         html += `<div class="overlap-cell" style="background:var(--bg-card);border:1px solid var(--border);opacity:0.3">—</div>`;
@@ -1124,7 +1120,7 @@ function renderEvents() {
         <div class="event-body">
           <div class="event-date">${formatDate(ev.date)}</div>
           <div class="event-name">${ev.name}</div>
-          <div class="event-venue">📍 ${ev.venue} · ${ev.city}</div>
+          <div class="event-venue"><i data-lucide="map-pin" style="width:14px;height:14px"></i> ${ev.venue} · ${ev.city}</div>
           <div class="event-footer">
             <div class="leg-travelers" style="margin:0">${travelerDots}</div>
             ${ev.link ? `<a href="${ev.link}" target="_blank" class="event-link">Tickets →</a>` : `<span class="badge badge-tbd">TBD</span>`}
@@ -1174,21 +1170,21 @@ function renderBudget() {
 
   container.innerHTML = `
     <div class="budget-card">
-      <h3>🏨 Accommodation (per person)</h3>
+      <h3><i data-lucide="bed-double" style="width:18px;height:18px"></i> Accommodation (per person)</h3>
       ${legRows.map(r => `
         <div class="budget-row">
           <span class="label">${r.city} (${r.nights}n)</span>
-          <span class="value">${r.accomm ? '$' + r.accomm : '—'}</span>
+          <span class="value">${r.accomm ? 'R$' + r.accomm : '—'}</span>
         </div>
       `).join('')}
       <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
         <span class="label" style="font-weight:700;color:var(--text)">Subtotal Accommodation</span>
-        <span class="value" style="color:var(--accent)">~$${totalAccomm}+</span>
+        <span class="value" style="color:var(--accent)">~R$${totalAccomm}+</span>
       </div>
     </div>
 
     <div class="budget-card">
-      <h3>✈️ Flights (per person)</h3>
+      <h3><i data-lucide="plane" style="width:18px;height:18px"></i> Flights (per person)</h3>
       ${DATA.legs.filter(l => l.flights?.inbound).map(l => `
         <div class="budget-row">
           <span class="label">${l.flights.inbound.from} → ${l.city}</span>
@@ -1197,12 +1193,12 @@ function renderBudget() {
       `).join('')}
       <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
         <span class="label" style="font-weight:700;color:var(--text)">Subtotal Flights</span>
-        <span class="value" style="color:var(--accent)">~$${totalFlights}+</span>
+        <span class="value" style="color:var(--accent)">~R$${totalFlights}+</span>
       </div>
     </div>
 
     <div class="budget-card">
-      <h3>🎵 Events (per person)</h3>
+      <h3><i data-lucide="music" style="width:18px;height:18px"></i> Events (per person)</h3>
       <div class="budget-row">
         <span class="label">Ibiza shows (5 events)</span>
         <span class="value">TBD</span>
@@ -1214,10 +1210,10 @@ function renderBudget() {
     </div>
 
     <div class="budget-card budget-total">
-      <h3>💰 Estimated Total (per person)</h3>
+      <h3><i data-lucide="wallet" style="width:18px;height:18px"></i> Estimated Total (per person)</h3>
       <div class="budget-row">
         <span class="label">Accommodation + Flights + Events</span>
-        <span class="value">~$${totalAccomm + totalFlights}+ (partial)</span>
+        <span class="value">~R$${totalAccomm + totalFlights}+ (partial)</span>
       </div>
       <div class="budget-row">
         <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Excludes: food, transport, shopping, activities</span>
@@ -1228,7 +1224,19 @@ function renderBudget() {
 }
 
 // ─── INIT ───
-loadData();
+loadData().then(() => { setTimeout(() => lucide.createIcons(), 100); });
+
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.tab[data-tab="${tab}"]`).classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(`section-${tab}`).classList.add('active');
+
+  if (tab === 'map' && window._map) {
+    setTimeout(() => window._map.invalidateSize(), 100);
+  }
+  setTimeout(() => lucide.createIcons(), 50);
+}
 </script>
 
 </body>
