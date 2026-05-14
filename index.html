@@ -381,10 +381,10 @@
   .leg-details {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.5s ease;
   }
 
-  .leg-card.expanded .leg-details { max-height: 800px; }
+  .leg-card.expanded .leg-details { max-height: 3000px; overflow-y: auto; }
 
   .leg-details-inner {
     padding: 0 24px 24px;
@@ -506,6 +506,13 @@
   .accomm-option-details { font-size: 0.75rem; color: var(--text-muted); margin-top: 2px; }
   .accomm-option-price { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.8rem; color: var(--accent); margin-top: 4px; }
   .accomm-option-source { font-size: 0.65rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
+
+  .flight-options { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+  .flight-option { display: flex; align-items: center; gap: 12px; background: var(--bg-surface); border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 10px 12px; }
+  .flight-option:hover { border-color: var(--border-hover); }
+  .flight-option-airline { font-weight: 600; font-size: 0.85rem; color: var(--text); min-width: 120px; }
+  .flight-option-details { font-size: 0.75rem; color: var(--text-muted); flex: 1; }
+  .flight-option-price { font-family: 'JetBrains Mono', monospace; font-weight: 600; font-size: 0.8rem; color: var(--accent); white-space: nowrap; }
 
   .event-date {
     font-family: 'JetBrains Mono', monospace;
@@ -920,17 +927,22 @@ function renderMap() {
     marker.bindPopup(`
       <div class="map-popup">
         <h3>${leg.flag} ${leg.city}</h3>
-        <div class="dates">${formatDate(leg.dates.start)} — ${formatDate(leg.dates.end)} (${leg.nights}n)</div>
+        <div class="dates">${formatDate(leg.dates.start)} → ${formatDate(leg.dates.end)} (${leg.nights}n)</div>
         <div class="travelers-mini">${travelerDots}</div>
-        ${leg.events.length ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--show)"><i data-lucide="music" style="width:14px;height:14px"></i> ${leg.events.length} event${leg.events.length > 1 ? 's' : ''}</div>` : ''}
+        <div style="margin-top:4px;font-size:0.75rem;color:var(--text-muted)">Etapa ${i+1} de ${mainLegs.length}</div>
+        ${leg.accommodation?.name ? '<div style="margin-top:4px;font-size:0.8rem">🏨 ' + leg.accommodation.name + '</div>' : ''}
+        ${leg.accommodation?.status === 'booked' ? '<div style="color:var(--booked);font-size:0.75rem">✅ Reservado</div>' : ''}
+        ${leg.flights?.inbound ? '<div style="margin-top:4px;font-size:0.8rem">✈️ De ' + leg.flights.inbound.from + '</div>' : ''}
+        ${leg.events.length ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--show)"><i data-lucide="music" style="width:14px;height:14px"></i> ${leg.events.length} evento${leg.events.length > 1 ? 's' : ''}</div>` : ''}
+        ${leg.isTransit ? '<div style="margin-top:4px;font-size:0.75rem;color:var(--text-dim)">🚆 Conexão</div>' : ''}
       </div>
     `);
 
-    // City label
+    // City label with step number
     L.marker([leg.lat, leg.lng], {
       icon: L.divIcon({
         className: '',
-        html: `<div style="color:#fff;font-size:11px;font-weight:700;text-shadow:0 1px 4px #000,0 0 8px #000;white-space:nowrap;transform:translate(-50%,8px)">${leg.city}</div>`,
+        html: `<div style="color:#fff;font-size:11px;font-weight:700;text-shadow:0 1px 4px #000,0 0 8px #000;white-space:nowrap;transform:translate(-50%,8px)">${i+1}. ${leg.city}</div>`,
         iconSize: [0, 0],
         iconAnchor: [0, -12]
       })
@@ -969,6 +981,18 @@ function renderMap() {
   map.fitBounds(routeCoords, { padding: [40, 40] });
 }
 
+// ─── FLIGHT OPTIONS ───
+function renderFlightOptions(options) {
+  if (!options || !options.length) return '';
+  return `<div class="flight-options">${options.map(opt => `
+    <div class="flight-option">
+      <div class="flight-option-airline">${opt.airline || ''}</div>
+      <div class="flight-option-details">${opt.route || ''} · ${opt.duration || ''} · ${opt.stops || ''}<br>${opt.times || ''}</div>
+      <div class="flight-option-price">${opt.price || ''}</div>
+    </div>
+  `).join('')}</div>`;
+}
+
 // ─── ACCOMMODATION OPTIONS ───
 function renderAccommOptions(options) {
   if (!options || !options.length) return '';
@@ -1001,14 +1025,26 @@ function renderTimeline() {
       `<a href="${v}" target="_blank">${k.charAt(0).toUpperCase() + k.slice(1)} →</a>`
     ).join(' &nbsp; ') : '';
 
-    const flightInfo = leg.flights?.inbound ? `
+    const flightInfo = `
       <div class="detail-block">
-        <h4><i data-lucide="plane" style="width:14px;height:14px"></i> Voo</h4>
-        <p>De ${leg.flights.inbound.from}<br>
-        ${leg.flights.inbound.duration || ''} ${leg.flights.inbound.price ? '· ' + leg.flights.inbound.price : ''}<br>
-        ${statusBadge(leg.flights.inbound.status || 'tbd')}</p>
+        <h4><i data-lucide="plane" style="width:14px;height:14px"></i> Voos</h4>
+        ${leg.flights?.inbound ? `
+          <p><strong>De ${leg.flights.inbound.from}</strong><br>
+          ${leg.flights.inbound.airline ? leg.flights.inbound.airline + ' · ' : ''}${leg.flights.inbound.duration || ''} ${leg.flights.inbound.price ? '· ' + leg.flights.inbound.price : ''}<br>
+          ${leg.flights.inbound.notes ? '<span style="font-size:0.8rem;color:var(--text-muted)">' + leg.flights.inbound.notes + '</span><br>' : ''}
+          ${statusBadge(leg.flights.inbound.status || 'tbd')}</p>
+          ${leg.flights.options ? renderFlightOptions(leg.flights.options) : ''}
+        ` : '<p style="color:var(--text-dim)">Ainda sem pesquisa de voos para este trecho</p>'}
+        ${leg.flights?.return ? `
+          <div style="margin-top:12px;padding-top:12px;border-top:1px solid var(--border)">
+            <p><strong>✈️ Volta: ${leg.flights.return.from} → ${leg.flights.return.to}</strong><br>
+            <span style="font-size:0.85rem;color:var(--show);font-weight:600">${leg.flights.return.notes || ''}</span><br>
+            ${statusBadge(leg.flights.return.status || 'tbd')}</p>
+            ${leg.flights.return.options ? renderFlightOptions(leg.flights.return.options) : ''}
+          </div>
+        ` : ''}
       </div>
-    ` : '';
+    `;
 
     const eventsList = leg.events.length ? `
       <div class="detail-block" style="grid-column: 1 / -1">

@@ -29,6 +29,82 @@
   ],
   "legs": [
     {
+      "id": "milan",
+      "city": "Milão",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 45.4642,
+      "lng": 9.19,
+      "dates": {
+        "start": "2026-06-17",
+        "end": "2026-06-17"
+      },
+      "nights": 0,
+      "who": [
+        "ale"
+      ],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "BRL",
+        "notes": "Apenas conexão — segue direto pra Florença",
+        "links": {}
+      },
+      "flights": {
+        "inbound": {
+          "from": "Rio de Janeiro (GIG)",
+          "airline": "TAP Portugal",
+          "duration": "14h25",
+          "price": "R$3.512",
+          "status": "looking",
+          "notes": "Alexandre sai do Galeão dia 17/Jun para Milão Malpensa. Encontra Lucas em Florença."
+        },
+        "options": [
+          {
+            "airline": "TAP Portugal",
+            "route": "GIG → LIS → MXP",
+            "duration": "14h25",
+            "stops": "1 (LIS, 1h55)",
+            "times": "15:35 → 11:00+1",
+            "price": "R$3.512"
+          },
+          {
+            "airline": "LATAM",
+            "route": "GIG → GRU → MXP",
+            "duration": "14h15",
+            "stops": "1 (GRU, 1h50)",
+            "times": "15:00 → 10:15+1",
+            "price": "R$4.451"
+          },
+          {
+            "airline": "Air France",
+            "route": "GIG → CDG → MXP",
+            "duration": "14h35",
+            "stops": "1 (CDG, 1h45)",
+            "times": "22:00 → 17:35+1",
+            "price": "R$4.689"
+          },
+          {
+            "airline": "Lufthansa / Air Dolomiti",
+            "route": "GIG → FRA → MXP",
+            "duration": "16h45",
+            "stops": "1 (FRA, 4h05)",
+            "times": "16:15 → 14:00+1",
+            "price": "R$5.012"
+          }
+        ]
+      },
+      "events": [],
+      "highlights": [
+        "Conexão para Florença"
+      ],
+      "notes": "Ponto de chegada do Alexandre na Europa. Segue pra Florença de trem (~1h40 Trenitalia/Italo) ou voo (~1h).",
+      "image": "assets/cities/florence.jpg",
+      "isTransit": true
+    },
+    {
       "id": "florence",
       "city": "Florence",
       "country": "Italy",
@@ -119,7 +195,32 @@
         ]
       },
       "flights": {
-        "inbound": null
+        "inbound": {
+          "from": "Milão (MXP)",
+          "airline": "Trenitalia/Italo",
+          "duration": "~1h40",
+          "price": "~R$150-300",
+          "status": "looking",
+          "notes": "Trem de alta velocidade MXP→Firenze SMN. Alternativa: voo doméstico ~1h."
+        },
+        "options": [
+          {
+            "airline": "Trenitalia Frecciarossa",
+            "route": "MXP → Firenze SMN",
+            "duration": "1h40",
+            "stops": "Direto",
+            "times": "Saídas a cada 1-2h",
+            "price": "~R$150-250"
+          },
+          {
+            "airline": "Italo",
+            "route": "MXP → Firenze SMN",
+            "duration": "1h50",
+            "stops": "Direto",
+            "times": "Saídas frequentes",
+            "price": "~R$130-220"
+          }
+        ]
       },
       "events": [],
       "highlights": [
@@ -455,8 +556,26 @@
           "duration": "1h45",
           "price": "R$141",
           "status": "looking",
-          "notes": "Voo direto 11:15→13:00. Absurdamente barato."
-        }
+          "notes": "Voo direto 11:15→13:00. Lucas."
+        },
+        "options": [
+          {
+            "airline": "Ryanair (Malta Air)",
+            "route": "NAP → MAH",
+            "duration": "1h45",
+            "stops": "Direto",
+            "times": "11:15 → 13:00",
+            "price": "R$141"
+          },
+          {
+            "airline": "Vueling",
+            "route": "NAP → MAH",
+            "duration": "4h10",
+            "stops": "1 (BCN)",
+            "times": "15:15 → 19:25",
+            "price": "R$704"
+          }
+        ]
       },
       "events": [],
       "highlights": [
@@ -501,8 +620,42 @@
           "duration": "2h05",
           "price": "R$392",
           "status": "looking",
-          "notes": "Voo direto 07:00→09:05. Tem 3 opções diretas easyJet."
-        }
+          "notes": "Voo direto 07:00→09:05. Alexandre."
+        },
+        "options": [
+          {
+            "airline": "easyJet",
+            "route": "NAP → IBZ",
+            "duration": "2h05",
+            "stops": "Direto",
+            "times": "07:00 → 09:05",
+            "price": "R$392"
+          },
+          {
+            "airline": "easyJet",
+            "route": "NAP → IBZ",
+            "duration": "2h05",
+            "stops": "Direto",
+            "times": "17:55 → 20:00",
+            "price": "R$453"
+          },
+          {
+            "airline": "easyJet",
+            "route": "NAP → IBZ",
+            "duration": "2h10",
+            "stops": "Direto",
+            "times": "10:40 → 12:50",
+            "price": "R$456"
+          },
+          {
+            "airline": "Vueling",
+            "route": "NAP → IBZ",
+            "duration": "4h30",
+            "stops": "1 (BCN)",
+            "times": "10:05 → 14:35",
+            "price": "R$694"
+          }
+        ]
       },
       "events": [
         {
@@ -615,7 +768,90 @@
           "duration": "3h50",
           "price": "R$1.968/pessoa",
           "status": "looking",
-          "notes": "1 stop BCN (1h25 layover). 13:35→17:25. Total 3 pessoas: ~R$5.904"
+          "notes": "1 stop BCN (1h25 layover). 13:35→17:25. Total 3 pessoas: ~R$5.904."
+        },
+        "options": [
+          {
+            "airline": "Vueling",
+            "route": "IBZ → NCE",
+            "duration": "3h50",
+            "stops": "1 (BCN, 1h25)",
+            "times": "13:35 → 17:25",
+            "price": "R$1.968/pp"
+          },
+          {
+            "airline": "Vueling",
+            "route": "IBZ → NCE",
+            "duration": "5h30",
+            "stops": "1 (BCN, 3h)",
+            "times": "16:15 → 21:45",
+            "price": "R$2.056/pp"
+          },
+          {
+            "airline": "KLM",
+            "route": "IBZ → NCE",
+            "duration": "5h30",
+            "stops": "1 (AMS)",
+            "times": "16:55 → 22:25",
+            "price": "R$2.534/pp"
+          },
+          {
+            "airline": "Vueling",
+            "route": "IBZ → NCE",
+            "duration": "8h05",
+            "stops": "1 (BCN, 5h40)",
+            "times": "09:20 → 17:25",
+            "price": "R$1.765/pp"
+          }
+        ],
+        "return": {
+          "from": "Nice (NCE)",
+          "to": "São Paulo (GRU)",
+          "date": "2026-07-11",
+          "status": "looking",
+          "notes": "⚠️ PASSAGEM DE VOLTA DO ALEXANDRE — PRIORIDADE ALTA",
+          "options": [
+            {
+              "airline": "BA / LATAM",
+              "route": "NCE → LHR → GRU",
+              "duration": "15h10",
+              "stops": "1 (LHR, 1h35)",
+              "times": "18:35 → 04:45+1",
+              "price": "R$6.693"
+            },
+            {
+              "airline": "SWISS",
+              "route": "NCE → ZRH → GRU",
+              "duration": "15h15",
+              "stops": "1 (ZRH, 2h15)",
+              "times": "19:10 → 05:25+1",
+              "price": "R$6.961"
+            },
+            {
+              "airline": "TAP",
+              "route": "NCE → LIS → GRU",
+              "duration": "16h",
+              "stops": "1 (LIS, 3h)",
+              "times": "12:15 → 23:15",
+              "price": "R$7.025"
+            },
+            {
+              "airline": "TAP + LATAM",
+              "route": "NCE → LIS → CNF → GRU",
+              "duration": "18h15",
+              "stops": "2 (LIS + CNF)",
+              "times": "06:00 → 19:15",
+              "price": "R$5.960"
+            },
+            {
+              "airline": "KLM / Air France",
+              "route": "NCE → AMS → GRU",
+              "duration": "18h30",
+              "stops": "1 (AMS, 4h40)",
+              "times": "06:20 → 19:50",
+              "price": "R$6.640"
+            }
+          ]
         }
       },
       "events": [],
