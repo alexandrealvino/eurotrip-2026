@@ -778,13 +778,15 @@
           "name": "Black Coffee @ Hï",
           "venue": "Hï Ibiza",
           "type": "show",
-          "status": "tbd",
+          "status": "booked",
           "link": "https://www.hiibiza.com/events/2026/black-coffee/2026-07-04",
           "who": [
             "ale",
             "david"
           ],
-          "venueImage": "assets/events/hi-ibiza.jpg"
+          "venueImage": "assets/events/hi-ibiza.jpg",
+          "price": "R$550,48",
+          "notes": "✅ Comprado por Alexandre. R$550,48."
         },
         {
           "date": "2026-07-05",
@@ -811,7 +813,7 @@
             "lucas",
             "david"
           ],
-          "notes": "✅ Comprado por Lucas. Opening night. Add-on: 3 drinks/waters €26.",
+          "notes": "✅ Comprado por Lucas + Alexandre. Opening night. Add-on: 3 drinks/waters €26.",
           "venueImage": "assets/events/pacha.jpg"
         }
       ],
@@ -1117,8 +1119,8 @@
       "city": "🇪🇸 Ibiza"
     },
     {
-      "task": "Comprar ingressos Black Coffee @ Hï (04/Jul) — Ale + David",
-      "priority": "medium",
+      "task": "✅ Ingressos Black Coffee @ Hï (04/Jul) — comprado R$550,48",
+      "priority": "done",
       "who": "ale",
       "city": "🇪🇸 Ibiza"
     },
