@@ -892,54 +892,199 @@
   },
   "todos": [
     {
-      "task": "✅ Voo ida SDU→MXP comprado (LATAM, R$2.572,49, 17/Jun)",
+      "task": "✅ Voo ida SDU→MXP comprado (LATAM LA3975+LA8072, R$2.572, 17/Jun)",
       "priority": "done",
       "who": "ale"
     },
     {
-      "task": "✅ Voo volta NCE→GIG comprado (TAP, 11/Jul 18:30)",
+      "task": "✅ Voo volta NCE→GIG comprado (TAP TP483+TP75, 11/Jul)",
       "priority": "done",
       "who": "ale"
     },
     {
-      "task": "Comprar ingressos Rufus Du Sol @ Pacha",
+      "task": "✅ Voo IBZ→NCE comprado (Vueling VY3509+VY1521, 08/Jul, 3 passageiros)",
+      "priority": "done",
+      "who": "ale"
+    },
+    {
+      "task": "✅ PID (Permissão Internacional de Dirigir) concluído",
+      "priority": "done",
+      "who": "ale"
+    },
+    {
+      "task": "✅ Roma: hospedagem garantida (casa da mãe do Lucas)",
+      "priority": "done",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar ingressos Rufus Du Sol @ Pacha (07/Jul) — Ale + Lucas + David",
       "priority": "high",
       "who": "ale"
     },
     {
-      "task": "Definir destino Ale Jul 1-3 (Formentera/Menorca/Maiorca)",
+      "task": "Comprar trem Milão → Florença (Trenitalia ou Italo, 18/Jun)",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "Reservar hospedagem Florença (Jun 17-19, 2 noites) — opções pesquisadas",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "Reservar hospedagem Positano/Amalfi (Jun 23-26, 3 noites) — opções pesquisadas",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "Definir destino Ale Jul 1-3 (Formentera / Menorca / Maiorca / direto Ibiza?)",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar voo NAP→IBZ ou NAP→destino Jul 1 (easyJet R$392 direto)",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "ETIAS — autorização de viagem pra Europa",
+      "priority": "high",
+      "who": "ale"
+    },
+    {
+      "task": "Reservar hospedagem Sorrento (Jun 26-27, 1 noite)",
       "priority": "medium",
       "who": "ale"
     },
     {
-      "task": "Reservar hospedagem Florence",
+      "task": "Reservar hospedagem Capri (Jun 27-30, 3 noites)",
       "priority": "medium",
       "who": "ale"
     },
     {
-      "task": "ETIAS",
+      "task": "Reservar hospedagem Pompeii/Naples (Jun 30-Jul 1, 1 noite)",
       "priority": "medium",
       "who": "ale"
     },
     {
-      "task": "PID concluído ✅",
-      "priority": "done",
-      "who": "ale"
-    },
-    {
-      "task": "Pesquisar hospedagem Costa Amalfitana",
+      "task": "Reservar hospedagem Ibiza (Jul 1-8, 7 noites, 3 pessoas)",
       "priority": "medium",
       "who": "ale"
     },
     {
-      "task": "Lago di Como com Rafa (separado)",
-      "priority": "low",
+      "task": "Reservar hospedagem Nice (Jul 8-11, 3 noites, 3 pessoas)",
+      "priority": "medium",
       "who": "ale"
+    },
+    {
+      "task": "Reservar hospedagem Baleares/destino solo (Jul 1-3, 2 noites)",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar ingressos Calvin Harris @ Ushuaïa (03/Jul) — Ale + David",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar ingressos David Guetta @ UNVRS (03/Jul) — Ale + David",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar ingressos Black Coffee @ Hï (04/Jul) — Ale + David",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar ingresso Solomun @ Pacha (05/Jul) — Lucas",
+      "priority": "medium",
+      "who": "lucas"
+    },
+    {
+      "task": "Pesquisar transporte Florença→Roma (trem ~1h30)",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Pesquisar transporte Roma→Positano (trem/bus ~3-4h)",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Pesquisar transporte Sorrento↔Capri (ferry ~20min)",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Pesquisar transporte Capri→Pompeii/Naples (ferry+trem)",
+      "priority": "medium",
+      "who": "ale"
+    },
+    {
+      "task": "Comprar voo NAP→MAH Jul 1 (Ryanair R$141 direto)",
+      "priority": "high",
+      "who": "lucas"
+    },
+    {
+      "task": "Definir voo Menorca→Ibiza (Jul 5) — Lucas",
+      "priority": "medium",
+      "who": "lucas"
     },
     {
       "task": "Definir voo de volta do Lucas (data e rota TBD)",
       "priority": "medium",
       "who": "lucas"
+    },
+    {
+      "task": "Reservar hospedagem Menorca (Jul 1-5, 4 noites)",
+      "priority": "medium",
+      "who": "lucas"
+    },
+    {
+      "task": "Definir voo de ida do David (→ Paris Jun 23 ou Roma Jun 24)",
+      "priority": "medium",
+      "who": "david"
+    },
+    {
+      "task": "Definir transporte David Paris→Roma (Jun 23-24)",
+      "priority": "medium",
+      "who": "david"
+    },
+    {
+      "task": "Definir voo/transporte David Roma→Ibiza (Jun 30 ou Jul 1)",
+      "priority": "medium",
+      "who": "david"
+    },
+    {
+      "task": "Definir voo David Nice→Londres (Jul 14)",
+      "priority": "medium",
+      "who": "david"
+    },
+    {
+      "task": "Definir voo David Londres→Rio (Jul 15)",
+      "priority": "medium",
+      "who": "david"
+    },
+    {
+      "task": "Lago di Como com Rafa (separado do grupo)",
+      "priority": "low",
+      "who": "ale"
+    },
+    {
+      "task": "Pesquisar chip de celular/eSIM Europa",
+      "priority": "low",
+      "who": "ale"
+    },
+    {
+      "task": "Seguro viagem",
+      "priority": "low",
+      "who": "ale"
+    },
+    {
+      "task": "Reservar aluguel de moto (PID feito) — Amalfi/Capri/Ibiza",
+      "priority": "low",
+      "who": "ale"
     }
   ]
 }
