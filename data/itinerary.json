@@ -178,34 +178,6 @@
           }
         ]
       },
-      "flights": {
-        "inbound": {
-          "from": "Milão (MXP)",
-          "airline": "Trenitalia/Italo",
-          "duration": "~1h40",
-          "price": "~R$150-300",
-          "status": "looking",
-          "notes": "Trem de alta velocidade MXP→Firenze SMN. Alternativa: voo doméstico ~1h."
-        },
-        "options": [
-          {
-            "airline": "Trenitalia Frecciarossa",
-            "route": "MXP → Firenze SMN",
-            "duration": "1h40",
-            "stops": "Direto",
-            "times": "Saídas a cada 1-2h",
-            "price": "~R$150-250"
-          },
-          {
-            "airline": "Italo",
-            "route": "MXP → Firenze SMN",
-            "duration": "1h50",
-            "stops": "Direto",
-            "times": "Saídas frequentes",
-            "price": "~R$130-220"
-          }
-        ]
-      },
       "events": [],
       "highlights": [
         "Duomo",
@@ -214,7 +186,40 @@
         "Piazzale Michelangelo"
       ],
       "notes": "",
-      "image": "assets/cities/florence.jpg"
+      "image": "assets/cities/florence.jpg",
+      "transport": {
+        "inbound": {
+          "from": "Milão (MXP/Milano Centrale)",
+          "type": "trem",
+          "operator": "Trenitalia / Italo",
+          "duration": "~1h40",
+          "price": "~R$130-250",
+          "status": "looking",
+          "notes": "Trem de alta velocidade Milano Centrale → Firenze Santa Maria Novella. Comprar antecipado pra preço mais baixo."
+        },
+        "options": [
+          {
+            "type": "Trem",
+            "operator": "Trenitalia Frecciarossa",
+            "route": "Milano Centrale → Firenze SMN",
+            "duration": "1h40",
+            "stops": "Direto",
+            "times": "Saídas a cada 1-2h",
+            "price": "~€25-45",
+            "url": "https://www.trenitalia.com/en.html"
+          },
+          {
+            "type": "Trem",
+            "operator": "Italo",
+            "route": "Milano Centrale → Firenze SMN",
+            "duration": "1h50",
+            "stops": "Direto",
+            "times": "Saídas frequentes",
+            "price": "~€22-40",
+            "url": "https://www.italotreno.it/en"
+          }
+        ]
+      }
     },
     {
       "id": "rome",
