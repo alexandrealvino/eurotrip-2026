@@ -583,6 +583,91 @@
       "parallelWith": "baleares"
     },
     {
+      "id": "david-paris",
+      "city": "Paris",
+      "country": "France",
+      "flag": "🇫🇷",
+      "lat": 48.8566,
+      "lng": 2.3522,
+      "dates": {
+        "start": "2026-06-23",
+        "end": "2026-06-24"
+      },
+      "nights": 1,
+      "who": [
+        "david"
+      ],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "BRL",
+        "notes": "David chega na Europa. 1 noite em Paris.",
+        "links": {}
+      },
+      "flights": {
+        "inbound": {
+          "from": "Rio de Janeiro",
+          "airline": "A confirmar",
+          "duration": "A confirmar",
+          "price": "A confirmar",
+          "status": "looking",
+          "notes": "Voo de ida do David para Europa."
+        }
+      },
+      "events": [],
+      "highlights": [
+        "Chegada na Europa"
+      ],
+      "notes": "David chega em Paris dia 23/Jun.",
+      "image": null
+    },
+    {
+      "id": "david-rome",
+      "city": "Roma (David)",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "dates": {
+        "start": "2026-06-24",
+        "end": "2026-07-01"
+      },
+      "nights": 7,
+      "who": [
+        "david"
+      ],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "BRL",
+        "notes": "David quer pelo menos 1 dia pra conhecer Roma. Depois segue pra Nápoles/Ibiza.",
+        "links": {}
+      },
+      "transport": {
+        "inbound": {
+          "from": "Paris",
+          "type": "voo/trem",
+          "operator": "A confirmar",
+          "duration": "~2h (voo) ou ~11h (trem)",
+          "price": "A confirmar",
+          "status": "looking",
+          "notes": "Paris→Roma dia 24/Jun."
+        }
+      },
+      "events": [],
+      "highlights": [
+        "Colosseum",
+        "Vatican",
+        "Trastevere"
+      ],
+      "notes": "David em Roma solo. Depois segue pra Nápoles e Ibiza dia 01/Jul.",
+      "image": "assets/cities/rome.jpg"
+    },
+    {
       "id": "ibiza",
       "city": "Ibiza",
       "country": "Spain",
@@ -940,12 +1025,12 @@
     {
       "task": "✅ Roma: hospedagem garantida (casa da mãe do Lucas)",
       "priority": "done",
-      "who": "ale"
+      "who": "lucas"
     },
     {
       "task": "✅ Ingressos Rufus Du Sol @ Pacha (07/Jul) — comprado por Lucas",
       "priority": "done",
-      "who": "ale"
+      "who": "lucas"
     },
     {
       "task": "Comprar trem Milão → Florença (Trenitalia ou Italo, 18/Jun)",
@@ -965,7 +1050,7 @@
     {
       "task": "✅ Voo Menorca→Ibiza comprado (04/Jul, R$1.200) — Lucas",
       "priority": "done",
-      "who": "ale"
+      "who": "lucas"
     },
     {
       "task": "Comprar voo NAP→IBZ ou NAP→destino Jul 1 (easyJet R$392 direto)",
@@ -1058,7 +1143,7 @@
       "who": "lucas"
     },
     {
-      "task": "Reservar hospedagem Menorca (Jul 1-5, 4 noites)",
+      "task": "Reservar hospedagem Menorca (Jul 1-4, 3 noites)",
       "priority": "medium",
       "who": "lucas"
     },
@@ -1088,17 +1173,7 @@
       "who": "david"
     },
     {
-      "task": "Lago di Como com Rafa (separado do grupo)",
-      "priority": "low",
-      "who": "ale"
-    },
-    {
       "task": "Pesquisar chip de celular/eSIM Europa",
-      "priority": "low",
-      "who": "ale"
-    },
-    {
-      "task": "Seguro viagem",
       "priority": "low",
       "who": "ale"
     },
