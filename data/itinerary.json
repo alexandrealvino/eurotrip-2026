@@ -1,0 +1,372 @@
+{
+  "trip": {
+    "name": "Eurotrip 2026",
+    "subtitle": "Itália → Baleares → Côte d'Azur",
+    "startDate": "2026-06-17",
+    "endDate": "2026-07-11",
+    "totalDays": 25,
+    "currency": "USD"
+  },
+  "travelers": [
+    { "id": "ale", "name": "Alexandre", "emoji": "🔵", "color": "#3B82F6" },
+    { "id": "lucas", "name": "Lucas", "emoji": "🟢", "color": "#22C55E" },
+    { "id": "david", "name": "David", "emoji": "🟡", "color": "#EAB308" }
+  ],
+  "legs": [
+    {
+      "id": "florence",
+      "city": "Florence",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 43.7696,
+      "lng": 11.2558,
+      "dates": { "start": "2026-06-17", "end": "2026-06-19" },
+      "nights": 2,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": 100,
+        "currency": "USD",
+        "notes": "~100 USD/person/night",
+        "links": {
+          "airbnb": "https://www.airbnb.com.br/s/Floren%C3%A7a--Toscana--It%C3%A1lia/homes?checkin=2026-06-17&checkout=2026-06-19&adults=2",
+          "booking": "https://www.booking.com/searchresults.html?ss=Florence%2C+Tuscany%2C+Italy&checkin=2026-06-17&checkout=2026-06-19&group_adults=2"
+        }
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Duomo", "Uffizi Gallery", "Ponte Vecchio", "Piazzale Michelangelo"],
+      "notes": "",
+      "image": "assets/cities/florence.jpg"
+    },
+    {
+      "id": "rome",
+      "city": "Rome",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 41.9028,
+      "lng": 12.4964,
+      "dates": { "start": "2026-06-19", "end": "2026-06-23" },
+      "nights": 4,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Colosseum", "Vatican", "Trastevere", "Pantheon"],
+      "notes": "",
+      "image": "assets/cities/rome.jpg"
+    },
+    {
+      "id": "positano",
+      "city": "Positano / Amalfi",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 40.6281,
+      "lng": 14.4850,
+      "dates": { "start": "2026-06-23", "end": "2026-06-26" },
+      "nights": 3,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "Costa Amalfitana é cara (Romano alertou)",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Amalfi Coast", "Path of the Gods", "Beach clubs"],
+      "notes": "Romano (contato italiano) alertou que é cara. Pesquisar hospedagem em Sorrento/Positano.",
+      "image": "assets/cities/positano.jpg"
+    },
+    {
+      "id": "sorrento",
+      "city": "Sorrento",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 40.6263,
+      "lng": 14.3758,
+      "dates": { "start": "2026-06-26", "end": "2026-06-27" },
+      "nights": 1,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Limoncello tasting", "Marina Grande", "Views of Vesuvius"],
+      "notes": "",
+      "image": "assets/cities/sorrento.jpg"
+    },
+    {
+      "id": "capri",
+      "city": "Capri",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 40.5507,
+      "lng": 14.2224,
+      "dates": { "start": "2026-06-27", "end": "2026-06-30" },
+      "nights": 3,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "Capri Town ou Anacapri",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Blue Grotto", "Faraglioni", "Anacapri", "Marina Piccola"],
+      "notes": "Decidir entre Capri Town ou Anacapri",
+      "image": "assets/cities/capri.jpg"
+    },
+    {
+      "id": "pompeii",
+      "city": "Pompeii / Naples",
+      "country": "Italy",
+      "flag": "🇮🇹",
+      "lat": 40.7462,
+      "lng": 14.4989,
+      "dates": { "start": "2026-06-30", "end": "2026-07-01" },
+      "nights": 1,
+      "who": ["ale", "lucas"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [],
+      "highlights": ["Pompeii ruins", "Naples pizza", "Mount Vesuvius"],
+      "notes": "",
+      "image": "assets/cities/pompeii.jpg"
+    },
+    {
+      "id": "baleares",
+      "city": "Baleares (TBD)",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "lat": 39.9496,
+      "lng": 3.8613,
+      "dates": { "start": "2026-07-01", "end": "2026-07-03" },
+      "nights": 2,
+      "who": ["ale"],
+      "whoNotes": {
+        "ale": "Formentera/Menorca/Maiorca — indefinido",
+        "lucas": "Menorca (4 nights, Jul 1-5)"
+      },
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "Ale: destino indefinido. Lucas: Menorca confirmado.",
+        "links": {}
+      },
+      "flights": {
+        "inbound": {
+          "from": "Naples",
+          "duration": "~2h",
+          "price": "80-100 USD",
+          "status": "looking"
+        }
+      },
+      "events": [],
+      "highlights": [],
+      "notes": "Ale e Lucas divergem aqui. Ale: Formentera/Menorca/Maiorca (TBD). Lucas: Menorca 4 noites (Jul 1-5).",
+      "image": "assets/cities/baleares.jpg"
+    },
+    {
+      "id": "menorca-lucas",
+      "city": "Menorca",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "lat": 39.9496,
+      "lng": 4.1107,
+      "dates": { "start": "2026-07-01", "end": "2026-07-05" },
+      "nights": 4,
+      "who": ["lucas"],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {}
+      },
+      "flights": {
+        "inbound": {
+          "from": "Naples",
+          "duration": "~2h",
+          "price": "80-100 USD",
+          "status": "looking"
+        }
+      },
+      "events": [],
+      "highlights": ["Cala Macarella", "Ciutadella", "Beaches"],
+      "notes": "Lucas: 4 noites confirmado",
+      "image": "assets/cities/menorca.jpg",
+      "parallelWith": "baleares"
+    },
+    {
+      "id": "ibiza",
+      "city": "Ibiza",
+      "country": "Spain",
+      "flag": "🇪🇸",
+      "lat": 38.9067,
+      "lng": 1.4206,
+      "dates": { "start": "2026-07-03", "end": "2026-07-08" },
+      "nights": 5,
+      "who": ["ale", "lucas", "david"],
+      "accommodation": {
+        "status": "tbd",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {}
+      },
+      "flights": { "inbound": null },
+      "events": [
+        {
+          "date": "2026-07-03",
+          "name": "Calvin Harris @ Ushuaïa",
+          "venue": "Ushuaïa",
+          "type": "show",
+          "status": "tbd",
+          "link": null,
+          "who": ["ale"]
+        },
+        {
+          "date": "2026-07-03",
+          "name": "David Guetta @ UNVRS",
+          "venue": "UNVRS",
+          "type": "show",
+          "status": "tbd",
+          "link": null,
+          "who": ["ale"]
+        },
+        {
+          "date": "2026-07-04",
+          "name": "Black Coffee @ Hï",
+          "venue": "Hï Ibiza",
+          "type": "show",
+          "status": "tbd",
+          "link": "https://www.hiibiza.com/events/2026/black-coffee/2026-07-04",
+          "who": ["ale"]
+        },
+        {
+          "date": "2026-07-05",
+          "name": "Solomun @ Pacha",
+          "venue": "Pacha",
+          "type": "show",
+          "status": "tbd",
+          "link": "https://pacha.com/event/solomun1-05-07-2026",
+          "who": ["ale", "lucas"]
+        },
+        {
+          "date": "2026-07-07",
+          "name": "Rufus Du Sol @ Pacha",
+          "venue": "Pacha",
+          "type": "show",
+          "status": "looking",
+          "link": "https://pacha.com/event/rufus-du-sol-dj-set---opening-night-07-07-2026",
+          "who": ["ale", "lucas", "david"],
+          "notes": "Ingressos sendo comprados com David"
+        }
+      ],
+      "highlights": ["Ushuaïa", "Pacha", "Hï Ibiza", "Cala Comte", "Dalt Vila"],
+      "notes": "David junta ao grupo em Ibiza. Ale chega Jul 3, Lucas Jul 5.",
+      "image": "assets/cities/ibiza.jpg"
+    },
+    {
+      "id": "nice",
+      "city": "Nice / Côte d'Azur",
+      "country": "France",
+      "flag": "🇫🇷",
+      "lat": 43.7102,
+      "lng": 7.2620,
+      "dates": { "start": "2026-07-08", "end": "2026-07-11" },
+      "nights": 3,
+      "who": ["ale", "lucas", "david"],
+      "accommodation": {
+        "status": "looking",
+        "type": null,
+        "name": null,
+        "pricePerNight": null,
+        "currency": "USD",
+        "notes": "",
+        "links": {
+          "skyscanner": "https://www.skyscanner.com.br/transporte/passagens-aereas/ibz/nce/260708/"
+        }
+      },
+      "flights": {
+        "inbound": {
+          "from": "Ibiza",
+          "duration": "~4h",
+          "price": "~100 USD",
+          "time": "13:35",
+          "status": "looking"
+        }
+      },
+      "events": [],
+      "highlights": ["Promenade des Anglais", "Monaco", "Monte Carlo Casino", "Cannes", "St Tropez"],
+      "dayTrips": [
+        { "date": "2026-07-09", "destination": "Nice / Monaco / Cannes" },
+        { "date": "2026-07-10", "destination": "St Tropez" }
+      ],
+      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez",
+      "image": "assets/cities/nice.jpg"
+    }
+  ],
+  "budget": {
+    "flights": {
+      "estimated": 280,
+      "currency": "USD",
+      "notes": "Naples→Baleares (~90) + Ibiza→Nice (~100) + outros transfers"
+    },
+    "accommodation": {
+      "estimatedPerNight": 100,
+      "currency": "USD",
+      "notes": "Média estimada, varia muito por destino"
+    }
+  },
+  "todos": [
+    { "task": "Fechar passagem de volta do Alexandre", "priority": "high", "who": "ale" },
+    { "task": "Comprar ingressos Rufus Du Sol @ Pacha", "priority": "high", "who": "ale" },
+    { "task": "Definir destino Ale Jul 1-3 (Formentera/Menorca/Maiorca)", "priority": "medium", "who": "ale" },
+    { "task": "Reservar hospedagem Florence", "priority": "medium", "who": "ale" },
+    { "task": "ETIAS", "priority": "medium", "who": "ale" },
+    { "task": "PID concluído ✅", "priority": "done", "who": "ale" },
+    { "task": "Pesquisar hospedagem Costa Amalfitana", "priority": "medium", "who": "ale" },
+    { "task": "Lago di Como com Rafa (separado)", "priority": "low", "who": "ale" }
+  ]
+}

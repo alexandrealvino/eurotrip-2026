@@ -1,0 +1,1207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eurotrip 2026 — Ale • Lucas • David</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: #12121a;
+    --bg-card-hover: #1a1a28;
+    --bg-surface: #16162288;
+    --border: #1e1e30;
+    --border-hover: #2a2a44;
+    --text: #e8e8f0;
+    --text-muted: #8888aa;
+    --text-dim: #555570;
+    --accent: #7c5cff;
+    --accent-glow: #7c5cff33;
+    --ale: #3B82F6;
+    --lucas: #22C55E;
+    --david: #EAB308;
+    --booked: #22C55E;
+    --looking: #F59E0B;
+    --tbd: #6B7280;
+    --show: #EC4899;
+    --italy: #22C55E;
+    --spain: #EAB308;
+    --france: #3B82F6;
+    --radius: 16px;
+    --radius-sm: 10px;
+    --radius-xs: 6px;
+    --shadow: 0 4px 24px rgba(0,0,0,0.4);
+    --shadow-glow: 0 0 40px var(--accent-glow);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ───── HERO ───── */
+  .hero {
+    position: relative;
+    padding: 60px 40px 40px;
+    text-align: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #0a0a1a 0%, #12102a 50%, #0a0a1a 100%);
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(ellipse at 30% 50%, var(--accent-glow) 0%, transparent 50%),
+                radial-gradient(ellipse at 70% 50%, #ec489922 0%, transparent 50%);
+    animation: heroGlow 8s ease-in-out infinite alternate;
+  }
+
+  @keyframes heroGlow {
+    0% { transform: translate(0, 0) scale(1); }
+    100% { transform: translate(20px, -10px) scale(1.05); }
+  }
+
+  .hero-content { position: relative; z-index: 1; }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    background: linear-gradient(135deg, #fff 0%, #c4b5fd 50%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 8px;
+  }
+
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-bottom: 24px;
+  }
+
+  .hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .stat {
+    text-align: center;
+  }
+
+  .stat-value {
+    font-size: 2rem;
+    font-weight: 800;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, var(--accent), #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-top: 2px;
+  }
+
+  /* ───── TRAVELERS BAR ───── */
+  .travelers-bar {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+
+  .traveler-badge {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 18px;
+    border-radius: 100px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+  }
+
+  .traveler-badge:hover { border-color: var(--border-hover); transform: translateY(-1px); }
+  .traveler-badge.active { border-color: var(--accent); box-shadow: 0 0 16px var(--accent-glow); }
+  .traveler-badge .dot { width: 10px; height: 10px; border-radius: 50%; }
+  .traveler-badge span { font-weight: 600; font-size: 0.9rem; }
+
+  /* ───── TABS ───── */
+  .tabs {
+    display: flex;
+    justify-content: center;
+    gap: 4px;
+    padding: 0 40px;
+    margin-bottom: 24px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--bg);
+    padding-top: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .tab {
+    padding: 10px 24px;
+    border-radius: 100px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: var(--text-muted);
+    background: transparent;
+    border: 1px solid transparent;
+  }
+
+  .tab:hover { color: var(--text); background: var(--bg-card); }
+  .tab.active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 0 20px var(--accent-glow);
+  }
+
+  /* ───── CONTENT AREA ───── */
+  .content { max-width: 1400px; margin: 0 auto; padding: 0 24px 60px; }
+
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ───── MAP ───── */
+  #map {
+    width: 100%;
+    height: 500px;
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    margin-bottom: 32px;
+    overflow: hidden;
+  }
+
+  .leaflet-popup-content-wrapper {
+    background: var(--bg-card) !important;
+    color: var(--text) !important;
+    border: 1px solid var(--border) !important;
+    border-radius: var(--radius-sm) !important;
+    box-shadow: var(--shadow) !important;
+  }
+
+  .leaflet-popup-tip { background: var(--bg-card) !important; }
+
+  .map-popup h3 { font-size: 1rem; font-weight: 700; margin-bottom: 4px; }
+  .map-popup .dates { font-size: 0.8rem; color: var(--text-muted); margin-bottom: 6px; }
+  .map-popup .travelers-mini { display: flex; gap: 4px; }
+  .map-popup .travelers-mini .mini-dot {
+    width: 8px; height: 8px; border-radius: 50%; display: inline-block;
+  }
+
+  /* ───── TIMELINE ───── */
+  .timeline { position: relative; }
+
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 24px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--italy), var(--spain), var(--france));
+    border-radius: 2px;
+  }
+
+  .leg-card {
+    position: relative;
+    margin-left: 60px;
+    margin-bottom: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+
+  .leg-card:hover {
+    border-color: var(--border-hover);
+    transform: translateX(4px);
+    box-shadow: var(--shadow);
+  }
+
+  .leg-card.expanded { box-shadow: var(--shadow-glow); border-color: var(--accent); }
+
+  .leg-dot {
+    position: absolute;
+    left: -48px;
+    top: 24px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    border: 3px solid var(--bg);
+    z-index: 2;
+  }
+
+  .leg-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+
+  .leg-image {
+    width: 80px;
+    height: 80px;
+    border-radius: var(--radius-sm);
+    object-fit: cover;
+    background: var(--bg-surface);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    flex-shrink: 0;
+  }
+
+  .leg-info { flex: 1; min-width: 0; }
+
+  .leg-city {
+    font-size: 1.25rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .leg-city .flag { font-size: 1.1rem; }
+
+  .leg-dates {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 2px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .leg-travelers {
+    display: flex;
+    gap: 6px;
+    margin-top: 8px;
+  }
+
+  .leg-traveler-dot {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: #000;
+    position: relative;
+  }
+
+  .leg-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+  }
+
+  .badge {
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .badge-booked { background: #22C55E22; color: var(--booked); border: 1px solid #22C55E44; }
+  .badge-looking { background: #F59E0B22; color: var(--looking); border: 1px solid #F59E0B44; }
+  .badge-tbd { background: #6B728022; color: var(--tbd); border: 1px solid #6B728044; }
+
+  .nights-badge {
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    color: var(--text-muted);
+    padding: 4px 12px;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    font-family: 'JetBrains Mono', monospace;
+    white-space: nowrap;
+  }
+
+  .leg-expand-icon {
+    color: var(--text-dim);
+    transition: transform 0.3s;
+    font-size: 1.2rem;
+  }
+
+  .leg-card.expanded .leg-expand-icon { transform: rotate(180deg); }
+
+  /* Expanded content */
+  .leg-details {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+  }
+
+  .leg-card.expanded .leg-details { max-height: 800px; }
+
+  .leg-details-inner {
+    padding: 0 24px 24px;
+    border-top: 1px solid var(--border);
+    margin-top: 0;
+    padding-top: 20px;
+  }
+
+  .details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+  }
+
+  .detail-block h4 {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+
+  .detail-block p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .detail-block a {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.85rem;
+  }
+
+  .detail-block a:hover { text-decoration: underline; }
+
+  .highlights-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    list-style: none;
+  }
+
+  .highlights-list li {
+    padding: 4px 12px;
+    background: var(--bg-surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+  }
+
+  /* ───── EVENTS ───── */
+  .events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 16px;
+  }
+
+  .event-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: all 0.3s;
+    position: relative;
+  }
+
+  .event-card:hover {
+    border-color: var(--show);
+    transform: translateY(-2px);
+    box-shadow: 0 0 30px #EC489922;
+  }
+
+  .event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--show), var(--accent));
+  }
+
+  .event-image {
+    width: 100%;
+    height: 160px;
+    background: linear-gradient(135deg, #1a1028, #281832);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+  }
+
+  .event-body { padding: 20px; }
+
+  .event-date {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--show);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .event-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+  }
+
+  .event-venue {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+
+  .event-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .event-link {
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .event-link:hover { text-decoration: underline; }
+
+  /* ───── TODOS ───── */
+  .todos-list { max-width: 700px; }
+
+  .todo-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 8px;
+    transition: all 0.2s;
+  }
+
+  .todo-item:hover { border-color: var(--border-hover); }
+
+  .todo-priority {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .todo-priority.high { background: #EF4444; box-shadow: 0 0 8px #EF444466; }
+  .todo-priority.medium { background: #F59E0B; }
+  .todo-priority.low { background: #6B7280; }
+  .todo-priority.done { background: #22C55E; }
+
+  .todo-text { flex: 1; font-size: 0.9rem; }
+  .todo-item.done .todo-text { text-decoration: line-through; color: var(--text-dim); }
+
+  .todo-who {
+    font-size: 0.75rem;
+    padding: 2px 10px;
+    border-radius: 100px;
+    font-weight: 600;
+  }
+
+  /* ───── BUDGET ───── */
+  .budget-section { max-width: 800px; }
+
+  .budget-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .budget-card h3 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .budget-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.9rem;
+  }
+
+  .budget-row:last-child { border-bottom: none; }
+
+  .budget-row .label { color: var(--text-muted); }
+  .budget-row .value {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 600;
+  }
+
+  .budget-total {
+    background: linear-gradient(135deg, var(--accent-glow), transparent);
+    border-color: var(--accent);
+  }
+
+  .budget-total .value {
+    font-size: 1.3rem;
+    background: linear-gradient(135deg, var(--accent), #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* ───── SECTION HEADERS ───── */
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-header h2 {
+    font-size: 1.8rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    margin-bottom: 4px;
+  }
+
+  .section-header p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+  }
+
+  /* ───── OVERLAP CALENDAR ───── */
+  .overlap-grid {
+    display: grid;
+    grid-template-columns: auto repeat(25, 1fr);
+    gap: 2px;
+    font-size: 0.7rem;
+    overflow-x: auto;
+    padding-bottom: 12px;
+  }
+
+  .overlap-cell {
+    padding: 8px 4px;
+    text-align: center;
+    border-radius: 4px;
+    min-width: 36px;
+  }
+
+  .overlap-header {
+    font-weight: 700;
+    color: var(--text-dim);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 6px 4px;
+    writing-mode: horizontal-tb;
+  }
+
+  .overlap-name {
+    text-align: right;
+    padding-right: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .overlap-active { border-radius: 4px; position: relative; }
+
+  /* ───── RESPONSIVE ───── */
+  @media (max-width: 768px) {
+    .hero { padding: 40px 20px 30px; }
+    .hero h1 { font-size: 2.2rem; }
+    .hero-stats { gap: 20px; }
+    .stat-value { font-size: 1.5rem; }
+    .tabs { gap: 2px; padding: 8px 12px; }
+    .tab { padding: 8px 14px; font-size: 0.8rem; }
+    .content { padding: 0 12px 40px; }
+    .timeline::before { left: 16px; }
+    .leg-card { margin-left: 44px; }
+    .leg-dot { left: -36px; }
+    .leg-header { padding: 14px 16px; gap: 12px; }
+    .leg-image { width: 56px; height: 56px; font-size: 1.8rem; }
+    .leg-city { font-size: 1.05rem; }
+    .events-grid { grid-template-columns: 1fr; }
+    #map { height: 350px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-content">
+    <h1>Eurotrip 2026</h1>
+    <p class="hero-sub">Itália → Baleares → Côte d'Azur</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <div class="stat-value">25</div>
+        <div class="stat-label">Days</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">10</div>
+        <div class="stat-label">Cities</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">3</div>
+        <div class="stat-label">Countries</div>
+      </div>
+      <div class="stat">
+        <div class="stat-value">5</div>
+        <div class="stat-label">Shows</div>
+      </div>
+    </div>
+    <div class="travelers-bar" id="travelers-bar"></div>
+  </div>
+</div>
+
+<!-- TABS -->
+<div class="tabs">
+  <div class="tab active" data-tab="map" onclick="switchTab('map')">🗺️ Map</div>
+  <div class="tab" data-tab="timeline" onclick="switchTab('timeline')">📅 Timeline</div>
+  <div class="tab" data-tab="overlap" onclick="switchTab('overlap')">👥 Who's Where</div>
+  <div class="tab" data-tab="events" onclick="switchTab('events')">🎵 Events</div>
+  <div class="tab" data-tab="todos" onclick="switchTab('todos')">✅ To-Do</div>
+  <div class="tab" data-tab="budget" onclick="switchTab('budget')">💰 Budget</div>
+</div>
+
+<div class="content">
+
+  <!-- MAP -->
+  <div class="section active" id="section-map">
+    <div class="section-header">
+      <h2>Route Map</h2>
+      <p>Click on markers for details. Line follows the route chronologically.</p>
+    </div>
+    <div id="map"></div>
+  </div>
+
+  <!-- TIMELINE -->
+  <div class="section" id="section-timeline">
+    <div class="section-header">
+      <h2>Timeline</h2>
+      <p>Click any leg to expand details, accommodation links and highlights.</p>
+    </div>
+    <div class="timeline" id="timeline"></div>
+  </div>
+
+  <!-- OVERLAP -->
+  <div class="section" id="section-overlap">
+    <div class="section-header">
+      <h2>Who's Where</h2>
+      <p>Day-by-day overlap view. Colors = destination country.</p>
+    </div>
+    <div class="overlap-grid" id="overlap-grid"></div>
+  </div>
+
+  <!-- EVENTS -->
+  <div class="section" id="section-events">
+    <div class="section-header">
+      <h2>Events & Shows</h2>
+      <p>Ibiza season. The real reason for the trip.</p>
+    </div>
+    <div class="events-grid" id="events-grid"></div>
+  </div>
+
+  <!-- TODOS -->
+  <div class="section" id="section-todos">
+    <div class="section-header">
+      <h2>To-Do List</h2>
+      <p>What still needs to happen before June 17.</p>
+    </div>
+    <div class="todos-list" id="todos-list"></div>
+  </div>
+
+  <!-- BUDGET -->
+  <div class="section" id="section-budget">
+    <div class="section-header">
+      <h2>Budget Tracker</h2>
+      <p>Estimated costs per person. Updates as we book.</p>
+    </div>
+    <div class="budget-section" id="budget-section"></div>
+  </div>
+
+</div>
+
+<script>
+// ─── DATA ───
+let DATA = null;
+
+async function loadData() {
+  try {
+    const resp = await fetch('data/itinerary.json');
+    DATA = await resp.json();
+  } catch(e) {
+    console.error('Failed to load itinerary.json, using embedded data');
+    return;
+  }
+  renderAll();
+}
+
+// ─── HELPERS ───
+const countryColors = { 'Italy': 'var(--italy)', 'Spain': 'var(--spain)', 'France': 'var(--france)' };
+
+function formatDate(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const days = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  return `${days[d.getDay()]} ${months[d.getMonth()]} ${d.getDate()}`;
+}
+
+function formatDateShort(dateStr) {
+  const d = new Date(dateStr + 'T12:00:00');
+  return `${d.getDate()}/${d.getMonth()+1}`;
+}
+
+function statusBadge(status) {
+  const map = {
+    'booked': '<span class="badge badge-booked">✅ Booked</span>',
+    'looking': '<span class="badge badge-looking">🔍 Looking</span>',
+    'tbd': '<span class="badge badge-tbd">❓ TBD</span>'
+  };
+  return map[status] || map['tbd'];
+}
+
+const cityEmojis = {
+  'florence': '🏛️', 'rome': '🏟️', 'positano': '🏖️', 'sorrento': '🍋',
+  'capri': '⛵', 'pompeii': '🌋', 'baleares': '🏝️', 'menorca-lucas': '🏝️',
+  'ibiza': '🎧', 'nice': '🌊'
+};
+
+const venueEmojis = {
+  'Ushuaïa': '☀️', 'Pacha': '🍒', 'Hï Ibiza': '✨', 'UNVRS': '🌌'
+};
+
+// ─── TABS ───
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelector(`.tab[data-tab="${tab}"]`).classList.add('active');
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.getElementById(`section-${tab}`).classList.add('active');
+
+  if (tab === 'map' && window._map) {
+    setTimeout(() => window._map.invalidateSize(), 100);
+  }
+}
+
+// ─── RENDER ───
+function renderAll() {
+  renderTravelers();
+  renderMap();
+  renderTimeline();
+  renderOverlap();
+  renderEvents();
+  renderTodos();
+  renderBudget();
+}
+
+function renderTravelers() {
+  const bar = document.getElementById('travelers-bar');
+  bar.innerHTML = DATA.travelers.map(t => `
+    <div class="traveler-badge active" data-traveler="${t.id}" onclick="toggleTraveler('${t.id}', this)">
+      <div class="dot" style="background:${t.color}"></div>
+      <span>${t.name}</span>
+    </div>
+  `).join('');
+}
+
+function toggleTraveler(id, el) {
+  el.classList.toggle('active');
+  // Future: filter timeline/map by selected travelers
+}
+
+// ─── MAP ───
+function renderMap() {
+  const map = L.map('map', {
+    zoomControl: true,
+    scrollWheelZoom: true
+  }).setView([42.5, 8], 5);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+    attribution: '© OpenStreetMap © CARTO',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  window._map = map;
+
+  const routeCoords = [];
+  const mainLegs = DATA.legs.filter(l => !l.parallelWith);
+
+  mainLegs.forEach((leg, i) => {
+    const color = countryColors[leg.country] || '#fff';
+    routeCoords.push([leg.lat, leg.lng]);
+
+    const travelerDots = leg.who.map(wId => {
+      const t = DATA.travelers.find(tr => tr.id === wId);
+      return `<span class="mini-dot" style="background:${t.color}"></span>`;
+    }).join('');
+
+    const marker = L.circleMarker([leg.lat, leg.lng], {
+      radius: 8,
+      fillColor: color,
+      color: '#fff',
+      weight: 2,
+      opacity: 0.9,
+      fillOpacity: 0.8
+    }).addTo(map);
+
+    marker.bindPopup(`
+      <div class="map-popup">
+        <h3>${leg.flag} ${leg.city}</h3>
+        <div class="dates">${formatDate(leg.dates.start)} — ${formatDate(leg.dates.end)} (${leg.nights}n)</div>
+        <div class="travelers-mini">${travelerDots}</div>
+        ${leg.events.length ? `<div style="margin-top:6px;font-size:0.8rem;color:var(--show)">🎵 ${leg.events.length} event${leg.events.length > 1 ? 's' : ''}</div>` : ''}
+      </div>
+    `);
+
+    // City label
+    L.marker([leg.lat, leg.lng], {
+      icon: L.divIcon({
+        className: '',
+        html: `<div style="color:#fff;font-size:11px;font-weight:700;text-shadow:0 1px 4px #000,0 0 8px #000;white-space:nowrap;transform:translate(-50%,8px)">${leg.city}</div>`,
+        iconSize: [0, 0],
+        iconAnchor: [0, -12]
+      })
+    }).addTo(map);
+  });
+
+  // Animated route line
+  const polyline = L.polyline(routeCoords, {
+    color: 'var(--accent)',
+    weight: 2.5,
+    opacity: 0.6,
+    dashArray: '8 8',
+    lineCap: 'round'
+  }).addTo(map);
+
+  // Parallel legs (Lucas in Menorca)
+  const parallelLegs = DATA.legs.filter(l => l.parallelWith);
+  parallelLegs.forEach(leg => {
+    const color = countryColors[leg.country] || '#fff';
+    L.circleMarker([leg.lat, leg.lng], {
+      radius: 6,
+      fillColor: color,
+      color: '#fff',
+      weight: 1.5,
+      opacity: 0.7,
+      fillOpacity: 0.5
+    }).addTo(map).bindPopup(`
+      <div class="map-popup">
+        <h3>${leg.flag} ${leg.city}</h3>
+        <div class="dates">${formatDate(leg.dates.start)} — ${formatDate(leg.dates.end)} (${leg.nights}n)</div>
+        <div style="font-size:0.8rem;color:var(--text-muted);margin-top:4px">${leg.notes || ''}</div>
+      </div>
+    `);
+  });
+
+  map.fitBounds(routeCoords, { padding: [40, 40] });
+}
+
+// ─── TIMELINE ───
+function renderTimeline() {
+  const container = document.getElementById('timeline');
+  container.innerHTML = DATA.legs.map((leg, i) => {
+    const color = countryColors[leg.country] || '#888';
+    const emoji = cityEmojis[leg.id] || '📍';
+
+    const travelerDots = leg.who.map(wId => {
+      const t = DATA.travelers.find(tr => tr.id === wId);
+      return `<div class="leg-traveler-dot" style="background:${t.color}" title="${t.name}">${t.name[0]}</div>`;
+    }).join('');
+
+    const accommLinks = leg.accommodation.links ? Object.entries(leg.accommodation.links).map(([k, v]) =>
+      `<a href="${v}" target="_blank">${k.charAt(0).toUpperCase() + k.slice(1)} →</a>`
+    ).join(' &nbsp; ') : '';
+
+    const flightInfo = leg.flights?.inbound ? `
+      <div class="detail-block">
+        <h4>✈️ Flight</h4>
+        <p>From ${leg.flights.inbound.from}<br>
+        ${leg.flights.inbound.duration || ''} ${leg.flights.inbound.price ? '· ' + leg.flights.inbound.price : ''}<br>
+        ${statusBadge(leg.flights.inbound.status || 'tbd')}</p>
+      </div>
+    ` : '';
+
+    const eventsList = leg.events.length ? `
+      <div class="detail-block" style="grid-column: 1 / -1">
+        <h4>🎵 Events</h4>
+        ${leg.events.map(ev => `
+          <p style="margin-bottom:6px">
+            <strong>${ev.date.split('-').reverse().join('/')}</strong> — ${ev.name} @ ${ev.venue}
+            ${ev.link ? `<a href="${ev.link}" target="_blank" style="margin-left:8px">Tickets →</a>` : ''}
+          </p>
+        `).join('')}
+      </div>
+    ` : '';
+
+    const highlights = leg.highlights?.length ? `
+      <div class="detail-block" style="grid-column: 1 / -1">
+        <h4>✨ Highlights</h4>
+        <ul class="highlights-list">
+          ${leg.highlights.map(h => `<li>${h}</li>`).join('')}
+        </ul>
+      </div>
+    ` : '';
+
+    const dayTrips = leg.dayTrips?.length ? `
+      <div class="detail-block">
+        <h4>🚗 Day Trips</h4>
+        ${leg.dayTrips.map(dt => `<p>${formatDateShort(dt.date)} — ${dt.destination}</p>`).join('')}
+      </div>
+    ` : '';
+
+    return `
+      <div class="leg-card" data-leg="${leg.id}" onclick="toggleLeg(this)">
+        <div class="leg-dot" style="background:${color}"></div>
+        <div class="leg-header">
+          <div class="leg-image">${emoji}</div>
+          <div class="leg-info">
+            <div class="leg-city"><span class="flag">${leg.flag}</span> ${leg.city}</div>
+            <div class="leg-dates">${formatDate(leg.dates.start)} → ${formatDate(leg.dates.end)}</div>
+            <div class="leg-travelers">${travelerDots}</div>
+          </div>
+          <div class="leg-meta">
+            <span class="nights-badge">${leg.nights}n</span>
+            ${statusBadge(leg.accommodation.status)}
+            <span class="leg-expand-icon">▼</span>
+          </div>
+        </div>
+        <div class="leg-details">
+          <div class="leg-details-inner">
+            <div class="details-grid">
+              <div class="detail-block">
+                <h4>🏨 Accommodation</h4>
+                <p>${leg.accommodation.notes || 'No details yet'}</p>
+                ${leg.accommodation.pricePerNight ? `<p style="margin-top:4px;font-family:'JetBrains Mono',monospace;font-weight:600">~$${leg.accommodation.pricePerNight}/night/person</p>` : ''}
+                <div style="margin-top:8px">${accommLinks}</div>
+              </div>
+              ${flightInfo}
+              ${dayTrips}
+              ${highlights}
+              ${eventsList}
+              ${leg.notes ? `<div class="detail-block" style="grid-column:1/-1"><h4>📝 Notes</h4><p>${leg.notes}</p></div>` : ''}
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function toggleLeg(el) {
+  el.classList.toggle('expanded');
+}
+
+// ─── OVERLAP CALENDAR ───
+function renderOverlap() {
+  const grid = document.getElementById('overlap-grid');
+  const start = new Date('2026-06-17T12:00:00');
+  const days = [];
+  for (let i = 0; i < 25; i++) {
+    const d = new Date(start);
+    d.setDate(d.getDate() + i);
+    days.push(d);
+  }
+
+  // Header row
+  let html = '<div class="overlap-cell"></div>';
+  days.forEach(d => {
+    html += `<div class="overlap-cell overlap-header">${d.getDate()}/${d.getMonth()+1}</div>`;
+  });
+
+  // Each traveler
+  DATA.travelers.forEach(traveler => {
+    html += `<div class="overlap-cell overlap-name"><div class="dot" style="background:${traveler.color};width:8px;height:8px;border-radius:50%"></div>${traveler.name}</div>`;
+
+    days.forEach(day => {
+      const dayStr = day.toISOString().split('T')[0];
+      // Find which leg this traveler is in on this day
+      const leg = DATA.legs.find(l => {
+        if (!l.who.includes(traveler.id)) return false;
+        return dayStr >= l.dates.start && dayStr < l.dates.end;
+      });
+
+      if (leg) {
+        const color = countryColors[leg.country] || '#444';
+        const emoji = cityEmojis[leg.id] || '📍';
+        html += `<div class="overlap-cell overlap-active" style="background:${color}22;border:1px solid ${color}44" title="${traveler.name} in ${leg.city}">
+          <span style="font-size:0.7rem">${emoji}</span>
+        </div>`;
+      } else {
+        html += `<div class="overlap-cell" style="background:var(--bg-card);border:1px solid var(--border);opacity:0.3">—</div>`;
+      }
+    });
+  });
+
+  grid.innerHTML = html;
+}
+
+// ─── EVENTS ───
+function renderEvents() {
+  const container = document.getElementById('events-grid');
+  const allEvents = [];
+  DATA.legs.forEach(leg => {
+    leg.events.forEach(ev => {
+      allEvents.push({ ...ev, city: leg.city, flag: leg.flag });
+    });
+  });
+
+  container.innerHTML = allEvents.map(ev => {
+    const venueEmoji = venueEmojis[ev.venue] || '🎵';
+    const travelerDots = (ev.who || []).map(wId => {
+      const t = DATA.travelers.find(tr => tr.id === wId);
+      return t ? `<div class="leg-traveler-dot" style="background:${t.color};width:18px;height:18px;font-size:0.6rem" title="${t.name}">${t.name[0]}</div>` : '';
+    }).join('');
+
+    return `
+      <div class="event-card">
+        <div class="event-image">${venueEmoji}</div>
+        <div class="event-body">
+          <div class="event-date">${formatDate(ev.date)}</div>
+          <div class="event-name">${ev.name}</div>
+          <div class="event-venue">📍 ${ev.venue} · ${ev.city}</div>
+          <div class="event-footer">
+            <div class="leg-travelers" style="margin:0">${travelerDots}</div>
+            ${ev.link ? `<a href="${ev.link}" target="_blank" class="event-link">Tickets →</a>` : `<span class="badge badge-tbd">TBD</span>`}
+          </div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+// ─── TODOS ───
+function renderTodos() {
+  const container = document.getElementById('todos-list');
+  container.innerHTML = DATA.todos.map(todo => {
+    const isDone = todo.priority === 'done';
+    const traveler = DATA.travelers.find(t => t.id === todo.who);
+    return `
+      <div class="todo-item ${isDone ? 'done' : ''}">
+        <div class="todo-priority ${todo.priority}"></div>
+        <div class="todo-text">${todo.task}</div>
+        ${traveler ? `<span class="todo-who" style="background:${traveler.color}22;color:${traveler.color};border:1px solid ${traveler.color}44">${traveler.name}</span>` : ''}
+      </div>
+    `;
+  }).join('');
+}
+
+// ─── BUDGET ───
+function renderBudget() {
+  const container = document.getElementById('budget-section');
+
+  // Calculate per-leg costs
+  let totalAccomm = 0;
+  let totalFlights = 0;
+  const legRows = DATA.legs.filter(l => !l.parallelWith).map(leg => {
+    const accommCost = leg.accommodation.pricePerNight ? leg.accommodation.pricePerNight * leg.nights : 0;
+    totalAccomm += accommCost;
+    return { city: `${leg.flag} ${leg.city}`, nights: leg.nights, accomm: accommCost };
+  });
+
+  // Flights estimate
+  DATA.legs.forEach(leg => {
+    if (leg.flights?.inbound?.price) {
+      const match = leg.flights.inbound.price.match(/(\d+)/);
+      if (match) totalFlights += parseInt(match[1]);
+    }
+  });
+
+  container.innerHTML = `
+    <div class="budget-card">
+      <h3>🏨 Accommodation (per person)</h3>
+      ${legRows.map(r => `
+        <div class="budget-row">
+          <span class="label">${r.city} (${r.nights}n)</span>
+          <span class="value">${r.accomm ? '$' + r.accomm : '—'}</span>
+        </div>
+      `).join('')}
+      <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
+        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Accommodation</span>
+        <span class="value" style="color:var(--accent)">~$${totalAccomm}+</span>
+      </div>
+    </div>
+
+    <div class="budget-card">
+      <h3>✈️ Flights (per person)</h3>
+      ${DATA.legs.filter(l => l.flights?.inbound).map(l => `
+        <div class="budget-row">
+          <span class="label">${l.flights.inbound.from} → ${l.city}</span>
+          <span class="value">${l.flights.inbound.price || '—'}</span>
+        </div>
+      `).join('')}
+      <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
+        <span class="label" style="font-weight:700;color:var(--text)">Subtotal Flights</span>
+        <span class="value" style="color:var(--accent)">~$${totalFlights}+</span>
+      </div>
+    </div>
+
+    <div class="budget-card">
+      <h3>🎵 Events (per person)</h3>
+      <div class="budget-row">
+        <span class="label">Ibiza shows (5 events)</span>
+        <span class="value">TBD</span>
+      </div>
+      <div class="budget-row">
+        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Prices update as we buy tickets</span>
+        <span class="value">—</span>
+      </div>
+    </div>
+
+    <div class="budget-card budget-total">
+      <h3>💰 Estimated Total (per person)</h3>
+      <div class="budget-row">
+        <span class="label">Accommodation + Flights + Events</span>
+        <span class="value">~$${totalAccomm + totalFlights}+ (partial)</span>
+      </div>
+      <div class="budget-row">
+        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Excludes: food, transport, shopping, activities</span>
+        <span class="value">—</span>
+      </div>
+    </div>
+  `;
+}
+
+// ─── INIT ───
+loadData();
+</script>
+
+</body>
+</html>
