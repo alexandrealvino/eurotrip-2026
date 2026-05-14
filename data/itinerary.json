@@ -718,7 +718,7 @@
             "lucas",
             "david"
           ],
-          "notes": "Lucas comprando os ingressos",
+          "notes": "✅ Comprado por Lucas. Opening night.",
           "venueImage": "assets/events/pacha.jpg"
         }
       ],
@@ -935,7 +935,7 @@
       "who": "ale"
     },
     {
-      "task": "✅ Ingressos Rufus Du Sol @ Pacha (07/Jul) — Lucas comprando",
+      "task": "✅ Ingressos Rufus Du Sol @ Pacha (07/Jul) — comprado por Lucas",
       "priority": "done",
       "who": "ale"
     },
