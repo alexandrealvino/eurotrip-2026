@@ -651,7 +651,8 @@
           "status": "tbd",
           "link": null,
           "who": [
-            "ale"
+            "ale",
+            "david"
           ],
           "venueImage": "assets/events/ushuaia.jpg"
         },
@@ -663,7 +664,8 @@
           "status": "tbd",
           "link": null,
           "who": [
-            "ale"
+            "ale",
+            "david"
           ],
           "venueImage": "assets/events/unvrs.jpg"
         },
@@ -675,7 +677,8 @@
           "status": "tbd",
           "link": "https://www.hiibiza.com/events/2026/black-coffee/2026-07-04",
           "who": [
-            "ale"
+            "ale",
+            "david"
           ],
           "venueImage": "assets/events/hi-ibiza.jpg"
         },
@@ -687,10 +690,10 @@
           "status": "tbd",
           "link": "https://pacha.com/event/solomun1-05-07-2026",
           "who": [
-            "ale",
             "lucas"
           ],
-          "venueImage": "assets/events/pacha.jpg"
+          "venueImage": "assets/events/pacha.jpg",
+          "notes": "Ale e David não vão. Só Lucas."
         },
         {
           "date": "2026-07-07",
@@ -865,7 +868,7 @@
           "destination": "St Tropez"
         }
       ],
-      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre volta dia 11/Jul (TAP NCE→LIS→GIG). David continua na Riviera e volta dia 14/Jul via Londres (escala 1 dia, volta dia 15).",
+      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre volta dia 11/Jul (TAP NCE→LIS→GIG). David continua na Riviera e volta dia 14/Jul via Londres (escala 1 dia, volta dia 15). Volta do Lucas ainda por definir.",
       "image": "assets/cities/nice.jpg"
     },
     {
@@ -975,6 +978,11 @@
       "task": "Lago di Como com Rafa (separado)",
       "priority": "low",
       "who": "ale"
+    },
+    {
+      "task": "Definir voo de volta do Lucas (data e rota TBD)",
+      "priority": "medium",
+      "who": "lucas"
     }
   ]
 }
