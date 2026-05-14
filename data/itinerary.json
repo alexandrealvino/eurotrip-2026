@@ -548,27 +548,20 @@
         "inbound": {
           "from": "Naples (NAP)",
           "airline": "Ryanair (Malta Air)",
+          "flight": "FR7169",
           "duration": "1h45",
-          "price": "R$141",
-          "status": "looking",
-          "notes": "Voo direto 11:15→13:00. Lucas."
+          "price": "R$278 (com mala)",
+          "status": "booked",
+          "notes": "✅ COMPRADO — Lucas. NAP 11:15 → MAH 13:00. Mala de cabine + item pessoal inclusos."
         },
         "options": [
           {
-            "airline": "Ryanair (Malta Air)",
+            "airline": "Ryanair FR7169",
             "route": "NAP → MAH",
             "duration": "1h45",
             "stops": "Direto",
-            "times": "11:15 → 13:00",
-            "price": "R$141"
-          },
-          {
-            "airline": "Vueling",
-            "route": "NAP → MAH",
-            "duration": "4h10",
-            "stops": "1 (BCN)",
-            "times": "15:15 → 19:25",
-            "price": "R$704"
+            "times": "01/Jul 11:15 → 13:00",
+            "price": "✅ R$278"
           }
         ]
       },
@@ -1039,8 +1032,8 @@
       "who": "ale"
     },
     {
-      "task": "Comprar voo NAP→MAH Jul 1 (Ryanair R$141 direto)",
-      "priority": "high",
+      "task": "✅ Voo NAP→MAH comprado (Ryanair FR7169, R$278, 01/Jul) — Lucas",
+      "priority": "done",
       "who": "lucas"
     },
     {
