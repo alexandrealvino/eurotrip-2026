@@ -54,45 +54,29 @@
       },
       "flights": {
         "inbound": {
-          "from": "Rio de Janeiro (GIG)",
-          "airline": "TAP Portugal",
-          "duration": "14h25",
-          "price": "R$3.512",
-          "status": "looking",
-          "notes": "Alexandre sai do Galeão dia 17/Jun para Milão Malpensa. Encontra Lucas em Florença."
+          "from": "Rio de Janeiro (SDU)",
+          "airline": "LATAM",
+          "duration": "~20h20",
+          "price": "R$2.572,49",
+          "status": "booked",
+          "notes": "LA3975 SDU→GRU + LA8072 GRU→MXP. Conexão 2h55 em Guarulhos. Chega 18/Jun 10:15."
         },
         "options": [
           {
-            "airline": "TAP Portugal",
-            "route": "GIG → LIS → MXP",
-            "duration": "14h25",
-            "stops": "1 (LIS, 1h55)",
-            "times": "15:35 → 11:00+1",
-            "price": "R$3.512"
+            "airline": "LATAM LA3975",
+            "route": "SDU → GRU",
+            "duration": "Trecho 1",
+            "stops": "—",
+            "times": "17/Jun 13:55 → GRU",
+            "price": "✅ Comprado"
           },
           {
-            "airline": "LATAM",
-            "route": "GIG → GRU → MXP",
-            "duration": "14h15",
-            "stops": "1 (GRU, 1h50)",
-            "times": "15:00 → 10:15+1",
-            "price": "R$4.451"
-          },
-          {
-            "airline": "Air France",
-            "route": "GIG → CDG → MXP",
-            "duration": "14h35",
-            "stops": "1 (CDG, 1h45)",
-            "times": "22:00 → 17:35+1",
-            "price": "R$4.689"
-          },
-          {
-            "airline": "Lufthansa / Air Dolomiti",
-            "route": "GIG → FRA → MXP",
-            "duration": "16h45",
-            "stops": "1 (FRA, 4h05)",
-            "times": "16:15 → 14:00+1",
-            "price": "R$5.012"
+            "airline": "LATAM LA8072",
+            "route": "GRU → MXP",
+            "duration": "Conexão 2h55",
+            "stops": "—",
+            "times": "GRU → 18/Jun 10:15",
+            "price": "R$2.572,49 total"
           }
         ]
       },
@@ -806,50 +790,26 @@
         ],
         "return": {
           "from": "Nice (NCE)",
-          "to": "São Paulo (GRU)",
+          "to": "Rio de Janeiro (GIG)",
           "date": "2026-07-11",
-          "status": "looking",
-          "notes": "⚠️ PASSAGEM DE VOLTA DO ALEXANDRE — PRIORIDADE ALTA",
+          "status": "booked",
+          "notes": "✅ COMPRADO — TAP TP483 + TP75. Conexão 3h05 em Lisboa. Chega 12/Jul 05:20.",
           "options": [
             {
-              "airline": "BA / LATAM",
-              "route": "NCE → LHR → GRU",
-              "duration": "15h10",
-              "stops": "1 (LHR, 1h35)",
-              "times": "18:35 → 04:45+1",
-              "price": "R$6.693"
+              "airline": "TAP TP483 (Portugália)",
+              "route": "NCE T1 → LIS T1",
+              "duration": "2h50",
+              "stops": "—",
+              "times": "11/Jul 18:30 → 20:20",
+              "price": "✅ Comprado"
             },
             {
-              "airline": "SWISS",
-              "route": "NCE → ZRH → GRU",
-              "duration": "15h15",
-              "stops": "1 (ZRH, 2h15)",
-              "times": "19:10 → 05:25+1",
-              "price": "R$6.961"
-            },
-            {
-              "airline": "TAP",
-              "route": "NCE → LIS → GRU",
-              "duration": "16h",
-              "stops": "1 (LIS, 3h)",
-              "times": "12:15 → 23:15",
-              "price": "R$7.025"
-            },
-            {
-              "airline": "TAP + LATAM",
-              "route": "NCE → LIS → CNF → GRU",
-              "duration": "18h15",
-              "stops": "2 (LIS + CNF)",
-              "times": "06:00 → 19:15",
-              "price": "R$5.960"
-            },
-            {
-              "airline": "KLM / Air France",
-              "route": "NCE → AMS → GRU",
-              "duration": "18h30",
-              "stops": "1 (AMS, 4h40)",
-              "times": "06:20 → 19:50",
-              "price": "R$6.640"
+              "airline": "TAP TP75",
+              "route": "LIS T1 → GIG T2",
+              "duration": "9h55",
+              "stops": "—",
+              "times": "11/Jul 23:25 → 12/Jul 05:20",
+              "price": "Bagagem: 1PC (23kg)"
             }
           ]
         }
@@ -890,8 +850,13 @@
   },
   "todos": [
     {
-      "task": "Comprar passagem de volta: Nice→GRU Jul 11. BA/LATAM R$6.693 (15h10, 1 stop LHR) ou TAP+LATAM R$5.960 (18h15, 2 stops)",
-      "priority": "high",
+      "task": "✅ Voo ida SDU→MXP comprado (LATAM, R$2.572,49, 17/Jun)",
+      "priority": "done",
+      "who": "ale"
+    },
+    {
+      "task": "✅ Voo volta NCE→GIG comprado (TAP, 11/Jul 18:30)",
+      "priority": "done",
       "who": "ale"
     },
     {
