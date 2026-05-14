@@ -759,7 +759,7 @@
           "from": "Ibiza (IBZ)",
           "airline": "Vueling",
           "duration": "3h50",
-          "price": "Comprado",
+          "price": "R$1.292,17",
           "status": "booked",
           "notes": "✅ COMPRADO — 3 passageiros. VY3509 IBZ 13:35→BCN 14:35 + VY1521 BCN 16:00→NCE 17:25. Conexão 1h25 Barcelona. Alexandre: lugar 17F, check-in feito, 1 mala 25kg porão + 1 mão 40x30x20."
         },
@@ -794,7 +794,7 @@
               "duration": "2h50",
               "stops": "—",
               "times": "11/Jul 18:30 → 20:20",
-              "price": "✅ Comprado"
+              "price": "✅ R$5.492,80"
             },
             {
               "airline": "TAP TP75",
@@ -804,7 +804,8 @@
               "times": "11/Jul 23:25 → 12/Jul 05:20",
               "price": "Bagagem: 1PC (23kg)"
             }
-          ]
+          ],
+          "price": "R$5.492,80"
         }
       },
       "events": [],
