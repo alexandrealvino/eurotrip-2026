@@ -757,12 +757,6 @@
       },
       "events": [
         {
-          "name": "Hugel @ Hï Ibiza",
-          "date": "2026-07-02",
-          "type": "party",
-          "notes": "David quer ir"
-        },
-        {
           "date": "2026-07-03",
           "name": "Calvin Harris @ Ushuaïa",
           "venue": "Ushuaïa",
@@ -837,13 +831,15 @@
           "name": "Day trip: Formentera",
           "date": "2026-07-06",
           "type": "daytrip",
-          "notes": "Ferry 30min. Ses Illetes beach. Alugar scooter. Dia inteiro."
+          "notes": "Ferry 30min. Ses Illetes beach. Alugar scooter. Dia inteiro.",
+          "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/47/5f/88/ses-illetes.jpg?w=800"
         },
         {
           "name": "Es Vedrà boat trip",
           "date": "2026-07-07",
           "type": "daytrip",
-          "notes": "Manhã — passeio barco + snorkel. Rufus Du Sol à noite."
+          "notes": "Manhã — passeio barco + snorkel. Rufus Du Sol à noite.",
+          "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/fc/c2/es-vedra.jpg?w=800"
         }
       ],
       "highlights": [
