@@ -971,18 +971,34 @@ function applyTravelerFilter() {
     card.style.display = visible ? '' : 'none';
   });
 
-  // Filter map markers
+  // Filter map markers — fully hide/show
   if (window._mapMarkers) {
     window._mapMarkers.forEach(({marker, label, leg}) => {
       const visible = leg.who.some(w => activeTravelers.has(w));
       if (visible) {
-        marker.setStyle({opacity: 0.9, fillOpacity: 0.8});
-        if (label._icon) label._icon.style.opacity = '1';
+        if (!window._map.hasLayer(marker)) window._map.addLayer(marker);
+        if (!window._map.hasLayer(label)) window._map.addLayer(label);
       } else {
-        marker.setStyle({opacity: 0.15, fillOpacity: 0.1});
-        if (label._icon) label._icon.style.opacity = '0.15';
+        if (window._map.hasLayer(marker)) window._map.removeLayer(marker);
+        if (window._map.hasLayer(label)) window._map.removeLayer(label);
       }
     });
+  }
+
+  // Filter map polyline — rebuild with only visible legs
+  if (window._mapPolyline && window._map) {
+    window._map.removeLayer(window._mapPolyline);
+  }
+  const visibleMainLegs = DATA.legs.filter(l => !l.parallelWith && l.who.some(w => activeTravelers.has(w)));
+  const visibleCoords = visibleMainLegs.map(l => [l.lat, l.lng]);
+  if (visibleCoords.length > 1) {
+    window._mapPolyline = L.polyline(visibleCoords, {
+      color: 'var(--accent)',
+      weight: 2.5,
+      opacity: 0.6,
+      dashArray: '8 8',
+      lineCap: 'round'
+    }).addTo(window._map);
   }
 
   // Filter overlap rows
@@ -1094,7 +1110,7 @@ function renderMap() {
   });
 
   // Animated route line
-  const polyline = L.polyline(routeCoords, {
+  window._mapPolyline = L.polyline(routeCoords, {
     color: 'var(--accent)',
     weight: 2.5,
     opacity: 0.6,
