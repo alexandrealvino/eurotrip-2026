@@ -1008,8 +1008,12 @@
           "destination": "St Tropez"
         }
       ],
-      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre e Lucas voltam dia 11/Jul. David continua até dia 14/Jul, depois vai pra Londres.",
-      "image": "assets/cities/nice.jpg"
+      "notes": "Base em Nice com day trips pra Monaco, Cannes e St Tropez. Alexandre e Lucas voltam dia 11/Jul. David continua até dia 14/Jul, depois vai pra Londres. David fica até Jul 14 (Alexandre e Lucas saem Jul 11).",
+      "image": "assets/cities/nice.jpg",
+      "davidDates": {
+        "start": "2026-07-08",
+        "end": "2026-07-14"
+      }
     },
     {
       "id": "david-return",
