@@ -709,7 +709,7 @@
           "duration": "2h05",
           "price": "R$392",
           "status": "booked",
-          "notes": "NAP 07:00 → IBZ 09:05. Direto. Alexandre + David. Ref: KCMW6DD. Check-in abre 1/Jun 02:00."
+          "notes": "David: NAP 07:00 → IBZ 09:05 Jul 1 (comprado, ref KCMW6DD). Alexandre: NAP→IBZ Jul 2 (ainda não comprado)."
         },
         "options": [
           {
@@ -1086,37 +1086,43 @@
       "task": "✅ Voo ida SDU→MXP comprado (LATAM LA3975+LA8072, R$2.572, 17/Jun)",
       "priority": "done",
       "who": "ale",
-      "city": "🇮🇹 Milão"
+      "city": "🇮🇹 Milão",
+      "done": true
     },
     {
       "task": "✅ Voo volta NCE→GIG comprado (TAP TP483+TP75, 11/Jul)",
       "priority": "done",
       "who": "ale",
-      "city": "🇫🇷 Nice / Côte d'Azur"
+      "city": "🇫🇷 Nice / Côte d'Azur",
+      "done": true
     },
     {
       "task": "✅ Voo IBZ→NCE comprado (Vueling VY3509+VY1521, 08/Jul, 3 passageiros)",
       "priority": "done",
       "who": "ale",
-      "city": "🇪🇸 Ibiza"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
       "task": "✅ PID (Permissão Internacional de Dirigir) concluído",
       "priority": "done",
       "who": "ale",
-      "city": "📋 Geral"
+      "city": "📋 Geral",
+      "done": true
     },
     {
       "task": "✅ Roma: hospedagem garantida (casa da mãe do Lucas)",
       "priority": "done",
       "who": "lucas",
-      "city": "🇮🇹 Roma"
+      "city": "🇮🇹 Roma",
+      "done": true
     },
     {
       "task": "✅ Ingressos Rufus Du Sol @ Pacha (07/Jul) — comprado por Lucas",
       "priority": "done",
       "who": "lucas",
-      "city": "🇪🇸 Ibiza"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
       "task": "Comprar trem Milão → Florença (Trenitalia ou Italo, 18/Jun)",
@@ -1140,10 +1146,11 @@
       "task": "✅ Voo Menorca→Ibiza comprado (04/Jul, R$1.200) — Lucas",
       "priority": "done",
       "who": "lucas",
-      "city": "🇪🇸 Menorca"
+      "city": "🇪🇸 Menorca",
+      "done": true
     },
     {
-      "task": "Comprar voo NAP→IBZ ou NAP→destino Jul 1 (easyJet R$392 direto)",
+      "task": "Comprar voo NAP→IBZ (Jul 2, easyJet ~R$392) — Alexandre sozinho",
       "priority": "high",
       "who": "ale",
       "city": "🇮🇹 Nápoles / Pompeii"
@@ -1161,46 +1168,43 @@
       "city": "🇮🇹 Capri"
     },
     {
-      "task": "Reservar hospedagem Pompeii/Naples (Jun 30-Jul 1, 1 noite)",
+      "task": "Reservar hospedagem Nápoles (Jun 30-Jul 2, 2 noites) — Alexandre",
       "priority": "medium",
       "who": "ale",
       "city": "🇮🇹 Nápoles / Pompeii"
     },
     {
-      "task": "Reservar hospedagem Ibiza (Jul 1-8, 7 noites, 3 pessoas)",
+      "task": "Reservar hospedagem Ibiza (Jul 1-8). David faz check-in Jul 1. Alexandre chega Jul 2. Mesmo hotel.",
       "priority": "medium",
       "who": "ale",
       "city": "🇪🇸 Ibiza"
     },
     {
-      "task": "Reservar hospedagem Nice (Jul 8-11, 3 noites, 3 pessoas)",
+      "task": "Reservar hospedagem Nice (Jul 8-11, 3 noites) — Ale+Lucas. David já reservou separado.",
       "priority": "medium",
       "who": "ale",
       "city": "🇫🇷 Nice / Côte d'Azur"
     },
     {
-      "task": "Reservar hospedagem Baleares/destino solo (Jul 1-3, 2 noites)",
+      "task": "✅ Calvin Harris @ Ushuaïa (03/Jul) — comprado €169,99 (entrada + drink)",
       "priority": "medium",
       "who": "ale",
-      "city": "🇪🇸 Baleares (TBD)"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
-      "task": "Comprar ingressos Calvin Harris @ Ushuaïa (03/Jul) — Ale + David",
+      "task": "✅ David Guetta @ UNVRS (05/Jul) — comprado €110",
       "priority": "medium",
       "who": "ale",
-      "city": "🇪🇸 Ibiza"
-    },
-    {
-      "task": "Comprar ingressos David Guetta @ UNVRS (03/Jul) — Ale + David",
-      "priority": "medium",
-      "who": "ale",
-      "city": "🇪🇸 Ibiza"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
       "task": "✅ Ingressos Black Coffee @ Hï (04/Jul) — comprado R$550,48",
       "priority": "done",
       "who": "ale",
-      "city": "🇪🇸 Ibiza"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
       "task": "Comprar ingresso Solomun @ Pacha (05/Jul) — Lucas",
@@ -1236,7 +1240,8 @@
       "task": "✅ Voo NAP→MAH comprado (Ryanair FR7169, R$278, 01/Jul) — Lucas",
       "priority": "done",
       "who": "lucas",
-      "city": "🇮🇹 Nápoles / Pompeii"
+      "city": "🇮🇹 Nápoles / Pompeii",
+      "done": true
     },
     {
       "task": "Reservar hospedagem Menorca (Jul 1-4, 3 noites)",
@@ -1260,7 +1265,8 @@
       "task": "✅ Voo David NAP→IBZ comprado (easyJet EJU4287, 01/Jul 07:00→09:05)",
       "priority": "done",
       "who": "david",
-      "city": "🇮🇹 Nápoles / Pompeii"
+      "city": "🇮🇹 Nápoles / Pompeii",
+      "done": true
     },
     {
       "task": "Definir voo David Nice→Londres (Jul 14)",
@@ -1285,6 +1291,24 @@
       "priority": "low",
       "who": "ale",
       "city": "🇮🇹 Positano / Amalfi"
+    },
+    {
+      "who": "david",
+      "task": "✅ Nice: easyHotel Old Town (Jul 8-12) + La Régence (Jul 12-14) reservados",
+      "city": "🇫🇷 Nice",
+      "done": true
+    },
+    {
+      "who": "ale",
+      "task": "Day trip Formentera (Jul 6) — pesquisar ferry + aluguel scooter",
+      "city": "🇪🇸 Ibiza",
+      "done": false
+    },
+    {
+      "who": "ale",
+      "task": "Day trip Es Vedrà boat trip (Jul 7 manhã) — pesquisar passeios",
+      "city": "🇪🇸 Ibiza",
+      "done": false
     }
   ]
 }
