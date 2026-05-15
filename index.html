@@ -708,7 +708,7 @@
   /* ───── OVERLAP CALENDAR ───── */
   .overlap-grid {
     display: grid;
-    grid-template-columns: auto repeat(25, 1fr);
+    grid-template-columns: auto repeat(29, 1fr);
     gap: 2px;
     font-size: 0.7rem;
     overflow-x: auto;
@@ -1012,7 +1012,7 @@ function applyTravelerFilter() {
     const visible = activeTravelers.has(traveler.id);
     // Walk sibling cells (overlap grid uses CSS grid, cells are flat siblings)
     let el = nameCell;
-    const totalDays = 25;
+    const totalDays = 29;
     for (let i = 0; i <= totalDays; i++) {
       if (el) {
         el.style.opacity = visible ? '1' : '0.15';
@@ -1290,7 +1290,8 @@ function renderOverlap() {
   const grid = document.getElementById('overlap-grid');
   const start = new Date('2026-06-17T12:00:00');
   const days = [];
-  for (let i = 0; i < 25; i++) {
+  // Extend to 29 days to cover David's full trip (Jun 17 → Jul 15)
+  for (let i = 0; i < 29; i++) {
     const d = new Date(start);
     d.setDate(d.getDate() + i);
     days.push(d);
@@ -1309,9 +1310,13 @@ function renderOverlap() {
     days.forEach(day => {
       const dayStr = day.toISOString().split('T')[0];
       // Find which leg this traveler is in on this day
+      // Check per-traveler dates first, then fall back to leg dates
       const leg = DATA.legs.find(l => {
         if (!l.who.includes(traveler.id)) return false;
-        return dayStr >= l.dates.start && dayStr < l.dates.end;
+        // Per-traveler date overrides
+        const tKey = traveler.id + 'Dates';
+        const dates = l[tKey] || l.dates;
+        return dayStr >= dates.start && dayStr < dates.end;
       });
 
       if (leg) {
