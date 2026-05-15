@@ -832,14 +832,16 @@
           "date": "2026-07-06",
           "type": "daytrip",
           "notes": "Ferry 30min. Ses Illetes beach. Alugar scooter. Dia inteiro.",
-          "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/17/47/5f/88/ses-illetes.jpg?w=800"
+          "venue": "Formentera",
+          "venueImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Ses_Illetes%2C_Formentera_-_panoramio.jpg/1280px-Ses_Illetes%2C_Formentera_-_panoramio.jpg"
         },
         {
           "name": "Es Vedrà boat trip",
           "date": "2026-07-07",
           "type": "daytrip",
           "notes": "Manhã — passeio barco + snorkel. Rufus Du Sol à noite.",
-          "image": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0f/ba/fc/c2/es-vedra.jpg?w=800"
+          "venue": "Es Vedrà",
+          "venueImage": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Es_Vedr%C3%A0_-_panoramio_%281%29.jpg/1280px-Es_Vedr%C3%A0_-_panoramio_%281%29.jpg"
         }
       ],
       "highlights": [
