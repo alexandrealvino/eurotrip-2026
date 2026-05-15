@@ -897,12 +897,12 @@
         "david"
       ],
       "accommodation": {
-        "status": "booked",
+        "status": "partial",
         "type": "hotel",
-        "name": "easyHotel Nice Old Town (Jul 8-12) + Hotel La Régence (Jul 12-14)",
+        "name": "David: easyHotel + La Régence (booked) | Ale+Lucas: TBD",
         "pricePerNight": null,
         "currency": "BRL",
-        "notes": "David reservou sozinho. easyHotel Jul 8-12 (R$4.328,83, 4 noites). Hotel La Régence Jul 12-14 (R$1.343,68, 2 noites). Total: R$5.672,51. Alexandre+Lucas Jul 8-11 (3 noites no easyHotel), David Jul 8-14 (6 noites nos dois hotéis).",
+        "notes": "David reservou sozinho: easyHotel Jul 8-12 (R$4.328,83) + La Régence Jul 12-14 (R$1.343,68). Alexandre + Lucas ainda não decidiram hospedagem em Nice (Jul 8-11).",
         "links": {
           "easyHotel": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html",
           "laRegence": "https://www.booking.com/hotel/fr/la-regence.html"
