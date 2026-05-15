@@ -746,11 +746,11 @@
       "flights": {
         "inbound": {
           "from": "Naples (NAP)",
-          "airline": "easyJet",
+          "airline": "easyJet EJU4287",
           "duration": "2h05",
           "price": "R$392",
-          "status": "looking",
-          "notes": "Voo direto 07:00→09:05. Alexandre."
+          "status": "booked",
+          "notes": "NAP 07:00 → IBZ 09:05. Direto. Alexandre + David. Ref: KCMW6DD. Check-in abre 1/Jun 02:00."
         },
         "options": [
           {
@@ -797,6 +797,12 @@
         }
       },
       "events": [
+        {
+          "name": "Hugel @ Hï Ibiza",
+          "date": "2026-07-02",
+          "type": "party",
+          "notes": "David quer ir"
+        },
         {
           "date": "2026-07-03",
           "name": "Calvin Harris @ Ushuaïa",
@@ -867,6 +873,18 @@
           ],
           "notes": "✅ Comprado por Lucas + Alexandre. Opening night. Add-on: 3 drinks/waters €26.",
           "venueImage": "assets/events/pacha.jpg"
+        },
+        {
+          "name": "Day trip: Formentera",
+          "date": "2026-07-06",
+          "type": "daytrip",
+          "notes": "Ferry 30min. Ses Illetes beach. Alugar scooter. Dia inteiro."
+        },
+        {
+          "name": "Es Vedrà boat trip",
+          "date": "2026-07-07",
+          "type": "daytrip",
+          "notes": "Manhã — passeio barco + snorkel. Rufus Du Sol à noite."
         }
       ],
       "highlights": [
