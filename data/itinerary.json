@@ -897,15 +897,40 @@
         "david"
       ],
       "accommodation": {
-        "status": "looking",
-        "type": null,
-        "name": null,
-        "pricePerNight": 550,
+        "status": "booked",
+        "type": "hotel",
+        "name": "easyHotel Nice Old Town (Jul 8-12) + Hotel La Régence (Jul 12-14)",
+        "pricePerNight": null,
         "currency": "BRL",
-        "notes": "",
+        "notes": "David reservou sozinho. easyHotel Jul 8-12 (R$4.328,83, 4 noites). Hotel La Régence Jul 12-14 (R$1.343,68, 2 noites). Total: R$5.672,51. Alexandre+Lucas Jul 8-11 (3 noites no easyHotel), David Jul 8-14 (6 noites nos dois hotéis).",
         "links": {
-          "skyscanner": "https://www.skyscanner.com.br/transporte/passagens-aereas/ibz/nce/260708/"
-        }
+          "easyHotel": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html",
+          "laRegence": "https://www.booking.com/hotel/fr/la-regence.html"
+        },
+        "options": [
+          {
+            "name": "easyHotel Nice Old Town",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html",
+            "rating": "TBD",
+            "location": "Nice, Vieille Ville (Old Town)",
+            "details": "Hotel · Jul 8-12 (4 noites)",
+            "price": "R$4.328,83 total · ~R$1.082/noite",
+            "bookedBy": "david",
+            "status": "booked"
+          },
+          {
+            "name": "Hotel La Régence",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/hotel/fr/la-regence.html",
+            "rating": "TBD",
+            "location": "Nice",
+            "details": "Hotel · Jul 12-14 (2 noites, David only)",
+            "price": "R$1.343,68 total · ~R$672/noite",
+            "bookedBy": "david",
+            "status": "booked"
+          }
+        ]
       },
       "flights": {
         "inbound": {
