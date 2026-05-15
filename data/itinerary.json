@@ -180,6 +180,56 @@
             "location": "Campo Di Marte",
             "details": "Hotel · Design moderno",
             "price": "$165/noite · ~R$908/noite"
+          },
+          {
+            "name": "Apartamento charmoso em Tornabuoni",
+            "source": "Airbnb · Superhost",
+            "url": "https://www.airbnb.com.br/rooms/53112259?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "",
+            "rating": "4.89 (348)",
+            "location": "Via Tornabuoni (centro)",
+            "details": "Apartamento inteiro · 1 quarto · loft · 4 hóspedes",
+            "price": "R$2.778 total (2n) · ~R$1.389/noite"
+          },
+          {
+            "name": "Apartamento Finardi (coração de Florença)",
+            "source": "Airbnb",
+            "url": "https://www.airbnb.com.br/rooms/30243532?check_in=2026-06-17&check_out=2026-06-19&adults=2",
+            "image": "",
+            "rating": "TBD",
+            "location": "Centro histórico",
+            "details": "Apartamento inteiro",
+            "price": "R$2.944 total (2n) · ~R$1.472/noite"
+          },
+          {
+            "name": "La Terrazza sul Duomo",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/hotel/it/la-terrazza-sul-duomo-firenze.en-gb.html?checkin=2026-06-17&checkout=2026-06-19&group_adults=2",
+            "image": "",
+            "rating": "9.1 (787)",
+            "location": "Frente ao Duomo · terraço",
+            "details": "B&B · Café da manhã · Terraço com vista",
+            "price": "~€626 total (2n) · ~R$3.757"
+          },
+          {
+            "name": "Aramis Deluxe Rooms",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/hotel/it/aramis-deluxe-rooms.en-gb.html?checkin=2026-06-17&checkout=2026-06-19&group_adults=2",
+            "image": "",
+            "rating": "TBD",
+            "location": "Centro",
+            "details": "Hotel · Quartos deluxe",
+            "price": "~€568 total (2n) · ~R$3.408"
+          },
+          {
+            "name": "Duomo Luxury Home with View",
+            "source": "Booking.com",
+            "url": "https://www.booking.com/hotel/it/duomo-luxury-home-with-view.en-gb.html?checkin=2026-06-17&checkout=2026-06-19&group_adults=2",
+            "image": "",
+            "rating": "TBD",
+            "location": "Vista pro Duomo",
+            "details": "Apartamento inteiro · Luxo",
+            "price": "~€479 total (2n) · ~R$2.874"
           }
         ]
       },
