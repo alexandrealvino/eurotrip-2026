@@ -500,9 +500,9 @@
       "lng": 14.4989,
       "dates": {
         "start": "2026-06-30",
-        "end": "2026-07-01"
+        "end": "2026-07-02"
       },
-      "nights": 1,
+      "nights": 2,
       "who": [
         "ale",
         "lucas"
@@ -525,49 +525,8 @@
         "Naples pizza",
         "Mount Vesuvius"
       ],
-      "notes": "",
+      "notes": "Alexandre fica 2 noites (Jun 30 + Jul 1). Pompeia + Nápoles centro. Voa pra Ibiza Jul 2. Lucas voa pra Menorca Jul 1.",
       "image": "assets/cities/pompeii.jpg"
-    },
-    {
-      "id": "baleares",
-      "city": "Baleares (TBD)",
-      "country": "Spain",
-      "flag": "🇪🇸",
-      "lat": 39.9496,
-      "lng": 3.8613,
-      "dates": {
-        "start": "2026-07-01",
-        "end": "2026-07-03"
-      },
-      "nights": 2,
-      "who": [
-        "ale"
-      ],
-      "whoNotes": {
-        "ale": "Formentera/Menorca/Maiorca — indefinido",
-        "lucas": "Menorca (4 nights, Jul 1-5)"
-      },
-      "accommodation": {
-        "status": "tbd",
-        "type": null,
-        "name": null,
-        "pricePerNight": null,
-        "currency": "BRL",
-        "notes": "Ale: destino indefinido. Lucas: Menorca confirmado.",
-        "links": {}
-      },
-      "flights": {
-        "inbound": {
-          "from": "Naples",
-          "duration": "~2h",
-          "price": "R$440-550",
-          "status": "looking"
-        }
-      },
-      "events": [],
-      "highlights": [],
-      "notes": "Ale e Lucas divergem aqui. Ale: Formentera/Menorca/Maiorca (TBD). Lucas: Menorca 4 noites (Jul 1-5).",
-      "image": "assets/cities/baleares.jpg"
     },
     {
       "id": "menorca-lucas",
@@ -714,7 +673,7 @@
         "Vatican",
         "Trastevere"
       ],
-      "notes": "David em Roma solo. Depois segue pra Nápoles e Ibiza dia 01/Jul.",
+      "notes": "David em Roma (casa da mãe do Lucas). Sai Jul 1 cedo pra Nápoles → voo NAP→IBZ 07:00.",
       "image": "assets/cities/rome.jpg"
     },
     {
@@ -894,7 +853,7 @@
         "Cala Comte",
         "Dalt Vila"
       ],
-      "notes": "David chega dia 1/Jul de Nápoles (easyJet, comprado). Alexandre chega Jul 1-3 (TBD). Lucas chega dia 4/Jul de Menorca (comprado). Todos juntos até dia 8.",
+      "notes": "David chega Jul 1 (voo NAP→IBZ 07:00, faz check-in). Alexandre chega Jul 2 (voo TBD). Lucas chega Jul 4 (de Menorca).",
       "image": "assets/cities/ibiza.jpg",
       "dayTrips": [
         {
@@ -906,7 +865,19 @@
             "david"
           ]
         }
-      ]
+      ],
+      "davidDates": {
+        "start": "2026-07-01",
+        "end": "2026-07-08"
+      },
+      "lucasDates": {
+        "start": "2026-07-04",
+        "end": "2026-07-08"
+      },
+      "aleDates": {
+        "start": "2026-07-02",
+        "end": "2026-07-08"
+      }
     },
     {
       "id": "nice",
@@ -1013,6 +984,14 @@
       "davidDates": {
         "start": "2026-07-08",
         "end": "2026-07-14"
+      },
+      "aleDates": {
+        "start": "2026-07-08",
+        "end": "2026-07-11"
+      },
+      "lucasDates": {
+        "start": "2026-07-08",
+        "end": "2026-07-11"
       }
     },
     {
