@@ -525,13 +525,15 @@
         "david"
       ],
       "accommodation": {
-        "status": "tbd",
-        "type": null,
-        "name": null,
-        "pricePerNight": null,
+        "status": "booked",
+        "type": "hotel",
+        "name": "Hotel Tropical Ibiza",
+        "pricePerNight": 975,
         "currency": "BRL",
-        "notes": "",
-        "links": {}
+        "notes": "Booking.com. 7 noites (Jul 1-8). R$6.821,24 total (~R$975/noite). Alexandre + David juntos. Lucas TBD (chega Jul 4 de Menorca).",
+        "links": {
+          "booking": "https://www.booking.com/hotel/es/tropical.pt-br.html?checkin=2026-07-01&checkout=2026-07-08&group_adults=2"
+        }
       },
       "flights": {
         "inbound": {
@@ -1005,10 +1007,11 @@
       "city": "🇮🇹 Nápoles / Pompeii"
     },
     {
-      "task": "Reservar hospedagem Ibiza (Jul 1-8). David faz check-in Jul 1. Alexandre chega Jul 2. Mesmo hotel.",
+      "task": "✅ Hospedagem Ibiza — Hotel Tropical (Booking, R$6.821, Jul 1-8, Ale+David)",
       "priority": "medium",
       "who": "ale",
-      "city": "🇪🇸 Ibiza"
+      "city": "🇪🇸 Ibiza",
+      "done": true
     },
     {
       "task": "Reservar hospedagem Nice (Jul 8-11, 3 noites) — Ale+Lucas. David já reservou separado.",
