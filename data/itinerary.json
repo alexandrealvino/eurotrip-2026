@@ -238,10 +238,10 @@
         "Path of the Gods",
         "Beach clubs"
       ],
-      "notes": "Alexandre + Lucas em Casa Donna Cunce. David chega Jun 25, fica em acomodação separada.",
+      "notes": "Alexandre + Lucas em Casa Donna Cunce (Jun 23-26). David chega Jun 26, fica em acomodação separada.",
       "image": "assets/cities/positano.jpg",
       "davidDates": {
-        "start": "2026-06-25",
+        "start": "2026-06-26",
         "end": "2026-06-26"
       }
     },
@@ -330,12 +330,13 @@
       "lng": 14.4989,
       "dates": {
         "start": "2026-06-30",
-        "end": "2026-07-02"
+        "end": "2026-07-01"
       },
-      "nights": 2,
+      "nights": 1,
       "who": [
         "ale",
-        "lucas"
+        "lucas",
+        "david"
       ],
       "accommodation": {
         "status": "looking",
@@ -355,7 +356,7 @@
         "Naples pizza",
         "Mount Vesuvius"
       ],
-      "notes": "Alexandre fica 2 noites (Jun 30 + Jul 1). Pompeia + Nápoles centro. Voa pra Ibiza Jul 2. Lucas voa pra Menorca Jul 1.",
+      "notes": "Alexandre + Lucas + David. Jun 30 noite em Nápoles. Alexandre + David voam pra Ibiza Jul 1. Lucas voa pra Menorca Jul 1.",
       "image": "assets/cities/pompeii.jpg"
     },
     {
@@ -539,7 +540,7 @@
           "duration": "2h05",
           "price": "R$392",
           "status": "booked",
-          "notes": "David: NAP 07:00 → IBZ 09:05 Jul 1 (comprado, ref KCMW6DD). Alexandre: NAP→IBZ Jul 2 (ainda não comprado)."
+          "notes": "David: NAP 07:00 → IBZ 09:05 Jul 1 (comprado, ref KCMW6DD). Alexandre: NAP→IBZ Jul 1 (ainda não comprado)."
         },
         "options": [
           {
@@ -681,7 +682,7 @@
         "Cala Comte",
         "Dalt Vila"
       ],
-      "notes": "David chega Jul 1 (voo NAP→IBZ 07:00, faz check-in). Alexandre chega Jul 2 (voo TBD). Lucas chega Jul 4 (de Menorca).",
+      "notes": "David chega Jul 1 (voo NAP→IBZ 07:00, faz check-in). Alexandre chega Jul 1 também. Lucas chega Jul 4 (de Menorca).",
       "image": "assets/cities/ibiza.jpg",
       "dayTrips": [
         {
@@ -703,7 +704,7 @@
         "end": "2026-07-08"
       },
       "aleDates": {
-        "start": "2026-07-02",
+        "start": "2026-07-01",
         "end": "2026-07-08"
       }
     },
@@ -980,7 +981,7 @@
       "done": true
     },
     {
-      "task": "Comprar voo NAP→IBZ (Jul 2, easyJet ~R$392) — Alexandre sozinho",
+      "task": "Comprar voo NAP→IBZ (Jul 1) — Alexandre",
       "priority": "high",
       "who": "ale",
       "city": "🇮🇹 Nápoles / Pompeii"
