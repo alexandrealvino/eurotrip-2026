@@ -238,10 +238,10 @@
         "Path of the Gods",
         "Beach clubs"
       ],
-      "notes": "Alexandre + Lucas em Casa Donna Cunce (Jun 23-26). David chega Jun 26, fica em acomodação separada.",
+      "notes": "Alexandre + Lucas em Casa Donna Cunce (Jun 23-26). David chega Jun 25, Airbnb separado. Todos vão pra Sorrento Jun 26.",
       "image": "assets/cities/positano.jpg",
       "davidDates": {
-        "start": "2026-06-26",
+        "start": "2026-06-25",
         "end": "2026-06-26"
       }
     },
@@ -259,7 +259,8 @@
       "nights": 1,
       "who": [
         "ale",
-        "lucas"
+        "lucas",
+        "david"
       ],
       "accommodation": {
         "status": "looking",
@@ -279,7 +280,7 @@
         "Marina Grande",
         "Views of Vesuvius"
       ],
-      "notes": "",
+      "notes": "Alexandre + Lucas + David juntos. 1 noite (Jun 26-27).",
       "image": "assets/cities/sorrento.jpg"
     },
     {
