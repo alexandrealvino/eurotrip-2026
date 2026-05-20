@@ -728,36 +728,29 @@
         "david"
       ],
       "accommodation": {
-        "status": "partial",
+        "status": "booked",
         "type": "hotel",
-        "name": "David: easyHotel + La Régence (booked) | Ale+Lucas: TBD",
-        "pricePerNight": null,
+        "name": "easyHotel Nice Old Town",
+        "pricePerNight": 1082,
         "currency": "BRL",
-        "notes": "David reservou sozinho: easyHotel Jul 8-12 (R$4.328,83) + La Régence Jul 12-14 (R$1.343,68). Alexandre + Lucas ainda não decidiram hospedagem em Nice (Jul 8-11).",
+        "notes": "David reservou. Alexandre fica com David Jul 8-11 (3 noites). David continua Jul 11-12 no mesmo + La Régence Jul 12-14. Lucas TBD (hospedagem separada).",
         "links": {
-          "easyHotel": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html",
-          "laRegence": "https://www.booking.com/hotel/fr/la-regence.html"
+          "booking": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html"
         },
         "options": [
           {
             "name": "easyHotel Nice Old Town",
             "source": "Booking.com",
-            "url": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html",
-            "rating": "TBD",
-            "location": "Nice, Vieille Ville (Old Town)",
-            "details": "Hotel · Jul 8-12 (4 noites)",
-            "price": "R$4.328,83 total · ~R$1.082/noite",
+            "details": "Hotel · Jul 8-12 (4 noites, David) / Jul 8-11 (3 noites, Alexandre)",
+            "price": "R$4.328,83 total (David)",
             "bookedBy": "david",
             "status": "booked"
           },
           {
             "name": "Hotel La Régence",
             "source": "Booking.com",
-            "url": "https://www.booking.com/hotel/fr/la-regence.html",
-            "rating": "TBD",
-            "location": "Nice",
             "details": "Hotel · Jul 12-14 (2 noites, David only)",
-            "price": "R$1.343,68 total · ~R$672/noite",
+            "price": "R$1.343,68 total",
             "bookedBy": "david",
             "status": "booked"
           }
@@ -1015,10 +1008,11 @@
       "done": true
     },
     {
-      "task": "Reservar hospedagem Nice (Jul 8-11, 3 noites) — Ale+Lucas. David já reservou separado.",
+      "task": "✅ Hospedagem Nice — easyHotel Old Town com David (Jul 8-11). Lucas TBD.",
       "priority": "medium",
       "who": "ale",
-      "city": "🇫🇷 Nice / Côte d'Azur"
+      "city": "🇫🇷 Nice / Côte d'Azur",
+      "done": true
     },
     {
       "task": "✅ Calvin Harris @ Ushuaïa (03/Jul) — comprado €169,99 (entrada + drink)",
