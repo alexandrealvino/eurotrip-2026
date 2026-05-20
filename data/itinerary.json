@@ -540,9 +540,9 @@
           "from": "Naples (NAP)",
           "airline": "easyJet EJU4287",
           "duration": "2h05",
-          "price": "R$392",
+          "price": "€137,97",
           "status": "booked",
-          "notes": "David: NAP 07:00 → IBZ 09:05 Jul 1 (comprado, ref KCMW6DD). Alexandre: NAP→IBZ Jul 1 (ainda não comprado)."
+          "notes": "Alexandre: NAP 07:00 → IBZ 09:05, Jul 1. Ref: KCNTSJS. €137,97. David no mesmo voo (ref KCMW6DD)."
         },
         "options": [
           {
@@ -983,10 +983,11 @@
       "done": true
     },
     {
-      "task": "Comprar voo NAP→IBZ (Jul 1) — Alexandre",
+      "task": "✅ Voo NAP→IBZ comprado (easyJet EJU4287, Jul 1 07:00→09:05, €137,97, ref KCNTSJS)",
       "priority": "high",
       "who": "ale",
-      "city": "🇮🇹 Nápoles / Pompeii"
+      "city": "🇮🇹 Nápoles / Pompeii",
+      "done": true
     },
     {
       "task": "Reservar hospedagem Sorrento (Jun 26-27, 1 noite)",
