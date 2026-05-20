@@ -300,13 +300,15 @@
         "david"
       ],
       "accommodation": {
-        "status": "looking",
-        "type": null,
-        "name": null,
-        "pricePerNight": null,
-        "currency": "BRL",
-        "notes": "Capri Town ou Anacapri",
-        "links": {}
+        "status": "booked",
+        "type": "airbnb",
+        "name": "Casa La Sorpresa — vista Faraglioni, Capri",
+        "pricePerNight": 749,
+        "currency": "USD",
+        "notes": "Airbnb. 3 noites (Jun 27-30). $2.248 USD total (~$749/noite). 3 pessoas (Alexandre + Lucas + David). Apt inteiro: 3 quartos, 3 camas, 2 banheiros, terraço panorâmico c/ vista Faraglioni. 6 hóspedes max. 5★ localização.",
+        "links": {
+          "airbnb": "https://www.airbnb.com.br/rooms/1121683772634502566?check_in=2026-06-27&check_out=2026-06-30&adults=3"
+        }
       },
       "flights": {
         "inbound": null
@@ -318,7 +320,7 @@
         "Anacapri",
         "Marina Piccola"
       ],
-      "notes": "Alexandre + Lucas + David. David em hotel/airbnb separado.",
+      "notes": "Alexandre + Lucas + David juntos em Casa La Sorpresa. Vista Faraglioni, terraço panorâmico.",
       "image": "assets/cities/capri.jpg"
     },
     {
@@ -989,10 +991,11 @@
       "city": "🇮🇹 Sorrento"
     },
     {
-      "task": "Reservar hospedagem Capri (Jun 27-30, 3 noites)",
+      "task": "✅ Hospedagem Capri — Casa La Sorpresa (Airbnb, $2.248 USD, Jun 27-30, 3 pessoas)",
       "priority": "medium",
       "who": "ale",
-      "city": "🇮🇹 Capri"
+      "city": "🇮🇹 Capri",
+      "done": true
     },
     {
       "task": "Reservar hospedagem Nápoles (Jun 30-Jul 2, 2 noites) — Alexandre",
