@@ -83,7 +83,16 @@
             "times": "GRU → 18/Jun 10:15",
             "price": "R$2.572,49 total"
           }
-        ]
+        ],
+        "outbound": {
+          "from": "Milano Centrale",
+          "to": "Firenze S. M. Novella",
+          "airline": "Trenitalia Frecciarossa 9539",
+          "duration": "1h54",
+          "price": "€46,90",
+          "status": "booked",
+          "notes": "Trem 18/Jun 13:10→15:04. Coach 6, Seat 7A. PNR: WK49JN. Economy Standard."
+        }
       },
       "events": [],
       "highlights": [
@@ -952,10 +961,11 @@
       "done": true
     },
     {
-      "task": "Comprar trem Milão → Florença (Trenitalia ou Italo, 18/Jun)",
+      "task": "✅ Trem Milão→Florença comprado (Frecciarossa 9539, 18/Jun 13:10→15:04, €46,90, PNR WK49JN)",
       "priority": "high",
       "who": "ale",
-      "city": "🇮🇹 Milão"
+      "city": "🇮🇹 Milão",
+      "done": true
     },
     {
       "task": "✅ Hospedagem Florença — Apt Finardi (Airbnb, R$2.944, Jun 17-19)",
