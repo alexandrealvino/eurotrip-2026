@@ -198,7 +198,16 @@
         "links": {}
       },
       "flights": {
-        "inbound": null
+        "inbound": null,
+        "outbound": {
+          "from": "Roma Termini",
+          "to": "Napoli Centrale",
+          "airline": "Italo",
+          "duration": "1h12",
+          "price": "€18,50",
+          "status": "booked",
+          "notes": "Trem 23/Jun 09:41→10:53. 1 passageiro. Trecho Roma→Nápoles comprado; falta fechar Nápoles→Positano."
+        }
       },
       "events": [],
       "highlights": [
@@ -1062,10 +1071,10 @@
       "city": "🇮🇹 Florença"
     },
     {
-      "task": "Pesquisar transporte Roma→Positano (trem/bus ~3-4h)",
+      "task": "Fechar Nápoles→Positano (ferry/transfer) — trem Roma→Nápoles já comprado (Italo, 23/Jun 09:41→10:53, €18,50)",
       "priority": "medium",
       "who": "ale",
-      "city": "🇮🇹 Roma"
+      "city": "🇮🇹 Positano / Amalfi"
     },
     {
       "task": "Pesquisar transporte Sorrento↔Capri (ferry ~20min)",
