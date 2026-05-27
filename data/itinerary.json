@@ -140,13 +140,14 @@
       "image": "assets/cities/florence.jpg",
       "transport": {
         "inbound": {
-          "from": "Milão (MXP/Milano Centrale)",
+          "from": "Milano Centrale",
+          "to": "Firenze S. M. Novella",
           "type": "trem",
-          "operator": "Trenitalia / Italo",
-          "duration": "~1h40",
-          "price": "~R$130-250",
-          "status": "looking",
-          "notes": "Trem de alta velocidade Milano Centrale → Firenze Santa Maria Novella. Comprar antecipado pra preço mais baixo."
+          "operator": "Trenitalia Frecciarossa 9539",
+          "duration": "1h54",
+          "price": "€46,90",
+          "status": "booked",
+          "notes": "✅ COMPRADO — 18/Jun 13:10→15:04. Coach 6, Seat 7A. PNR: WK49JN. Economy Standard."
         },
         "options": [
           {
@@ -169,7 +170,17 @@
             "price": "~€22-40",
             "url": "https://www.italotreno.it/en"
           }
-        ]
+        ],
+        "outbound": {
+          "from": "Firenze S. M. Novella",
+          "to": "Roma Termini",
+          "type": "trem",
+          "operator": "Italo",
+          "duration": "1h40",
+          "price": "€27,83",
+          "status": "booked",
+          "notes": "✅ COMPRADO — 19/Jun 20:03→21:43. 1 passageiro."
+        }
       }
     },
     {
@@ -1065,10 +1076,11 @@
       "city": "🇪🇸 Ibiza"
     },
     {
-      "task": "Pesquisar transporte Florença→Roma (trem ~1h30)",
-      "priority": "medium",
+      "task": "✅ Trem Florença→Roma comprado (Italo, 19/Jun 20:03→21:43, €27,83)",
+      "priority": "done",
       "who": "ale",
-      "city": "🇮🇹 Florença"
+      "city": "🇮🇹 Florença",
+      "done": true
     },
     {
       "task": "Fechar Nápoles→Positano (ferry/transfer) — trem Roma→Nápoles já comprado (Italo, 23/Jun 09:41→10:53, €18,50)",
