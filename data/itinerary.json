@@ -292,13 +292,15 @@
         "david"
       ],
       "accommodation": {
-        "status": "looking",
-        "type": null,
-        "name": null,
+        "status": "booked",
+        "type": "hotel",
+        "name": "Hotel Desiree Sorrento",
         "pricePerNight": null,
-        "currency": "BRL",
-        "notes": "",
-        "links": {}
+        "currency": "EUR",
+        "notes": "Booking.com. 1 noite (Jun 26-27). 3 pessoas, 1 quarto. Check-in Jun 26, check-out Jun 27.",
+        "links": {
+          "booking": "https://www.booking.com/hotel/it/desiree-sorrento.html"
+        }
       },
       "flights": {
         "inbound": null
@@ -1016,10 +1018,11 @@
       "done": true
     },
     {
-      "task": "Reservar hospedagem Sorrento (Jun 26-27, 1 noite)",
-      "priority": "medium",
+      "task": "✅ Hospedagem Sorrento — Hotel Desiree (Booking, Jun 26-27, 3 pessoas)",
+      "priority": "done",
       "who": "ale",
-      "city": "🇮🇹 Sorrento"
+      "city": "🇮🇹 Sorrento",
+      "done": true
     },
     {
       "task": "✅ Hospedagem Capri — Casa La Sorpresa (Airbnb, $2.248 USD, Jun 27-30, 3 pessoas)",
