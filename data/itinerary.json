@@ -409,13 +409,18 @@
         "lucas"
       ],
       "accommodation": {
-        "status": "tbd",
-        "type": null,
-        "name": null,
-        "pricePerNight": null,
-        "currency": "BRL",
-        "notes": "",
-        "links": {}
+        "status": "booked",
+        "type": "Booking.com",
+        "name": "One-Bedroom Apartment - Cala Galdana",
+        "address": "Urbanizacion Serpentona, 18 A, 07750 Cala Galdana, Spain",
+        "pricePerNight": 197,
+        "totalPrice": 590.04,
+        "currency": "EUR",
+        "guests": 2,
+        "notes": "Non-refundable. Check-in 14:00-00:00, Check-out 07:00-12:00.",
+        "links": {
+          "booking": "Booking.com"
+        }
       },
       "flights": {
         "inbound": {
