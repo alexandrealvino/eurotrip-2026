@@ -772,7 +772,7 @@
         "name": "easyHotel Nice Old Town",
         "pricePerNight": 1082,
         "currency": "BRL",
-        "notes": "David reservou. Alexandre fica com David Jul 8-11 (3 noites). David continua Jul 11-12 no mesmo + La Régence Jul 12-14. Lucas TBD (hospedagem separada).",
+        "notes": "Alexandre+David no easyHotel (Jul 8-11). Lucas no Airbnb separado (Bd Gambetta, 2min da praia, Jul 8-11, US$475).",
         "links": {
           "booking": "https://www.booking.com/hotel/fr/easyhotel-nice-old-town.html"
         },
@@ -791,6 +791,14 @@
             "details": "Hotel · Jul 12-14 (2 noites, David only)",
             "price": "R$1.343,68 total",
             "bookedBy": "david",
+            "status": "booked"
+          },
+          {
+            "name": "Studio pour 2 personnes - 2 mins a pied de la mer",
+            "source": "Airbnb",
+            "details": "Studio inteiro, hosted by David. Jul 8-11 (3 noites). 8 Bd Gambetta, 06000 Nice. Check-in 16:00, check-out 11:00.",
+            "price": "US$475.06 total",
+            "bookedBy": "lucas",
             "status": "booked"
           }
         ]
