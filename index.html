@@ -1487,6 +1487,11 @@ function renderBudget() {
     }
   });
 
+  // Gastos do dia a dia (Alexandre) — somado manualmente em euros
+  const dailyEUR = 3900;
+  const eurToBrl = 6.35; // cotação aproximada
+  const dailyBRL = Math.round(dailyEUR * eurToBrl);
+
   container.innerHTML = `
     <div class="budget-card">
       <h3><i data-lucide="bed-double" style="width:18px;height:18px"></i> Hospedagem (por pessoa)</h3>
@@ -1530,14 +1535,26 @@ function renderBudget() {
       </div>
     </div>
 
+    <div class="budget-card">
+      <h3><i data-lucide="utensils" style="width:18px;height:18px"></i> Gastos do Dia a Dia (Alexandre)</h3>
+      <div class="budget-row">
+        <span class="label">Alimentação, transporte, saídas, compras</span>
+        <span class="value">€${dailyEUR.toLocaleString('pt-BR')}</span>
+      </div>
+      <div class="budget-row" style="border-top:2px solid var(--border);margin-top:8px;padding-top:12px">
+        <span class="label" style="font-weight:700;color:var(--text)">Em reais (~R$6,35/€)</span>
+        <span class="value" style="color:var(--accent)">~R$${dailyBRL.toLocaleString('pt-BR')}</span>
+      </div>
+    </div>
+
     <div class="budget-card budget-total">
       <h3><i data-lucide="wallet" style="width:18px;height:18px"></i> Total Estimado (por pessoa)</h3>
       <div class="budget-row">
-        <span class="label">Hospedagem + Voos + Eventos</span>
-        <span class="value">~R$${totalAccomm + totalFlights}+ (parcial)</span>
+        <span class="label">Hospedagem + Voos + Eventos + Dia a dia</span>
+        <span class="value">~R$${(totalAccomm + totalFlights + dailyBRL).toLocaleString('pt-BR')}+ (parcial)</span>
       </div>
       <div class="budget-row">
-        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Não inclui: alimentação, transporte, compras, atividades</span>
+        <span class="label" style="font-size:0.8rem;color:var(--text-dim)">Gastos do dia a dia já incluídos acima</span>
         <span class="value">—</span>
       </div>
     </div>
